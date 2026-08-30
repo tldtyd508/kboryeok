@@ -1,20 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import copy from 'copy-to-clipboard';
 import { useGameStore } from '@/lib/store';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 
 const GameOverDialog = () => {
+  const gameStatus = useGameStore((state) => state.gameStatus);
+  const isGameOver = gameStatus === 'won' || gameStatus === 'lost';
+
+  if (!isGameOver) return null;
+
+  return <FinishedGameDialog />;
+};
+
+const FinishedGameDialog = () => {
   const { gameStatus, secretPlayer, guesses, results, actions } = useGameStore();
   const [isCopied, setIsCopied] = useState(false);
-
-  const isGameOver = gameStatus === 'won' || gameStatus === 'lost';
-  const [isDialogOpen, setIsDialogOpen] = useState(isGameOver);
-
-  useEffect(() => {
-    setIsDialogOpen(isGameOver);
-  }, [isGameOver]);
-
+  const [isDialogOpen, setIsDialogOpen] = useState(true);
 
   const handleShare = () => {
     const title = `크보력 ${gameStatus === 'won' ? guesses.length : 'X'}/8`;
