@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "season": 2026,
+  "source": {
+    "title": "2026년 구단별 코칭스탭 및 소속선수 명단",
+    "sourceUrl": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+    "publishedAt": "2026-02-10",
+    "localFile": "data/source/kbo-team-rosters-2026.xlsx",
+    "redistribution": "internal-source-only"
+  },
+  "lastReviewedAt": "2026-08-28",
+  "rosterCount": 621,
+  "quizEligibleCount": 425,
+  "needsEnrichmentCount": 196,
+  "teamCounts": {
+    "LG 트윈스": 63,
+    "한화 이글스": 64,
+    "SSG 랜더스": 67,
+    "삼성 라이온즈": 61,
+    "NC 다이노스": 60,
+    "KT 위즈": 61,
+    "롯데 자이언츠": 62,
+    "KIA 타이거즈": 63,
+    "두산 베어스": 60,
+    "키움 히어로즈": 60
+  }
+}
