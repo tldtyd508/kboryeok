@@ -50,3 +50,5 @@ __pycache__/
 
 # KBO 원본 파일은 내부 검수용이며 저장소에 재배포하지 않습니다.
 /data/source/*.xlsx
+.vercel
+.env*
