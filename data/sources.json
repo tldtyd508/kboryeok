@@ -1,0 +1,31 @@
+{
+  "sources": [
+    {
+      "id": "kbo-records",
+      "name": "KBO 공식 기록실",
+      "baseUrl": "https://www.koreabaseball.com/Record/",
+      "priority": 1,
+      "collectionMode": "manual-reviewed-snapshot",
+      "automatedCollection": false,
+      "note": "문제에 필요한 범위만 수동 검수하고 원문 URL과 확인일을 저장한다."
+    },
+    {
+      "id": "statiz",
+      "name": "STATIZ",
+      "baseUrl": "https://www.statiz.co.kr/",
+      "priority": 3,
+      "collectionMode": "permission-required",
+      "automatedCollection": false,
+      "note": "2026-04-02 모든 크롤링 금지 공지 및 콘텐츠 무단 이용 경고 확인. 별도 허가 전 수집원으로 사용하지 않는다."
+    },
+    {
+      "id": "namuwiki",
+      "name": "나무위키",
+      "baseUrl": "https://namu.wiki/",
+      "priority": 4,
+      "collectionMode": "discovery-only",
+      "automatedCollection": false,
+      "note": "개명·별칭·누락 후보 탐색용. 정답 수치의 단독 근거로 사용하지 않는다."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+    "id": "kboten-career-average-2026-09-04",
+    "game": "kboten",
+    "publishDate": "2026-09-04",
+    "revision": 1,
+    "title": "KBO 통산 타율 TOP 10",
+    "prompt": "통산 3,000타석 이상 타자 중 타율 상위 10명을 모두 찾아보세요.",
+    "statLabel": "통산 타율",
+    "scopeLabel": "2026-09-04 조회 스냅샷 · 3,000타석 이상",
+    "maxWrongGuesses": 5,
+    "answers": [
+      { "rank": 1, "name": "이정후", "value": "0.340", "status": "inactive", "aliases": [] },
+      { "rank": 2, "name": "장효조", "value": "0.330", "status": "retired", "aliases": [] },
+      { "rank": 3, "name": "박건우", "value": "0.322", "status": "active", "aliases": [] },
+      { "rank": 4, "name": "구자욱", "value": "0.321", "status": "active", "aliases": [] },
+      { "rank": 5, "name": "김태균", "value": "0.320", "status": "retired", "aliases": [] },
+      { "rank": 6, "name": "박민우", "value": "0.319", "status": "active", "aliases": [] },
+      { "rank": 7, "name": "손아섭", "value": "0.318", "status": "active", "aliases": [] },
+      { "rank": 8, "name": "양준혁", "value": "0.316", "status": "retired", "aliases": [] },
+      { "rank": 9, "name": "로하스", "value": "0.313", "status": "active", "aliases": ["멜 로하스", "멜로하스", "멜 로하스 주니어"] },
+      { "rank": 10, "name": "데이비스", "value": "0.313", "status": "retired", "aliases": ["제이 데이비스", "제이데이비스"] }
+    ],
+    "sources": [
+      {
+        "name": "KBO 기록실 · 통산 타자 기본기록",
+        "url": "https://www.koreabaseball.com/Record/Player/HitterBasic/BasicTotal.aspx",
+        "accessedAt": "2026-09-04",
+        "role": "primary"
+      }
+    ],
+    "review": {
+      "status": "verified",
+      "reviewedAt": "2026-09-04",
+      "note": "KBO 공식 기록실 표기와 순위를 수동 대조한 고정 스냅샷"
+    }
+}

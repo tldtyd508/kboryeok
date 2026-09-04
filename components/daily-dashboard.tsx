@@ -22,8 +22,10 @@ export function DailyDashboard() {
     getDashboardSnapshot,
     getServerDashboardSnapshot,
   );
-  const [progressValue, currentValue, bestValue, totalValue] = snapshot.split("|");
+  const [progressValue, completedValue, gameCountValue, currentValue, bestValue, totalValue] = snapshot.split("|");
   const progress = progressValue as DailyPlayerProgress;
+  const completedCount = Number(completedValue);
+  const gameCount = Number(gameCountValue);
   const currentStreak = Number(currentValue);
   const bestStreak = Number(bestValue);
   const totalDays = Number(totalValue);
@@ -36,11 +38,11 @@ export function DailyDashboard() {
         <div>
           <p className="text-xs font-black tracking-[0.16em] text-muted-foreground">TODAY&apos;S SCORECARD</p>
           <div className="mt-5 flex items-end gap-2">
-            <span className="text-5xl font-black tabular-nums">{completed ? 1 : 0}</span>
-            <span className="pb-1.5 text-lg font-bold text-muted-foreground">/ 1 완료</span>
+            <span className="text-5xl font-black tabular-nums">{completedCount}</span>
+            <span className="pb-1.5 text-lg font-bold text-muted-foreground">/ {gameCount} 완료</span>
           </div>
           <div className="mt-5 h-2.5 overflow-hidden rounded-full bg-muted">
-            <div className={`h-full rounded-full bg-[#ff6b35] transition-[width] ${completed ? "w-full" : "w-0"}`} />
+            <div className="h-full rounded-full bg-[#ff6b35] transition-[width]" style={{ width: `${(completedCount / gameCount) * 100}%` }} />
           </div>
         </div>
         <p className="mt-6 flex items-center gap-2 text-sm font-semibold text-muted-foreground">
