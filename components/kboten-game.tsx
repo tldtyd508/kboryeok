@@ -1,6 +1,6 @@
 "use client";
 
-import { useDeferredValue, useMemo, useRef, useState, useSyncExternalStore, type KeyboardEvent } from "react";
+import { useMemo, useRef, useState, useSyncExternalStore, type KeyboardEvent } from "react";
 import Fuse from "fuse.js";
 import { Check, CheckCircle2, CircleHelp, ExternalLink, Heart, Search, Share2, X, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -43,7 +43,6 @@ export function KboTenGame({
   const [feedback, setFeedback] = useState<{ kind: "neutral" | "correct" | "wrong"; playerName: string }>({ kind: "neutral", playerName: "" });
   const [shareLabel, setShareLabel] = useState("결과 공유");
   const searchContainerRef = useRef<HTMLDivElement>(null);
-  const deferredInput = useDeferredValue(input);
   const dateKey = getKstDateKey();
 
   const storedSnapshot = useSyncExternalStore(
@@ -81,7 +80,7 @@ export function KboTenGame({
   ), [correctNames, wrongNames]);
 
   const searchResults = useMemo(() => {
-    const query = normalizePlayerName(deferredInput.trim());
+    const query = normalizePlayerName(input.trim());
     if (!query) return [];
 
     const available = playerOptions.filter((player) => !guessedNames.has(normalizePlayerName(player.name)));
@@ -102,7 +101,7 @@ export function KboTenGame({
       .map((result) => result.item)
       .filter((player) => !guessedNames.has(normalizePlayerName(player.name)) && !directIds.has(player.id));
     return [...directMatches, ...fuzzyMatches].slice(0, 6);
-  }, [deferredInput, fuse, guessedNames, playerOptions]);
+  }, [fuse, guessedNames, input, playerOptions]);
 
   function submitPlayer(player: KboTenPlayerOption) {
     if (gameStatus !== "playing") return;
