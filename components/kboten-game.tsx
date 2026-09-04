@@ -1,8 +1,8 @@
 "use client";
 
-import { useDeferredValue, useMemo, useState, useSyncExternalStore, type KeyboardEvent } from "react";
+import { useDeferredValue, useMemo, useRef, useState, useSyncExternalStore, type KeyboardEvent } from "react";
 import Fuse from "fuse.js";
-import { Check, CircleHelp, ExternalLink, Search, Share2, X } from "lucide-react";
+import { Check, CheckCircle2, CircleHelp, ExternalLink, Heart, Search, Share2, X, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -40,7 +40,9 @@ export function KboTenGame({
   const [activeIndex, setActiveIndex] = useState(0);
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [message, setMessage] = useState("선수를 검색한 뒤 후보를 선택하세요.");
+  const [feedback, setFeedback] = useState<{ kind: "neutral" | "correct" | "wrong"; playerName: string }>({ kind: "neutral", playerName: "" });
   const [shareLabel, setShareLabel] = useState("결과 공유");
+  const searchContainerRef = useRef<HTMLDivElement>(null);
   const deferredInput = useDeferredValue(input);
   const dateKey = getKstDateKey();
 
@@ -110,11 +112,25 @@ export function KboTenGame({
       const nextStatus: DailyGameStatus = nextCorrectNames.length === puzzle.answers.length ? "won" : "playing";
       saveKboTenGame({ puzzleId: puzzle.id, correctNames: nextCorrectNames, wrongNames, gameStatus: nextStatus }, dateKey);
       setMessage(`${answer.rank}위 ${answer.name}, 정답!`);
+      setFeedback({ kind: "correct", playerName: answer.name });
     } else {
       const nextWrongNames = [...wrongNames, player.name];
       const nextStatus: DailyGameStatus = nextWrongNames.length >= puzzle.maxWrongGuesses ? "lost" : "playing";
       saveKboTenGame({ puzzleId: puzzle.id, correctNames, wrongNames: nextWrongNames, gameStatus: nextStatus }, dateKey);
       setMessage("TOP 10 명단에는 없어요.");
+      setFeedback({ kind: "wrong", playerName: player.name });
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        searchContainerRef.current?.animate(
+          [
+            { transform: "translateX(0)" },
+            { transform: "translateX(-9px)" },
+            { transform: "translateX(8px)" },
+            { transform: "translateX(-5px)" },
+            { transform: "translateX(0)" },
+          ],
+          { duration: 360, easing: "ease-out" },
+        );
+      }
     }
     setInput("");
     setActiveIndex(0);
@@ -150,6 +166,7 @@ export function KboTenGame({
   }
 
   const finished = gameStatus !== "playing";
+  const remainingLives = Math.max(0, puzzle.maxWrongGuesses - wrongNames.length);
 
   return (
     <>
@@ -190,7 +207,25 @@ export function KboTenGame({
         </div>
 
         <div className="p-4 sm:p-7">
-          <div className="relative mx-auto max-w-xl" role="search">
+          <div className="mx-auto mb-4 flex max-w-xl items-center justify-between rounded-2xl border border-foreground/10 bg-muted/55 px-4 py-3">
+            <div>
+              <p className="text-[11px] font-black tracking-[0.12em] text-muted-foreground">LIFE</p>
+              <p className="mt-0.5 text-sm font-bold">틀릴 때마다 하나씩 사라져요</p>
+            </div>
+            <div className="flex gap-1.5" aria-label={`남은 라이프 ${remainingLives}개`}>
+              {Array.from({ length: puzzle.maxWrongGuesses }, (_, index) => {
+                const active = index < remainingLives;
+                const justLost = feedback.kind === "wrong" && index === remainingLives;
+                return (
+                  <span key={index} className={justLost ? "kboten-life-lost" : ""} aria-hidden="true">
+                    <Heart className={`size-6 ${active ? "fill-rose-500 text-rose-500" : "fill-transparent text-foreground/20"}`} />
+                  </span>
+                );
+              })}
+            </div>
+          </div>
+
+          <div ref={searchContainerRef} className="relative mx-auto max-w-xl" role="search">
             <Search className="pointer-events-none absolute left-4 top-1/2 z-10 size-4 -translate-y-1/2 text-muted-foreground" />
             <Input
               value={input}
@@ -239,7 +274,8 @@ export function KboTenGame({
               </div>
             ) : null}
           </div>
-          <div className="mt-3 flex min-h-6 items-center justify-center gap-2 text-sm font-semibold text-muted-foreground" aria-live="polite">
+          <div className={`mx-auto mt-3 flex min-h-11 max-w-xl items-center justify-center gap-2 rounded-xl px-3 text-sm font-black transition-colors ${feedback.kind === "correct" ? "bg-emerald-500/12 text-emerald-700 dark:text-emerald-300" : feedback.kind === "wrong" ? "bg-rose-500/12 text-rose-700 dark:text-rose-300" : "text-muted-foreground"}`} aria-live="polite">
+            {feedback.kind === "correct" ? <CheckCircle2 className="size-5" /> : feedback.kind === "wrong" ? <XCircle className="size-5" /> : null}
             {message}
           </div>
 
@@ -248,7 +284,7 @@ export function KboTenGame({
               const found = correctNames.includes(answer.name);
               const revealed = found || finished;
               return (
-                <li key={answer.rank} className={`flex min-h-16 items-center gap-4 rounded-2xl border px-4 py-3 transition-colors ${found ? "border-emerald-500/40 bg-emerald-500/10" : revealed ? "border-foreground/10 bg-muted/65" : "border-foreground/10 bg-background"}`}>
+                <li key={answer.rank} className={`relative flex min-h-16 items-center gap-4 overflow-hidden rounded-2xl border px-4 py-3 transition-colors ${found ? "border-emerald-500/40 bg-emerald-500/10" : revealed ? "border-foreground/10 bg-muted/65" : "border-foreground/10 bg-background"} ${feedback.kind === "correct" && feedback.playerName === answer.name ? "kboten-correct-pop" : ""}`}>
                   <span className="grid size-8 shrink-0 place-items-center rounded-full bg-foreground text-xs font-black text-background">{answer.rank}</span>
                   <div className="min-w-0 flex-1">
                     <p className={`font-black ${revealed ? "" : "text-muted-foreground"}`}>{revealed ? answer.name : "???"}</p>

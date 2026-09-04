@@ -29,6 +29,11 @@ export interface KboTenPuzzle {
   statLabel: string;
   scopeLabel: string;
   maxWrongGuesses: number;
+  eligibility: {
+    recordType: "career-rate" | "career-counting" | "season-rate" | "season-counting";
+    minimum: { unit: "PA" | "IP"; value: number } | null;
+    ruleSource: string;
+  };
   answers: KboTenAnswer[];
   sources: Array<{
     name: string;
