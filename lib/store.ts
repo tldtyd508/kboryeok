@@ -1,11 +1,13 @@
 import { create } from 'zustand';
 import { Player } from '@/lib/types';
 import { compareGuess, JudgementResult } from '@/lib/utils';
+import { getKstDateKey, loadDailyPlayerGame, saveDailyPlayerGame } from '@/lib/daily-progress';
 
 const MAX_GUESSES = 8;
 interface GameState {
   players: Player[];
   dailyPuzzles: Record<string, number>;
+  activeDate: string | null;
   secretPlayer: Player | null;
   guesses: Player[];
   results: JudgementResult[];
@@ -15,13 +17,13 @@ interface GameState {
   actions: {
     fetchDataAndStartGame: () => Promise<void>;
     addGuess: (player: Player) => void;
-    restartGame: () => void; // 다시 시작 액션 추가
   };
 }
 
 export const useGameStore = create<GameState>((set, get) => ({
   players: [],
   dailyPuzzles: {},
+  activeDate: null,
   secretPlayer: null,
   guesses: [],
   results: [],
@@ -30,38 +32,50 @@ export const useGameStore = create<GameState>((set, get) => ({
   error: null,
   actions: {
     fetchDataAndStartGame: async () => {
-      if (get().players.length > 0) return;
+      const todayKst = getKstDateKey();
+      if (get().players.length > 0 && get().activeDate === todayKst) return;
 
       set({ isDataLoading: true, error: null });
       try {
-        const [playerResponse, puzzleResponse] = await Promise.all([
-          fetch('/players.json'),
-          fetch('/daily_puzzles.json')
-        ]);
+        let { players, dailyPuzzles } = get();
+        if (players.length === 0) {
+          const [playerResponse, puzzleResponse] = await Promise.all([
+            fetch('/players.json'),
+            fetch('/daily_puzzles.json')
+          ]);
 
-        if (!playerResponse.ok) throw new Error('선수 명단 로딩 실패');
-        if (!puzzleResponse.ok) throw new Error('오늘의 문제 로딩 실패');
+          if (!playerResponse.ok) throw new Error('선수 명단 로딩 실패');
+          if (!puzzleResponse.ok) throw new Error('오늘의 문제 로딩 실패');
 
-        const players = await playerResponse.json();
-        const dailyPuzzles = await puzzleResponse.json();
+          players = await playerResponse.json();
+          dailyPuzzles = await puzzleResponse.json();
+        }
 
-        const todayKst = new Intl.DateTimeFormat('en-CA', {
-          timeZone: 'Asia/Seoul',
-          year: 'numeric',
-          month: '2-digit',
-          day: '2-digit',
-        }).format(new Date());
         const secretPlayerId = dailyPuzzles[todayKst];
         const secretPlayer = players.find((p: Player) => p.id === secretPlayerId);
 
         if (secretPlayer) {
+          const storedGame = loadDailyPlayerGame(todayKst);
+          const storedIds = storedGame?.guessIds.slice(0, MAX_GUESSES) ?? [];
+          const guesses = storedIds
+            .map((id) => players.find((player: Player) => player.id === id))
+            .filter((player): player is Player => Boolean(player));
+          const results = guesses.map((guess) => compareGuess(secretPlayer, guess));
+          const hasCorrectGuess = results.some((result) => result.isCorrect);
+          const gameStatus: GameState['gameStatus'] = hasCorrectGuess
+            ? 'won'
+            : guesses.length >= MAX_GUESSES
+              ? 'lost'
+              : 'playing';
+
           set({
             players,
             dailyPuzzles,
+            activeDate: todayKst,
             secretPlayer,
-            guesses: [],
-            results: [],
-            gameStatus: 'playing',
+            guesses,
+            results,
+            gameStatus,
             isDataLoading: false,
           });
         } else {
@@ -73,7 +87,7 @@ export const useGameStore = create<GameState>((set, get) => ({
       }
     },
     addGuess: (guess) => {
-      const { secretPlayer, guesses, results } = get();
+      const { secretPlayer, guesses, results, activeDate } = get();
       if (!secretPlayer || get().gameStatus !== 'playing') return;
 
       const result = compareGuess(secretPlayer, guess);
@@ -88,14 +102,12 @@ export const useGameStore = create<GameState>((set, get) => ({
       }
 
       set({ guesses: newGuesses, results: newResults, gameStatus: newGameStatus });
-    },
-    restartGame: () => {
-      // 정답 선수는 바꾸지 않고, 추측 기록만 리셋
-      set({
-        guesses: [],
-        results: [],
-        gameStatus: 'playing',
-      });
+
+      saveDailyPlayerGame(
+        newGuesses.map((player) => player.id),
+        newGameStatus,
+        activeDate ?? getKstDateKey(),
+      );
     },
   },
 }));

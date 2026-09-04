@@ -29,7 +29,7 @@ export default function Home() {
                   <CalendarDays className="size-3.5" /> 매일 자정 새 문제
                 </span>
                 <span className="inline-flex items-center gap-1.5 rounded-full border bg-background px-3 py-2">
-                  <Flame className="size-3.5 text-[#ff6b35]" /> 연속 기록 준비 중
+                  <Flame className="size-3.5 text-[#ff6b35]" /> 기록은 이 브라우저에 저장
                 </span>
               </div>
             </div>

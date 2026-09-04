@@ -14,23 +14,14 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { getDailyPlayerStorageKey } from "@/lib/daily-progress";
 import { useGameStore } from "@/lib/store";
 
 export function DailyPlayerGame() {
-  const { isDataLoading, error, actions, guesses, gameStatus } = useGameStore();
+  const { isDataLoading, error, actions, guesses } = useGameStore();
 
   useEffect(() => {
     actions.fetchDataAndStartGame();
   }, [actions]);
-
-  useEffect(() => {
-    if (guesses.length === 0) return;
-    window.localStorage.setItem(
-      getDailyPlayerStorageKey(),
-      gameStatus === "playing" ? "playing" : "completed",
-    );
-  }, [gameStatus, guesses.length]);
 
   return (
     <>

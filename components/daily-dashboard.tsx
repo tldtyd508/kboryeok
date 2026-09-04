@@ -1,9 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Check, CircleDot, Clock3 } from "lucide-react";
+import { ArrowRight, Check, CircleDot, Clock3, Flame, Trophy } from "lucide-react";
 import { useSyncExternalStore } from "react";
-import { getDailyPlayerStorageKey, type DailyPlayerProgress } from "@/lib/daily-progress";
+import {
+  getDashboardSnapshot,
+  getServerDashboardSnapshot,
+  subscribeToProgress,
+  type DailyPlayerProgress,
+} from "@/lib/daily-progress";
 
 const progressLabels: Record<DailyPlayerProgress, string> = {
   "not-started": "아직 시작 전",
@@ -11,26 +16,17 @@ const progressLabels: Record<DailyPlayerProgress, string> = {
   completed: "오늘 경기 완료",
 };
 
-function subscribeToProgress(callback: () => void) {
-  window.addEventListener("storage", callback);
-  return () => window.removeEventListener("storage", callback);
-}
-
-function getProgressSnapshot(): DailyPlayerProgress {
-  const saved = window.localStorage.getItem(getDailyPlayerStorageKey());
-  return saved === "playing" || saved === "completed" ? saved : "not-started";
-}
-
-function getServerProgressSnapshot(): DailyPlayerProgress {
-  return "not-started";
-}
-
 export function DailyDashboard() {
-  const progress = useSyncExternalStore(
+  const snapshot = useSyncExternalStore(
     subscribeToProgress,
-    getProgressSnapshot,
-    getServerProgressSnapshot,
+    getDashboardSnapshot,
+    getServerDashboardSnapshot,
   );
+  const [progressValue, currentValue, bestValue, totalValue] = snapshot.split("|");
+  const progress = progressValue as DailyPlayerProgress;
+  const currentStreak = Number(currentValue);
+  const bestStreak = Number(bestValue);
+  const totalDays = Number(totalValue);
 
   const completed = progress === "completed";
 
@@ -51,6 +47,20 @@ export function DailyDashboard() {
           {completed ? <Check className="size-4 text-emerald-600" /> : <Clock3 className="size-4" />}
           {progressLabels[progress]}
         </p>
+        <dl className="mt-5 grid grid-cols-3 gap-2 border-t border-foreground/10 pt-5 text-center">
+          <div>
+            <dt className="flex items-center justify-center gap-1 text-[11px] font-bold text-muted-foreground"><Flame className="size-3 text-[#ff6b35]" /> 연속</dt>
+            <dd className="mt-1 text-lg font-black tabular-nums">{currentStreak}일</dd>
+          </div>
+          <div>
+            <dt className="flex items-center justify-center gap-1 text-[11px] font-bold text-muted-foreground"><Trophy className="size-3" /> 최고</dt>
+            <dd className="mt-1 text-lg font-black tabular-nums">{bestStreak}일</dd>
+          </div>
+          <div>
+            <dt className="text-[11px] font-bold text-muted-foreground">총 출석</dt>
+            <dd className="mt-1 text-lg font-black tabular-nums">{totalDays}일</dd>
+          </div>
+        </dl>
       </div>
 
       <Link href="/games/player" className="group relative flex min-h-64 flex-col justify-between overflow-hidden bg-primary p-6 text-primary-foreground sm:p-8">
