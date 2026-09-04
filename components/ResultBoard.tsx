@@ -8,7 +8,7 @@ const ResultBoard = () => {
   const guesses = useGameStore((state) => state.guesses);
 
   return (
-    <div className="border rounded-md mt-4">
+    <div className="mt-6 overflow-x-auto rounded-2xl border">
       <Table>
         <TableHeader>
           <TableRow>
