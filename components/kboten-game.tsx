@@ -1,7 +1,8 @@
 "use client";
 
-import { FormEvent, useMemo, useState, useSyncExternalStore } from "react";
-import { Check, CircleHelp, ExternalLink, Share2, X } from "lucide-react";
+import { useDeferredValue, useMemo, useState, useSyncExternalStore, type KeyboardEvent } from "react";
+import Fuse from "fuse.js";
+import { Check, CircleHelp, ExternalLink, Search, Share2, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -20,14 +21,27 @@ import {
   subscribeToProgress,
   type DailyGameStatus,
 } from "@/lib/daily-progress";
-import { normalizePlayerName, type KboTenPuzzle } from "@/lib/kboten";
+import {
+  normalizePlayerName,
+  type KboTenPlayerOption,
+  type KboTenPuzzle,
+} from "@/lib/kboten";
 
 const GAME_URL = "https://kboryeok.vercel.app/games/kboten";
 
-export function KboTenGame({ puzzle }: { puzzle: KboTenPuzzle }) {
+export function KboTenGame({
+  puzzle,
+  playerOptions,
+}: {
+  puzzle: KboTenPuzzle;
+  playerOptions: KboTenPlayerOption[];
+}) {
   const [input, setInput] = useState("");
-  const [message, setMessage] = useState("선수 이름을 입력하세요.");
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const [message, setMessage] = useState("선수를 검색한 뒤 후보를 선택하세요.");
   const [shareLabel, setShareLabel] = useState("결과 공유");
+  const deferredInput = useDeferredValue(input);
   const dateKey = getKstDateKey();
 
   const storedSnapshot = useSyncExternalStore(
@@ -35,11 +49,11 @@ export function KboTenGame({ puzzle }: { puzzle: KboTenPuzzle }) {
     () => getKboTenGameSnapshot(puzzle.id, dateKey),
     getServerKboTenGameSnapshot,
   );
-  const storedGame = JSON.parse(storedSnapshot) as {
-    gameStatus: DailyGameStatus;
-    correctNames: string[];
-    wrongNames: string[];
-  };
+  const storedGame = useMemo(() => JSON.parse(storedSnapshot) as {
+      gameStatus: DailyGameStatus;
+      correctNames: string[];
+      wrongNames: string[];
+    }, [storedSnapshot]);
   const { correctNames, wrongNames } = storedGame;
 
   const gameStatus: DailyGameStatus = correctNames.length === puzzle.answers.length
@@ -54,32 +68,73 @@ export function KboTenGame({ puzzle }: { puzzle: KboTenPuzzle }) {
     ),
   ), [puzzle.answers]);
 
-  function submitGuess(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  const fuse = useMemo(() => new Fuse(playerOptions, {
+    keys: ["name", "aliases"],
+    threshold: 0.35,
+    ignoreLocation: true,
+  }), [playerOptions]);
+
+  const guessedNames = useMemo(() => new Set(
+    [...correctNames, ...wrongNames].map(normalizePlayerName),
+  ), [correctNames, wrongNames]);
+
+  const searchResults = useMemo(() => {
+    const query = normalizePlayerName(deferredInput.trim());
+    if (!query) return [];
+
+    const available = playerOptions.filter((player) => !guessedNames.has(normalizePlayerName(player.name)));
+    const directMatches = available
+      .filter((player) => [player.name, ...player.aliases].some((name) => normalizePlayerName(name).includes(query)))
+      .sort((a, b) => {
+        const aName = normalizePlayerName(a.name);
+        const bName = normalizePlayerName(b.name);
+        const startDifference = Number(bName.startsWith(query)) - Number(aName.startsWith(query));
+        if (startDifference !== 0) return startDifference;
+        const positionDifference = aName.indexOf(query) - bName.indexOf(query);
+        return positionDifference !== 0 ? positionDifference : a.name.localeCompare(b.name, "ko-KR");
+      });
+
+    if (directMatches.length >= 6 || query.length < 2) return directMatches.slice(0, 6);
+    const directIds = new Set(directMatches.map((player) => player.id));
+    const fuzzyMatches = fuse.search(query)
+      .map((result) => result.item)
+      .filter((player) => !guessedNames.has(normalizePlayerName(player.name)) && !directIds.has(player.id));
+    return [...directMatches, ...fuzzyMatches].slice(0, 6);
+  }, [deferredInput, fuse, guessedNames, playerOptions]);
+
+  function submitPlayer(player: KboTenPlayerOption) {
     if (gameStatus !== "playing") return;
-    const cleaned = input.trim();
-    const normalized = normalizePlayerName(cleaned);
-    if (!normalized) return;
-
-    const alreadyGuessed = [...correctNames, ...wrongNames].some((name) => normalizePlayerName(name) === normalized);
-    if (alreadyGuessed) {
-      setMessage("이미 입력한 선수예요.");
-      return;
-    }
-
-    const answer = answerLookup.get(normalized);
+    const answer = answerLookup.get(normalizePlayerName(player.name));
     if (answer) {
       const nextCorrectNames = [...correctNames, answer.name];
       const nextStatus: DailyGameStatus = nextCorrectNames.length === puzzle.answers.length ? "won" : "playing";
       saveKboTenGame({ puzzleId: puzzle.id, correctNames: nextCorrectNames, wrongNames, gameStatus: nextStatus }, dateKey);
       setMessage(`${answer.rank}위 ${answer.name}, 정답!`);
     } else {
-      const nextWrongNames = [...wrongNames, cleaned];
+      const nextWrongNames = [...wrongNames, player.name];
       const nextStatus: DailyGameStatus = nextWrongNames.length >= puzzle.maxWrongGuesses ? "lost" : "playing";
       saveKboTenGame({ puzzleId: puzzle.id, correctNames, wrongNames: nextWrongNames, gameStatus: nextStatus }, dateKey);
       setMessage("TOP 10 명단에는 없어요.");
     }
     setInput("");
+    setActiveIndex(0);
+    setIsSearchFocused(true);
+  }
+
+  function handleSearchKeyDown(event: KeyboardEvent<HTMLInputElement>) {
+    if (searchResults.length === 0) return;
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      setActiveIndex((index) => (index + 1) % searchResults.length);
+    } else if (event.key === "ArrowUp") {
+      event.preventDefault();
+      setActiveIndex((index) => (index - 1 + searchResults.length) % searchResults.length);
+    } else if (event.key === "Enter") {
+      event.preventDefault();
+      submitPlayer(searchResults[activeIndex] ?? searchResults[0]);
+    } else if (event.key === "Escape") {
+      setInput("");
+    }
   }
 
   async function shareResult() {
@@ -135,10 +190,55 @@ export function KboTenGame({ puzzle }: { puzzle: KboTenPuzzle }) {
         </div>
 
         <div className="p-4 sm:p-7">
-          <form onSubmit={submitGuess} className="mx-auto flex max-w-xl gap-2">
-            <Input value={input} onChange={(event) => setInput(event.target.value)} disabled={finished} placeholder="예: 양준혁" aria-label="선수 이름" autoComplete="off" />
-            <Button type="submit" disabled={finished || input.trim().length === 0}>입력</Button>
-          </form>
+          <div className="relative mx-auto max-w-xl" role="search">
+            <Search className="pointer-events-none absolute left-4 top-1/2 z-10 size-4 -translate-y-1/2 text-muted-foreground" />
+            <Input
+              value={input}
+              onChange={(event) => {
+                setInput(event.target.value);
+                setActiveIndex(0);
+              }}
+              onFocus={() => setIsSearchFocused(true)}
+              onBlur={() => setIsSearchFocused(false)}
+              onKeyDown={handleSearchKeyDown}
+              disabled={finished}
+              placeholder="선수 이름 검색..."
+              aria-label="선수 이름 검색"
+              aria-autocomplete="list"
+              aria-controls="kboten-player-options"
+              aria-expanded={isSearchFocused && input.trim().length > 0}
+              aria-activedescendant={searchResults[activeIndex] ? `kboten-option-${searchResults[activeIndex].id}` : undefined}
+              role="combobox"
+              autoComplete="off"
+              className="h-12 rounded-2xl pl-11 pr-4 text-base"
+            />
+            {isSearchFocused && input.trim().length > 0 ? (
+              <div className="absolute inset-x-0 top-full z-20 mt-2 overflow-hidden rounded-2xl border border-foreground/10 bg-card shadow-[0_16px_45px_rgba(15,23,42,0.16)]">
+                {searchResults.length > 0 ? (
+                  <ul id="kboten-player-options" role="listbox" aria-label="검색된 선수">
+                    {searchResults.map((player, index) => (
+                      <li key={player.id} role="presentation">
+                        <button
+                          id={`kboten-option-${player.id}`}
+                          type="button"
+                          role="option"
+                          aria-selected={index === activeIndex}
+                          onMouseDown={(event) => event.preventDefault()}
+                          onClick={() => submitPlayer(player)}
+                          className={`flex w-full items-center justify-between gap-4 px-4 py-3 text-left transition-colors ${index === activeIndex ? "bg-accent text-accent-foreground" : "hover:bg-muted"}`}
+                        >
+                          <span className="font-black">{player.name}</span>
+                          <span className="text-xs font-semibold text-muted-foreground">{player.detail}</span>
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="px-4 py-4 text-sm font-semibold text-muted-foreground">검색 결과가 없어요.</p>
+                )}
+              </div>
+            ) : null}
+          </div>
           <div className="mt-3 flex min-h-6 items-center justify-center gap-2 text-sm font-semibold text-muted-foreground" aria-live="polite">
             {message}
           </div>
