@@ -43,6 +43,8 @@ export function KboTenGame({
   const [feedback, setFeedback] = useState<{ kind: "neutral" | "correct" | "wrong"; playerName: string }>({ kind: "neutral", playerName: "" });
   const [shareLabel, setShareLabel] = useState("결과 공유");
   const searchContainerRef = useRef<HTMLDivElement>(null);
+  const isComposingRef = useRef(false);
+  const lastSubmissionAtRef = useRef(0);
   const dateKey = getKstDateKey();
   const progressId = `${puzzle.id}:r${puzzle.revision}`;
 
@@ -106,6 +108,9 @@ export function KboTenGame({
 
   function submitPlayer(player: KboTenPlayerOption) {
     if (gameStatus !== "playing") return;
+    const submittedAt = performance.now();
+    if (submittedAt - lastSubmissionAtRef.current < 300) return;
+    lastSubmissionAtRef.current = submittedAt;
     const answer = answerLookup.get(normalizePlayerName(player.name));
     if (answer) {
       const nextCorrectNames = [...correctNames, answer.name];
@@ -138,6 +143,7 @@ export function KboTenGame({
   }
 
   function handleSearchKeyDown(event: KeyboardEvent<HTMLInputElement>) {
+    if (isComposingRef.current || event.nativeEvent.isComposing || event.nativeEvent.keyCode === 229) return;
     if (searchResults.length === 0) return;
     if (event.key === "ArrowDown") {
       event.preventDefault();
@@ -147,7 +153,14 @@ export function KboTenGame({
       setActiveIndex((index) => (index - 1 + searchResults.length) % searchResults.length);
     } else if (event.key === "Enter") {
       event.preventDefault();
-      submitPlayer(searchResults[activeIndex] ?? searchResults[0]);
+      const query = normalizePlayerName(event.currentTarget.value);
+      const exactMatch = searchResults.find((player) =>
+        [player.name, ...player.aliases].some((name) => normalizePlayerName(name) === query),
+      );
+      const selectedPlayer = activeIndex === 0
+        ? exactMatch ?? searchResults[0]
+        : searchResults[activeIndex];
+      submitPlayer(selectedPlayer ?? searchResults[0]);
     } else if (event.key === "Escape") {
       setInput("");
     }
@@ -235,6 +248,8 @@ export function KboTenGame({
               }}
               onFocus={() => setIsSearchFocused(true)}
               onBlur={() => setIsSearchFocused(false)}
+              onCompositionStart={() => { isComposingRef.current = true; }}
+              onCompositionEnd={() => { isComposingRef.current = false; }}
               onKeyDown={handleSearchKeyDown}
               disabled={finished}
               placeholder="선수 이름 검색..."

@@ -2,7 +2,7 @@
     "id": "kboten-career-average-2026-09-04",
     "game": "kboten",
     "publishDate": "2026-09-04",
-    "revision": 3,
+    "revision": 4,
     "title": "KBO 통산 타율 TOP 10",
     "prompt": "통산 3,000타석 이상 타자 중 타율 상위 10명을 모두 찾아보세요.",
     "statLabel": "통산 타율",
