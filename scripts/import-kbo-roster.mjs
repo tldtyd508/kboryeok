@@ -89,30 +89,29 @@ function parseRoster(workbook) {
 
     headers.forEach((header, headerIndex) => {
       const endRow = (headers[headerIndex + 1]?.rowNumber ?? sheet.rowCount + 1) - 1;
+      // The roster flows top-to-bottom through columns 1, 4, then 7. Position
+      // headings therefore carry into the next visual column. Keeping that state
+      // is essential: otherwise catchers/infielders at the top of column 7 get
+      // mislabeled as pitchers and fail to match the legacy player details.
+      let section = null;
       [1, 4, 7].forEach((startColumn) => {
-        const markers = [];
-        for (let rowNumber = header.rowNumber + 2; rowNumber <= endRow; rowNumber += 1) {
-          const value = cellText(sheet.getRow(rowNumber).getCell(startColumn));
-          if (POSITION_MAP.has(value) || value === "감독" || value === "코치") {
-            markers.push({ rowNumber, value });
-          }
-        }
-
         for (let rowNumber = header.rowNumber + 2; rowNumber <= endRow; rowNumber += 1) {
           const row = sheet.getRow(rowNumber);
+          const marker = cellText(row.getCell(startColumn));
+          const isMislabeledManager = startColumn === 1 &&
+            rowNumber === header.rowNumber + 2 &&
+            POSITION_MAP.has(marker) &&
+            cellText(sheet.getRow(rowNumber + 1).getCell(1)) === "코치";
+          if (isMislabeledManager) {
+            section = null;
+            continue;
+          }
+          if (POSITION_MAP.has(marker)) section = marker;
+          else if (marker === "감독" || marker === "코치") section = null;
           const rawName = cellText(row.getCell(startColumn + 1));
           const note = cellText(row.getCell(startColumn + 2));
 
           if (!rawName || rawName === "성명") continue;
-          if (
-            startColumn === 1 &&
-            rowNumber === header.rowNumber + 2 &&
-            cellText(sheet.getRow(rowNumber + 1).getCell(1)) === "코치"
-          ) continue;
-          const previousMarkers = markers.filter((marker) => marker.rowNumber <= rowNumber);
-          const firstMarker = markers[0];
-          const section = previousMarkers.at(-1)?.value ??
-            (firstMarker?.value && firstMarker.value !== "투수" ? "투수" : null);
           if (!POSITION_MAP.has(section)) continue;
 
           const { name, qualifier } = splitPlayerName(rawName);
@@ -204,14 +203,15 @@ function stableId(seed, usedIds) {
   return id;
 }
 
-function applyOverride(player, overrides) {
+function applyOverride(player, overrides, rosterPlayer) {
   const override = (overrides.players ?? []).find((candidate) => {
     if (candidate.id && candidate.id === player.id) return true;
     return candidate.name && normalizeName(candidate.name) === player.nameNorm &&
       (!candidate.team || candidate.team === player.team) &&
-      (!candidate.positionGroup || candidate.positionGroup === player.positionGroup);
+      (!candidate.positionGroup || candidate.positionGroup === player.positionGroup) &&
+      (!candidate.rosterNote || candidate.rosterNote === rosterPlayer.note);
   });
-  return override ? { ...player, ...override, id: player.id, nameNorm: player.nameNorm } : player;
+  return override ? { ...player, ...override, id: override.id ?? player.id, nameNorm: player.nameNorm } : player;
 }
 
 function isComplete(player) {
@@ -315,7 +315,7 @@ async function main() {
       jerseyNumber: null,
     };
 
-    const overridden = applyOverride(base, overrides);
+    const overridden = applyOverride(base, overrides, rosterPlayer);
     const needsEnrichment = [];
     if (!overridden.birthDate) needsEnrichment.push("birthDate");
     if (!overridden.throws) needsEnrichment.push("throws");

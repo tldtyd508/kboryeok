@@ -14,12 +14,13 @@
 
 - `data/source/kbo-team-rosters-2026.xlsx`: 로컬 기준 XLSX, Git 제외
 - `data/manual/roster-deltas.json`: 시즌 중 영입, 이적, 방출 변동분
-- `data/manual/player-overrides.json`: 별칭, 생년월일, 투타, 등번호 등 검수한 보강값
+- `data/manual/player-overrides.json`: KBO 공식 선수 프로필에서 동기화하거나 수동 검수한 생년월일, 투타, 등번호 등 보강값
 - `data/generated/roster-2026.json`: 전체 621명과 보강 필요 상태
 - `public/players.json`: 게임에 사용할 수 있는 검수 완료 선수
 - `public/daily_puzzles.json`: 날짜별 고정 정답
 - `data/roster-metadata.json`: 출처와 마지막 월간 검수일
-- `data/player-index/historical.json`: 자동완성과 판정을 위한 역대 선수 이름·허용 별칭 인덱스
+- `data/player-index/historical.json`: KBO 통산 타자 기록실의 최소 기준 충족 선수 인덱스
+- `data/player-index/historical-pitchers.json`: KBO 통산 투수 기록실의 최소 기준 충족 선수 인덱스
 - `data/questions/{game}/{YYYY-MM-DD}-{slug}.json`: 출제 당일 검수한 문제별 정답·기록·출처 스냅샷
 - `data/sources.json`: 출처별 허용 범위와 자동 수집 가능 여부
 
@@ -65,11 +66,16 @@
 
 1. 새 공식 XLSX가 있으면 `data/source/`의 로컬 파일을 교체한다.
 2. 시즌 중 변동을 `data/manual/roster-deltas.json`에 기록한다.
-3. 나무위키에서 찾은 단서는 공식 자료로 교차 확인한 뒤 `player-overrides.json`에 기록한다.
-4. 아래 명령으로 전체 데이터를 다시 생성한다.
+3. KBO 공식 선수 검색·프로필에서 세부 정보를 동기화한다. 남은 누락만 나무위키에서 단서를 찾고 공식 자료로 교차 확인한다.
+4. 크보텐의 통산 기록 후보 풀을 KBO 공식 기록실에서 갱신한다.
+5. 아래 명령으로 전체 데이터를 다시 생성하고 검증한다.
 
 ```bash
 npm run data:import -- --source data/source/kbo-team-rosters-2026.xlsx --season 2026 --reviewed-at YYYY-MM-DD
+npm run data:sync-players
+npm run data:import -- --source data/source/kbo-team-rosters-2026.xlsx --season 2026 --reviewed-at YYYY-MM-DD
+npm run data:sync-kboten-index
+npm run data:validate-kboten
 npm run data:check
 npm run build
 ```

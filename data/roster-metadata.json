@@ -8,10 +8,10 @@
     "localFile": "data/source/kbo-team-rosters-2026.xlsx",
     "redistribution": "internal-source-only"
   },
-  "lastReviewedAt": "2026-08-28",
+  "lastReviewedAt": "2026-09-05",
   "rosterCount": 621,
-  "quizEligibleCount": 425,
-  "needsEnrichmentCount": 196,
+  "quizEligibleCount": 599,
+  "needsEnrichmentCount": 22,
   "teamCounts": {
     "LG 트윈스": 63,
     "한화 이글스": 64,

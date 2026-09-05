@@ -1,49 +1,1272 @@
 {
-  "reviewedAt": "2026-09-04",
-  "sourceUrl": "https://www.koreabaseball.com/Record/History/Player/Hitter.aspx",
+  "reviewedAt": "2026-09-05",
+  "sourceUrl": "https://www.koreabaseball.com/Record/Player/HitterBasic/BasicTotal.aspx",
+  "selectionPolicy": "KBO 공식 통산 기록실의 해당 최소 규정 충족 선수 전체",
   "players": [
-    { "name": "백인천", "aliases": [] },
-    { "name": "장효조", "aliases": [] },
-    { "name": "이만수", "aliases": [] },
-    { "name": "김상훈", "aliases": [] },
-    { "name": "고원부", "aliases": [] },
-    { "name": "한대화", "aliases": [] },
-    { "name": "이정훈", "aliases": [] },
-    { "name": "양준혁", "aliases": [] },
-    { "name": "이종범", "aliases": [] },
-    { "name": "김광림", "aliases": [] },
-    { "name": "김기태", "aliases": [] },
-    { "name": "마해영", "aliases": [] },
-    { "name": "박종호", "aliases": [] },
-    { "name": "장성호", "aliases": [] },
-    { "name": "김동주", "aliases": [] },
-    { "name": "브룸바", "aliases": ["클리프 브룸바"] },
-    { "name": "이병규", "aliases": ["적토마"] },
-    { "name": "이대호", "aliases": [] },
-    { "name": "이현곤", "aliases": [] },
-    { "name": "김태균", "aliases": [] },
-    { "name": "박용택", "aliases": [] },
-    { "name": "정성훈", "aliases": [] },
-    { "name": "홍성흔", "aliases": [] },
-    { "name": "이진영", "aliases": [] },
-    { "name": "전준호", "aliases": [] },
-    { "name": "박한이", "aliases": [] },
-    { "name": "이승엽", "aliases": [] },
-    { "name": "심정수", "aliases": [] },
-    { "name": "우즈", "aliases": ["타이론 우즈"] },
-    { "name": "송지만", "aliases": [] },
-    { "name": "정근우", "aliases": [] },
-    { "name": "유한준", "aliases": [] },
-    { "name": "이택근", "aliases": [] },
-    { "name": "데이비스", "aliases": ["제이 데이비스", "제이데이비스"] },
-    { "name": "테임즈", "aliases": ["에릭 테임즈"] },
-    { "name": "이범호", "aliases": [] },
-    { "name": "김재현", "aliases": [] },
-    { "name": "안경현", "aliases": [] },
-    { "name": "박재홍", "aliases": [] },
-    { "name": "장종훈", "aliases": [] },
-    { "name": "이호준", "aliases": [] },
-    { "name": "조성환", "aliases": [] },
-    { "name": "조인성", "aliases": [] }
+    {
+      "id": 67341,
+      "name": "이정후",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=67341",
+      "aliases": []
+    },
+    {
+      "id": 83460,
+      "name": "장효조",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=83460",
+      "aliases": []
+    },
+    {
+      "id": 79215,
+      "name": "박건우",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=79215",
+      "aliases": []
+    },
+    {
+      "id": 62404,
+      "name": "구자욱",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=62404",
+      "aliases": []
+    },
+    {
+      "id": 71752,
+      "name": "김태균",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=71752",
+      "aliases": []
+    },
+    {
+      "id": 62907,
+      "name": "박민우",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=62907",
+      "aliases": []
+    },
+    {
+      "id": 77532,
+      "name": "손아섭",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=77532",
+      "aliases": []
+    },
+    {
+      "id": 93410,
+      "name": "양준혁",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=93410",
+      "aliases": []
+    },
+    {
+      "id": 67025,
+      "name": "로하스",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=67025",
+      "aliases": []
+    },
+    {
+      "id": 99725,
+      "name": "데이비스",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=99725",
+      "aliases": [
+        "제이 데이비스",
+        "제이데이비스"
+      ]
+    },
+    {
+      "id": 62947,
+      "name": "나성범",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=62947",
+      "aliases": []
+    },
+    {
+      "id": 97109,
+      "name": "이병규",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=97109",
+      "aliases": [
+        "적토마"
+      ]
+    },
+    {
+      "id": 72443,
+      "name": "최형우",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=72443",
+      "aliases": []
+    },
+    {
+      "id": 76290,
+      "name": "김현수",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=76290",
+      "aliases": []
+    },
+    {
+      "id": 71564,
+      "name": "이대호",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=71564",
+      "aliases": []
+    },
+    {
+      "id": 98218,
+      "name": "김동주",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=98218",
+      "aliases": []
+    },
+    {
+      "id": 72133,
+      "name": "박용택",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=72133",
+      "aliases": []
+    },
+    {
+      "id": 76232,
+      "name": "양의지",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=76232",
+      "aliases": []
+    },
+    {
+      "id": 76849,
+      "name": "이명기",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=76849",
+      "aliases": []
+    },
+    {
+      "id": 99810,
+      "name": "이진영",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=99810",
+      "aliases": []
+    },
+    {
+      "id": 78603,
+      "name": "김선빈",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=78603",
+      "aliases": []
+    },
+    {
+      "id": 67304,
+      "name": "김혜성",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=67304",
+      "aliases": []
+    },
+    {
+      "id": 66108,
+      "name": "홍창기",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=66108",
+      "aliases": []
+    },
+    {
+      "id": 73342,
+      "name": "이택근",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=73342",
+      "aliases": []
+    },
+    {
+      "id": 95436,
+      "name": "이승엽",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=95436",
+      "aliases": []
+    },
+    {
+      "id": 74339,
+      "name": "유한준",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=74339",
+      "aliases": []
+    },
+    {
+      "id": 75808,
+      "name": "정근우",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=75808",
+      "aliases": []
+    },
+    {
+      "id": 68050,
+      "name": "강백호",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=68050",
+      "aliases": []
+    },
+    {
+      "id": 99222,
+      "name": "홍성흔",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=99222",
+      "aliases": []
+    },
+    {
+      "id": 61353,
+      "name": "고종욱",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=61353",
+      "aliases": []
+    },
+    {
+      "id": 70410,
+      "name": "김주찬",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=70410",
+      "aliases": []
+    },
+    {
+      "id": 87721,
+      "name": "이정훈",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=87721",
+      "aliases": []
+    },
+    {
+      "id": 76325,
+      "name": "강정호",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=76325",
+      "aliases": []
+    },
+    {
+      "id": 78168,
+      "name": "서건창",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=78168",
+      "aliases": []
+    },
+    {
+      "id": 77463,
+      "name": "채태인",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=77463",
+      "aliases": []
+    },
+    {
+      "id": 82617,
+      "name": "김종모",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=82617",
+      "aliases": []
+    },
+    {
+      "id": 78513,
+      "name": "전준우",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=78513",
+      "aliases": []
+    },
+    {
+      "id": 93607,
+      "name": "이종범",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=93607",
+      "aliases": []
+    },
+    {
+      "id": 96610,
+      "name": "장성호",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=96610",
+      "aliases": []
+    },
+    {
+      "id": 82420,
+      "name": "이만수",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=82420",
+      "aliases": []
+    },
+    {
+      "id": 91514,
+      "name": "박정태",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=91514",
+      "aliases": []
+    },
+    {
+      "id": 76249,
+      "name": "민병헌",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=76249",
+      "aliases": []
+    },
+    {
+      "id": 74163,
+      "name": "이용규",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=74163",
+      "aliases": []
+    },
+    {
+      "id": 91803,
+      "name": "김기태",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=91803",
+      "aliases": []
+    },
+    {
+      "id": 94107,
+      "name": "김재현",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=94107",
+      "aliases": []
+    },
+    {
+      "id": 64300,
+      "name": "김하성",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=64300",
+      "aliases": []
+    },
+    {
+      "id": 79240,
+      "name": "허경민",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=79240",
+      "aliases": []
+    },
+    {
+      "id": 71432,
+      "name": "박한이",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=71432",
+      "aliases": []
+    },
+    {
+      "id": 95549,
+      "name": "마해영",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=95549",
+      "aliases": []
+    },
+    {
+      "id": 99606,
+      "name": "정성훈",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=99606",
+      "aliases": []
+    },
+    {
+      "id": 96734,
+      "name": "이영우",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=96734",
+      "aliases": []
+    },
+    {
+      "id": 88510,
+      "name": "김응국",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=88510",
+      "aliases": []
+    },
+    {
+      "id": 64004,
+      "name": "김민혁",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=64004",
+      "aliases": []
+    },
+    {
+      "id": 79608,
+      "name": "안치홍",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=79608",
+      "aliases": []
+    },
+    {
+      "id": 91511,
+      "name": "전준호",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=91511",
+      "aliases": []
+    },
+    {
+      "id": 73339,
+      "name": "이종욱",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=73339",
+      "aliases": []
+    },
+    {
+      "id": 67893,
+      "name": "박성한",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=67893",
+      "aliases": []
+    },
+    {
+      "id": 79192,
+      "name": "채은성",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=79192",
+      "aliases": []
+    },
+    {
+      "id": 94450,
+      "name": "김한수",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=94450",
+      "aliases": []
+    },
+    {
+      "id": 84112,
+      "name": "김상훈",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=84112",
+      "aliases": []
+    },
+    {
+      "id": 94204,
+      "name": "심정수",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=94204",
+      "aliases": []
+    },
+    {
+      "id": 66606,
+      "name": "최원준",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=66606",
+      "aliases": []
+    },
+    {
+      "id": 74465,
+      "name": "박석민",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=74465",
+      "aliases": []
+    },
+    {
+      "id": 82612,
+      "name": "김성한",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=82612",
+      "aliases": []
+    },
+    {
+      "id": 75847,
+      "name": "최정",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=75847",
+      "aliases": []
+    },
+    {
+      "id": 76753,
+      "name": "송광민",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=76753",
+      "aliases": []
+    },
+    {
+      "id": 76313,
+      "name": "황재균",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=76313",
+      "aliases": []
+    },
+    {
+      "id": 74215,
+      "name": "윤석민",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=74215",
+      "aliases": []
+    },
+    {
+      "id": 84210,
+      "name": "김광림",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=84210",
+      "aliases": []
+    },
+    {
+      "id": 85172,
+      "name": "윤덕규",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=85172",
+      "aliases": []
+    },
+    {
+      "id": 86724,
+      "name": "이강돈",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=86724",
+      "aliases": []
+    },
+    {
+      "id": 96362,
+      "name": "박재홍",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=96362",
+      "aliases": []
+    },
+    {
+      "id": 99543,
+      "name": "조성환",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=99543",
+      "aliases": []
+    },
+    {
+      "id": 62415,
+      "name": "박해민",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=62415",
+      "aliases": []
+    },
+    {
+      "id": 92211,
+      "name": "장원진",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=92211",
+      "aliases": []
+    },
+    {
+      "id": 82514,
+      "name": "김용철",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=82514",
+      "aliases": []
+    },
+    {
+      "id": 82121,
+      "name": "이광은",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=82121",
+      "aliases": []
+    },
+    {
+      "id": 65357,
+      "name": "송성문",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=65357",
+      "aliases": []
+    },
+    {
+      "id": 96761,
+      "name": "송지만",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=96761",
+      "aliases": []
+    },
+    {
+      "id": 94629,
+      "name": "이호준",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=94629",
+      "aliases": []
+    },
+    {
+      "id": 78813,
+      "name": "모창민",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=78813",
+      "aliases": []
+    },
+    {
+      "id": 94836,
+      "name": "조원우",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=94836",
+      "aliases": []
+    },
+    {
+      "id": 87760,
+      "name": "장종훈",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=87760",
+      "aliases": []
+    },
+    {
+      "id": 94310,
+      "name": "이숭용",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=94310",
+      "aliases": []
+    },
+    {
+      "id": 95208,
+      "name": "정수근",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=95208",
+      "aliases": []
+    },
+    {
+      "id": 94106,
+      "name": "류지현",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=94106",
+      "aliases": []
+    },
+    {
+      "id": 83270,
+      "name": "한대화",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=83270",
+      "aliases": []
+    },
+    {
+      "id": 89175,
+      "name": "노찬엽",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=89175",
+      "aliases": []
+    },
+    {
+      "id": 73153,
+      "name": "이대형",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=73153",
+      "aliases": []
+    },
+    {
+      "id": 84510,
+      "name": "김민호",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=84510",
+      "aliases": []
+    },
+    {
+      "id": 89778,
+      "name": "강석천",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=89778",
+      "aliases": []
+    },
+    {
+      "id": 75151,
+      "name": "정의윤",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=75151",
+      "aliases": []
+    },
+    {
+      "id": 84410,
+      "name": "김성래",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=84410",
+      "aliases": []
+    },
+    {
+      "id": 78224,
+      "name": "김재환",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=78224",
+      "aliases": []
+    },
+    {
+      "id": 78629,
+      "name": "나지완",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=78629",
+      "aliases": []
+    },
+    {
+      "id": 79456,
+      "name": "이지영",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=79456",
+      "aliases": []
+    },
+    {
+      "id": 79231,
+      "name": "정수빈",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=79231",
+      "aliases": []
+    },
+    {
+      "id": 74540,
+      "name": "강민호",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=74540",
+      "aliases": []
+    },
+    {
+      "id": 85210,
+      "name": "김형석",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=85210",
+      "aliases": []
+    },
+    {
+      "id": 82275,
+      "name": "신경식",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=82275",
+      "aliases": []
+    },
+    {
+      "id": 97202,
+      "name": "진갑용",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=97202",
+      "aliases": []
+    },
+    {
+      "id": 71552,
+      "name": "최준석",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=71552",
+      "aliases": []
+    },
+    {
+      "id": 90313,
+      "name": "김경기",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=90313",
+      "aliases": []
+    },
+    {
+      "id": 90695,
+      "name": "홍현우",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=90695",
+      "aliases": []
+    },
+    {
+      "id": 92207,
+      "name": "안경현",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=92207",
+      "aliases": []
+    },
+    {
+      "id": 76812,
+      "name": "이재원",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=76812",
+      "aliases": []
+    },
+    {
+      "id": 76267,
+      "name": "최주환",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=76267",
+      "aliases": []
+    },
+    {
+      "id": 71837,
+      "name": "김강민",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=71837",
+      "aliases": []
+    },
+    {
+      "id": 82460,
+      "name": "장태수",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=82460",
+      "aliases": []
+    },
+    {
+      "id": 74846,
+      "name": "박정권",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=74846",
+      "aliases": []
+    },
+    {
+      "id": 75334,
+      "name": "오재일",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=75334",
+      "aliases": []
+    },
+    {
+      "id": 82116,
+      "name": "김재박",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=82116",
+      "aliases": []
+    },
+    {
+      "id": 62234,
+      "name": "류지혁",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=62234",
+      "aliases": []
+    },
+    {
+      "id": 75125,
+      "name": "박병호",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=75125",
+      "aliases": []
+    },
+    {
+      "id": 74206,
+      "name": "김재호",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=74206",
+      "aliases": []
+    },
+    {
+      "id": 91470,
+      "name": "신동주",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=91470",
+      "aliases": []
+    },
+    {
+      "id": 50854,
+      "name": "최지훈",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=50854",
+      "aliases": []
+    },
+    {
+      "id": 89221,
+      "name": "이명수",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=89221",
+      "aliases": []
+    },
+    {
+      "id": 72606,
+      "name": "이현곤",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=72606",
+      "aliases": []
+    },
+    {
+      "id": 90658,
+      "name": "이호성",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=90658",
+      "aliases": []
+    },
+    {
+      "id": 73213,
+      "name": "손시헌",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=73213",
+      "aliases": []
+    },
+    {
+      "id": 60523,
+      "name": "정훈",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=60523",
+      "aliases": []
+    },
+    {
+      "id": 70626,
+      "name": "홍세완",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=70626",
+      "aliases": []
+    },
+    {
+      "id": 79402,
+      "name": "김상수",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=79402",
+      "aliases": []
+    },
+    {
+      "id": 70756,
+      "name": "이범호",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=70756",
+      "aliases": []
+    },
+    {
+      "id": 71610,
+      "name": "김경언",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=71610",
+      "aliases": []
+    },
+    {
+      "id": 71207,
+      "name": "김원섭",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=71207",
+      "aliases": []
+    },
+    {
+      "id": 98420,
+      "name": "강동우",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=98420",
+      "aliases": []
+    },
+    {
+      "id": 96503,
+      "name": "김대익",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=96503",
+      "aliases": []
+    },
+    {
+      "id": 85420,
+      "name": "이종두",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=85420",
+      "aliases": []
+    },
+    {
+      "id": 92906,
+      "name": "박종호",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=92906",
+      "aliases": []
+    },
+    {
+      "id": 61404,
+      "name": "김헌곤",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=61404",
+      "aliases": []
+    },
+    {
+      "id": 95114,
+      "name": "심재학",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=95114",
+      "aliases": []
+    },
+    {
+      "id": 64646,
+      "name": "박찬호",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=64646",
+      "aliases": []
+    },
+    {
+      "id": 94132,
+      "name": "최동수",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=94132",
+      "aliases": []
+    },
+    {
+      "id": 76802,
+      "name": "김성현",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=76802",
+      "aliases": []
+    },
+    {
+      "id": 93807,
+      "name": "최태원",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=93807",
+      "aliases": []
+    },
+    {
+      "id": 62700,
+      "name": "하주석",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=62700",
+      "aliases": []
+    },
+    {
+      "id": 77248,
+      "name": "오재원",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=77248",
+      "aliases": []
+    },
+    {
+      "id": 86780,
+      "name": "강정길",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=86780",
+      "aliases": []
+    },
+    {
+      "id": 77564,
+      "name": "김민성",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=77564",
+      "aliases": []
+    },
+    {
+      "id": 96441,
+      "name": "정경배",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=96441",
+      "aliases": []
+    },
+    {
+      "id": 62895,
+      "name": "한유섬",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=62895",
+      "aliases": []
+    },
+    {
+      "id": 69737,
+      "name": "노시환",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=69737",
+      "aliases": []
+    },
+    {
+      "id": 87470,
+      "name": "류중일",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=87470",
+      "aliases": []
+    },
+    {
+      "id": 88110,
+      "name": "김상호",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=88110",
+      "aliases": []
+    },
+    {
+      "id": 95518,
+      "name": "박현승",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=95518",
+      "aliases": []
+    },
+    {
+      "id": 74729,
+      "name": "최진행",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=74729",
+      "aliases": []
+    },
+    {
+      "id": 63963,
+      "name": "권희동",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=63963",
+      "aliases": []
+    },
+    {
+      "id": 61102,
+      "name": "유강남",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=61102",
+      "aliases": []
+    },
+    {
+      "id": 90419,
+      "name": "김동수",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=90419",
+      "aliases": []
+    },
+    {
+      "id": 79109,
+      "name": "오지환",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=79109",
+      "aliases": []
+    },
+    {
+      "id": 85620,
+      "name": "이순철",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=85620",
+      "aliases": []
+    },
+    {
+      "id": 73209,
+      "name": "나주환",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=73209",
+      "aliases": []
+    },
+    {
+      "id": 86231,
+      "name": "박노준",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=86231",
+      "aliases": []
+    },
+    {
+      "id": 86312,
+      "name": "김동기",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=86312",
+      "aliases": []
+    },
+    {
+      "id": 71857,
+      "name": "박재상",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=71857",
+      "aliases": []
+    },
+    {
+      "id": 75566,
+      "name": "이원석",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=75566",
+      "aliases": []
+    },
+    {
+      "id": 62931,
+      "name": "노진혁",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=62931",
+      "aliases": []
+    },
+    {
+      "id": 96307,
+      "name": "박진만",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=96307",
+      "aliases": []
+    },
+    {
+      "id": 98533,
+      "name": "조경환",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=98533",
+      "aliases": []
+    },
+    {
+      "id": 87670,
+      "name": "백인수",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=87670",
+      "aliases": []
+    },
+    {
+      "id": 64153,
+      "name": "양석환",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=64153",
+      "aliases": []
+    },
+    {
+      "id": 93225,
+      "name": "이도형",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=93225",
+      "aliases": []
+    },
+    {
+      "id": 64166,
+      "name": "배정대",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=64166",
+      "aliases": []
+    },
+    {
+      "id": 72466,
+      "name": "조동찬",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=72466",
+      "aliases": []
+    },
+    {
+      "id": 78288,
+      "name": "최재훈",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=78288",
+      "aliases": []
+    },
+    {
+      "id": 72860,
+      "name": "이대수",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=72860",
+      "aliases": []
+    },
+    {
+      "id": 78548,
+      "name": "장성우",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=78548",
+      "aliases": []
+    },
+    {
+      "id": 97644,
+      "name": "김창희",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=97644",
+      "aliases": []
+    },
+    {
+      "id": 60558,
+      "name": "오태곤",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=60558",
+      "aliases": []
+    },
+    {
+      "id": 70646,
+      "name": "김상현",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=70646",
+      "aliases": []
+    },
+    {
+      "id": 63123,
+      "name": "강승호",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=63123",
+      "aliases": []
+    },
+    {
+      "id": 79365,
+      "name": "박동원",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=79365",
+      "aliases": []
+    },
+    {
+      "id": 94539,
+      "name": "김종훈",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=94539",
+      "aliases": []
+    },
+    {
+      "id": 73136,
+      "name": "이성열",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=73136",
+      "aliases": []
+    },
+    {
+      "id": 82616,
+      "name": "김일권",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=82616",
+      "aliases": []
+    },
+    {
+      "id": 86711,
+      "name": "김상국",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=86711",
+      "aliases": []
+    },
+    {
+      "id": 85571,
+      "name": "한영준",
+      "status": "retired",
+      "profileUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=85571",
+      "aliases": []
+    },
+    {
+      "id": 64006,
+      "name": "심우준",
+      "status": "active",
+      "profileUrl": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=64006",
+      "aliases": []
+    }
   ]
 }

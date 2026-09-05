@@ -292,7 +292,7 @@ export function KboTenGame({
               </div>
             ) : null}
           </div>
-          <div className={`mx-auto mt-3 flex min-h-11 max-w-xl items-center justify-center gap-2 rounded-xl px-3 text-sm font-black transition-colors ${feedback.kind === "correct" ? "bg-emerald-500/12 text-emerald-700 dark:text-emerald-300" : feedback.kind === "wrong" ? "bg-rose-500/12 text-rose-700 dark:text-rose-300" : "text-muted-foreground"}`} aria-live="polite">
+          <div className={`mx-auto mt-3 flex min-h-11 max-w-xl items-center justify-center gap-2 rounded-xl px-3 text-sm font-black transition-colors ${feedback.kind === "correct" ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/25" : feedback.kind === "wrong" ? "bg-rose-500/12 text-rose-700 dark:text-rose-300" : "text-muted-foreground"}`} aria-live="polite">
             {feedback.kind === "correct" ? <CheckCircle2 className="size-5" /> : feedback.kind === "wrong" ? <XCircle className="size-5" /> : null}
             {message}
           </div>
@@ -302,13 +302,13 @@ export function KboTenGame({
               const found = correctNames.includes(answer.name);
               const revealed = found || finished;
               return (
-                <li key={answer.rank} className={`relative flex min-h-16 items-center gap-4 overflow-hidden rounded-2xl border px-4 py-3 transition-colors ${found ? "border-emerald-500/40 bg-emerald-500/10" : revealed ? "border-foreground/10 bg-muted/65" : "border-foreground/10 bg-background"} ${feedback.kind === "correct" && feedback.playerName === answer.name ? "kboten-correct-pop" : ""}`}>
-                  <span className="grid size-8 shrink-0 place-items-center rounded-full bg-foreground text-xs font-black text-background">{answer.rank}</span>
+                <li key={answer.rank} className={`relative flex min-h-16 items-center gap-4 overflow-hidden rounded-2xl border px-4 py-3 transition-colors ${found ? "border-emerald-600 bg-emerald-500 text-white ring-2 ring-emerald-300/70 shadow-md shadow-emerald-500/20" : revealed ? "border-foreground/10 bg-muted/65" : "border-foreground/10 bg-background"} ${feedback.kind === "correct" && feedback.playerName === answer.name ? "kboten-correct-pop" : ""}`}>
+                  <span className={`grid size-8 shrink-0 place-items-center rounded-full text-xs font-black ${found ? "bg-white text-emerald-700" : "bg-foreground text-background"}`}>{answer.rank}</span>
                   <div className="min-w-0 flex-1">
                     <p className={`font-black ${revealed ? "" : "text-muted-foreground"}`}>{revealed ? answer.name : "???"}</p>
-                    <p className="text-xs font-semibold text-muted-foreground">{revealed ? `${puzzle.statLabel} ${answer.value}` : puzzle.statLabel}</p>
+                    <p className={`text-xs font-semibold ${found ? "text-white/85" : "text-muted-foreground"}`}>{revealed ? `${puzzle.statLabel} ${answer.value}` : puzzle.statLabel}</p>
                   </div>
-                  {found ? <Check className="size-5 text-emerald-600" /> : revealed ? <X className="size-5 text-muted-foreground" /> : null}
+                  {found ? <Check className="size-6 stroke-[3] text-white" /> : revealed ? <X className="size-5 text-muted-foreground" /> : null}
                 </li>
               );
             })}
@@ -327,6 +327,7 @@ export function KboTenGame({
       <aside className="mt-6 rounded-2xl border border-foreground/10 bg-card p-5 text-sm">
         <p className="font-black">기록 출처와 기준</p>
         <p className="mt-2 leading-6 text-muted-foreground">{puzzle.review.note}. 기록 정정이나 시즌 진행으로 원문 수치는 달라질 수 있어, 이 문제의 답은 기준일 스냅샷으로 고정됩니다.</p>
+        <p className="mt-2 leading-6 text-muted-foreground">검색 후보는 이 문제의 정답 10명이 아니라 KBO 공식 통산 기록실의 최소 기준 충족 선수 전체에서 구성합니다.</p>
         <div className="mt-3 flex flex-wrap gap-2">
           {puzzle.sources.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full border px-3 py-1.5 text-xs font-bold hover:text-primary">{source.name} · {source.accessedAt}<ExternalLink className="size-3" /></a>)}
         </div>
