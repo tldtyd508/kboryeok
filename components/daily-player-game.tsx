@@ -16,19 +16,19 @@ import {
 } from "@/components/ui/dialog";
 import { useGameStore } from "@/lib/store";
 
-export function DailyPlayerGame() {
+export function DailyPlayerGame({ dateKey, isToday }: { dateKey: string; isToday: boolean }) {
   const { isDataLoading, error, actions, guesses } = useGameStore();
 
   useEffect(() => {
-    actions.fetchDataAndStartGame();
-  }, [actions]);
+    actions.fetchDataAndStartGame(dateKey);
+  }, [actions, dateKey]);
 
   return (
     <>
       <div className="mb-7 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
         <div>
           <div className="mb-3 flex items-center gap-2 text-sm font-black text-[#ff6b35]">
-            <span className="size-2 animate-pulse rounded-full bg-[#ff6b35]" /> 오늘의 게임
+            <span className="size-2 animate-pulse rounded-full bg-[#ff6b35]" /> {isToday ? "오늘의 게임" : "지난 게임"}
           </div>
           <h1 className="text-3xl font-black tracking-tight sm:text-4xl">오늘의 크보선수</h1>
           <p className="mt-2 text-muted-foreground">선수를 입력하고 힌트를 비교해 정답을 찾아보세요.</p>
@@ -48,7 +48,7 @@ export function DailyPlayerGame() {
         ) : error ? (
           <div className="flex min-h-52 flex-col items-center justify-center rounded-2xl bg-destructive/10 p-8 text-center">
             <p className="mb-4 text-destructive">오류: {error}</p>
-            <Button onClick={actions.fetchDataAndStartGame}>다시 시도</Button>
+            <Button onClick={() => actions.fetchDataAndStartGame(dateKey)}>다시 시도</Button>
           </div>
         ) : (
           <>

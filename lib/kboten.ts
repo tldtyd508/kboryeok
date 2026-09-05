@@ -1,5 +1,7 @@
 import careerAveragePuzzle from "@/data/questions/kboten/2026-09-04-career-average.json";
+import careerEraPuzzle from "@/data/questions/kboten/2026-09-05-career-era.json";
 import historicalIndex from "@/data/player-index/historical.json";
+import historicalPitchers from "@/data/player-index/historical-pitchers.json";
 import activePlayers from "@/public/players.json";
 
 export type PlayerStatus = "active" | "retired" | "inactive" | "unknown";
@@ -49,9 +51,10 @@ export interface KboTenPuzzle {
 }
 
 export function getDailyKboTenPuzzle(dateKey: string): KboTenPuzzle {
-  const puzzles = [careerAveragePuzzle];
-  const ordinal = dateKey.split("-").reduce((sum, part) => sum + Number(part), 0);
-  return puzzles[ordinal % puzzles.length] as KboTenPuzzle;
+  const puzzles = [careerAveragePuzzle, careerEraPuzzle] as KboTenPuzzle[];
+  const puzzle = puzzles.find((candidate) => candidate.publishDate === dateKey);
+  if (!puzzle) throw new Error(`${dateKey} 크보텐 문제를 찾을 수 없습니다.`);
+  return puzzle;
 }
 
 export function normalizePlayerName(name: string) {
@@ -61,7 +64,7 @@ export function normalizePlayerName(name: string) {
 export function getKboTenPlayerOptions(puzzle: KboTenPuzzle): KboTenPlayerOption[] {
   const options = new Map<string, KboTenPlayerOption>();
 
-  for (const player of historicalIndex.players) {
+  for (const player of [...historicalIndex.players, ...historicalPitchers.players]) {
     options.set(normalizePlayerName(player.name), {
       id: `historical:${normalizePlayerName(player.name)}`,
       name: player.name,

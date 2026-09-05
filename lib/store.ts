@@ -15,7 +15,7 @@ interface GameState {
   isDataLoading: boolean;
   error: string | null;
   actions: {
-    fetchDataAndStartGame: () => Promise<void>;
+    fetchDataAndStartGame: (dateKey?: string) => Promise<void>;
     addGuess: (player: Player) => void;
   };
 }
@@ -31,9 +31,9 @@ export const useGameStore = create<GameState>((set, get) => ({
   isDataLoading: false,
   error: null,
   actions: {
-    fetchDataAndStartGame: async () => {
-      const todayKst = getKstDateKey();
-      if (get().players.length > 0 && get().activeDate === todayKst) return;
+    fetchDataAndStartGame: async (dateKey) => {
+      const targetDate = dateKey ?? getKstDateKey();
+      if (get().players.length > 0 && get().activeDate === targetDate) return;
 
       set({ isDataLoading: true, error: null });
       try {
@@ -51,11 +51,11 @@ export const useGameStore = create<GameState>((set, get) => ({
           dailyPuzzles = await puzzleResponse.json();
         }
 
-        const secretPlayerId = dailyPuzzles[todayKst];
+        const secretPlayerId = dailyPuzzles[targetDate];
         const secretPlayer = players.find((p: Player) => p.id === secretPlayerId);
 
         if (secretPlayer) {
-          const storedGame = loadDailyPlayerGame(todayKst);
+          const storedGame = loadDailyPlayerGame(targetDate);
           const storedIds = storedGame?.guessIds.slice(0, MAX_GUESSES) ?? [];
           const guesses = storedIds
             .map((id) => players.find((player: Player) => player.id === id))
@@ -71,7 +71,7 @@ export const useGameStore = create<GameState>((set, get) => ({
           set({
             players,
             dailyPuzzles,
-            activeDate: todayKst,
+            activeDate: targetDate,
             secretPlayer,
             guesses,
             results,
@@ -79,7 +79,7 @@ export const useGameStore = create<GameState>((set, get) => ({
             isDataLoading: false,
           });
         } else {
-          throw new Error("오늘의 선수를 찾을 수 없습니다.");
+          throw new Error("선택한 날짜의 선수를 찾을 수 없습니다.");
         }
 
       } catch (error) {

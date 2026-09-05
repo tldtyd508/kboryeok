@@ -15,7 +15,6 @@ import {
 } from "@/components/ui/dialog";
 import {
   getKboTenGameSnapshot,
-  getKstDateKey,
   getServerKboTenGameSnapshot,
   saveKboTenGame,
   subscribeToProgress,
@@ -32,9 +31,13 @@ const GAME_URL = "https://kboryeok.vercel.app/games/kboten";
 export function KboTenGame({
   puzzle,
   playerOptions,
+  dateKey,
+  isToday,
 }: {
   puzzle: KboTenPuzzle;
   playerOptions: KboTenPlayerOption[];
+  dateKey: string;
+  isToday: boolean;
 }) {
   const [input, setInput] = useState("");
   const [activeIndex, setActiveIndex] = useState(0);
@@ -45,7 +48,6 @@ export function KboTenGame({
   const searchContainerRef = useRef<HTMLDivElement>(null);
   const isComposingRef = useRef(false);
   const lastSubmissionAtRef = useRef(0);
-  const dateKey = getKstDateKey();
   const progressId = `${puzzle.id}:r${puzzle.revision}`;
 
   const storedSnapshot = useSyncExternalStore(
@@ -168,9 +170,10 @@ export function KboTenGame({
 
   async function shareResult() {
     const grid = puzzle.answers.map((answer) => correctNames.includes(answer.name) ? "🟩" : "⬜").join("");
-    const text = `크보텐 ${dateKey}\n${correctNames.length}/10 · 실수 ${wrongNames.length}/${puzzle.maxWrongGuesses}\n${grid}\n${GAME_URL}`;
+    const gameUrl = isToday ? GAME_URL : `${GAME_URL}?date=${dateKey}`;
+    const text = `크보텐 ${dateKey}\n${correctNames.length}/10 · 실수 ${wrongNames.length}/${puzzle.maxWrongGuesses}\n${grid}\n${gameUrl}`;
     try {
-      if (navigator.share) await navigator.share({ text, url: GAME_URL });
+      if (navigator.share) await navigator.share({ text, url: gameUrl });
       else await navigator.clipboard.writeText(text);
       setShareLabel(navigator.share ? "공유 완료" : "복사 완료");
     } catch {
@@ -186,7 +189,7 @@ export function KboTenGame({
       <div className="mb-7 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
         <div>
           <div className="mb-3 flex items-center gap-2 text-sm font-black text-[#ff6b35]">
-            <span className="size-2 animate-pulse rounded-full bg-[#ff6b35]" /> 오늘의 2번 타자
+            <span className="size-2 animate-pulse rounded-full bg-[#ff6b35]" /> {isToday ? "오늘의 2번 타자" : "지난 크보텐"}
           </div>
           <h1 className="text-3xl font-black tracking-tight sm:text-4xl">크보텐</h1>
           <p className="mt-2 max-w-2xl text-muted-foreground">{puzzle.prompt}</p>

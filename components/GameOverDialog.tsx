@@ -22,7 +22,7 @@ export default function GameOverDialog() {
 }
 
 function FinishedGameDialog() {
-  const { gameStatus, secretPlayer, guesses, results } = useGameStore();
+  const { gameStatus, secretPlayer, guesses, results, activeDate } = useGameStore();
   const [shareFeedback, setShareFeedback] = useState<"idle" | "shared" | "copied">("idle");
   const [isDialogOpen, setIsDialogOpen] = useState(true);
   const dashboardSnapshot = useSyncExternalStore(
@@ -35,6 +35,8 @@ function FinishedGameDialog() {
   const bestStreak = Number(bestValue);
 
   const handleShare = async () => {
+    const shareDate = activeDate ?? getKstDateKey();
+    const gameUrl = shareDate === getKstDateKey() ? GAME_URL : `${GAME_URL}?date=${shareDate}`;
     const score = gameStatus === "won" ? guesses.length : "X";
     const grid = results.map((result) => [
       result.team === "correct" ? "🟩" : "🟥",
@@ -44,11 +46,11 @@ function FinishedGameDialog() {
       result.age === "correct" ? "🟩" : result.age === "up" ? "🔼" : "🔽",
       result.jerseyNumber === "correct" ? "🟩" : result.jerseyNumber === "up" ? "🔼" : "🔽",
     ].join("")).join("\n");
-    const shareText = `크보력 ${getKstDateKey()} ${score}/8\n🔥 ${currentStreak}일 연속\n\n${grid}\n\n오늘의 크보선수 도전하기`;
+    const shareText = `크보력 ${shareDate} ${score}/8\n🔥 ${currentStreak}일 연속\n\n${grid}\n\n크보선수 도전하기`;
 
     if (navigator.share) {
       try {
-        await navigator.share({ title: "오늘의 크보선수 | 크보력", text: shareText, url: GAME_URL });
+        await navigator.share({ title: "크보선수 | 크보력", text: shareText, url: gameUrl });
         setShareFeedback("shared");
         return;
       } catch (error) {
@@ -56,7 +58,7 @@ function FinishedGameDialog() {
       }
     }
 
-    copy(`${shareText}\n${GAME_URL}`);
+    copy(`${shareText}\n${gameUrl}`);
     setShareFeedback("copied");
     window.setTimeout(() => setShareFeedback("idle"), 2000);
   };
@@ -92,7 +94,7 @@ function FinishedGameDialog() {
 
         <div className="flex items-center gap-2 rounded-xl border bg-muted/50 px-3 py-2.5 text-xs text-muted-foreground">
           <Link2 className="size-4 shrink-0" />
-          <span className="truncate">{GAME_URL}</span>
+          <span className="truncate">{activeDate === getKstDateKey() || !activeDate ? GAME_URL : `${GAME_URL}?date=${activeDate}`}</span>
           {shareFeedback !== "idle" ? <Check className="ml-auto size-4 shrink-0 text-emerald-600" /> : null}
         </div>
 
