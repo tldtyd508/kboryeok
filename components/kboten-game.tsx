@@ -44,10 +44,11 @@ export function KboTenGame({
   const [shareLabel, setShareLabel] = useState("결과 공유");
   const searchContainerRef = useRef<HTMLDivElement>(null);
   const dateKey = getKstDateKey();
+  const progressId = `${puzzle.id}:r${puzzle.revision}`;
 
   const storedSnapshot = useSyncExternalStore(
     subscribeToProgress,
-    () => getKboTenGameSnapshot(puzzle.id, dateKey),
+    () => getKboTenGameSnapshot(progressId, dateKey),
     getServerKboTenGameSnapshot,
   );
   const storedGame = useMemo(() => JSON.parse(storedSnapshot) as {
@@ -109,13 +110,13 @@ export function KboTenGame({
     if (answer) {
       const nextCorrectNames = [...correctNames, answer.name];
       const nextStatus: DailyGameStatus = nextCorrectNames.length === puzzle.answers.length ? "won" : "playing";
-      saveKboTenGame({ puzzleId: puzzle.id, correctNames: nextCorrectNames, wrongNames, gameStatus: nextStatus }, dateKey);
+      saveKboTenGame({ puzzleId: progressId, correctNames: nextCorrectNames, wrongNames, gameStatus: nextStatus }, dateKey);
       setMessage(`${answer.rank}위 ${answer.name}, 정답!`);
       setFeedback({ kind: "correct", playerName: answer.name });
     } else {
       const nextWrongNames = [...wrongNames, player.name];
       const nextStatus: DailyGameStatus = nextWrongNames.length >= puzzle.maxWrongGuesses ? "lost" : "playing";
-      saveKboTenGame({ puzzleId: puzzle.id, correctNames, wrongNames: nextWrongNames, gameStatus: nextStatus }, dateKey);
+      saveKboTenGame({ puzzleId: progressId, correctNames, wrongNames: nextWrongNames, gameStatus: nextStatus }, dateKey);
       setMessage("TOP 10 명단에는 없어요.");
       setFeedback({ kind: "wrong", playerName: player.name });
       if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
