@@ -6,7 +6,7 @@ import { KboTenGame } from "@/components/kboten-game";
 import { SiteHeader } from "@/components/site-header";
 import { resolveDailyDate } from "@/lib/daily-date";
 import { getKstDateKey } from "@/lib/daily-progress";
-import { getDailyKboTenPuzzle, getKboTenPlayerOptions } from "@/lib/kboten";
+import { getDailyKboTenPuzzle, getKboTenPlayerOptions, toPublicKboTenPuzzle } from "@/lib/kboten";
 
 export const dynamic = "force-dynamic";
 
@@ -24,8 +24,9 @@ export default async function KboTenPage({
   const params = await searchParams;
   const requestedDate = Array.isArray(params.date) ? params.date[0] : params.date;
   const dateKey = resolveDailyDate(requestedDate, todayKey);
-  const puzzle = getDailyKboTenPuzzle(dateKey);
-  const playerOptions = getKboTenPlayerOptions(puzzle);
+  const puzzleData = getDailyKboTenPuzzle(dateKey);
+  const playerOptions = getKboTenPlayerOptions(puzzleData);
+  const puzzle = toPublicKboTenPuzzle(puzzleData);
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />

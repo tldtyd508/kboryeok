@@ -49,6 +49,10 @@ export interface KboTenPuzzle {
   };
 }
 
+export type KboTenPublicPuzzle = Omit<KboTenPuzzle, "answers"> & {
+  answers: Array<Omit<KboTenAnswer, "value">>;
+};
+
 export function getDailyKboTenPuzzle(dateKey: string): KboTenPuzzle {
   const puzzles = dailyPuzzles as KboTenPuzzle[];
   const puzzle = puzzles.find((candidate) => candidate.publishDate === dateKey);
@@ -56,11 +60,23 @@ export function getDailyKboTenPuzzle(dateKey: string): KboTenPuzzle {
   return puzzle;
 }
 
+export function toPublicKboTenPuzzle(puzzle: KboTenPuzzle): KboTenPublicPuzzle {
+  return {
+    ...puzzle,
+    answers: puzzle.answers.map((answer) => ({
+      rank: answer.rank,
+      name: answer.name,
+      status: answer.status,
+      aliases: answer.aliases,
+    })),
+  };
+}
+
 export function normalizePlayerName(name: string) {
   return name.normalize("NFKC").toLocaleLowerCase("ko-KR").replace(/[\s.·_-]/g, "");
 }
 
-export function getKboTenPlayerOptions(puzzle: KboTenPuzzle): KboTenPlayerOption[] {
+export function getKboTenPlayerOptions(puzzle: Pick<KboTenPublicPuzzle, "answers">): KboTenPlayerOption[] {
   const options = new Map<string, KboTenPlayerOption>();
 
   for (const player of [...historicalIndex.players, ...historicalPitchers.players]) {

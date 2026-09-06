@@ -24,7 +24,7 @@ import {
 import {
   normalizePlayerName,
   type KboTenPlayerOption,
-  type KboTenPuzzle,
+  type KboTenPublicPuzzle,
 } from "@/lib/kboten";
 
 const GAME_URL = "https://kboryeok.vercel.app/games/kboten";
@@ -35,7 +35,7 @@ export function KboTenGame({
   dateKey,
   isToday,
 }: {
-  puzzle: KboTenPuzzle;
+  puzzle: KboTenPublicPuzzle;
   playerOptions: KboTenPlayerOption[];
   dateKey: string;
   isToday: boolean;
@@ -307,7 +307,7 @@ export function KboTenGame({
                   <span className={`grid size-8 shrink-0 place-items-center rounded-full text-xs font-black ${found ? "bg-white text-emerald-700" : "bg-foreground text-background"}`}>{answer.rank}</span>
                   <div className="min-w-0 flex-1">
                     <p className={`font-black ${revealed ? "" : "text-muted-foreground"}`}>{revealed ? answer.name : "???"}</p>
-                    <p className={`text-xs font-semibold ${found ? "text-white/85" : "text-muted-foreground"}`}>{revealed ? `${puzzle.statLabel} ${answer.value}` : puzzle.statLabel}</p>
+                    <p className={`text-xs font-semibold ${found ? "text-white/85" : "text-muted-foreground"}`}>{puzzle.statLabel}</p>
                   </div>
                   {found ? <Check className="size-6 stroke-[3] text-white" /> : revealed ? <X className="size-5 text-muted-foreground" /> : null}
                 </li>
