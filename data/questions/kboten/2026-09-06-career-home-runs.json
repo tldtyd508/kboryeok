@@ -1,0 +1,41 @@
+{
+  "id": "kboten-career-home-runs-2026-09-06",
+  "game": "kboten",
+  "publishDate": "2026-09-06",
+  "revision": 1,
+  "title": "KBO 통산 홈런 TOP 10",
+  "prompt": "KBO 정규시즌 통산 홈런 상위 10명을 모두 찾아보세요.",
+  "statLabel": "통산 홈런",
+  "scopeLabel": "2026-09-06 조회 스냅샷 · 정규시즌",
+  "maxWrongGuesses": 3,
+  "eligibility": {
+    "recordType": "career-counting",
+    "minimum": null,
+    "ruleSource": "KBO 공식 통산 타자 기록실 기준"
+  },
+  "answers": [
+    { "rank": 1, "name": "최정", "value": "538", "status": "active", "aliases": [] },
+    { "rank": 2, "name": "이승엽", "value": "467", "status": "retired", "aliases": [] },
+    { "rank": 3, "name": "최형우", "value": "435", "status": "active", "aliases": [] },
+    { "rank": 4, "name": "박병호", "value": "418", "status": "retired", "aliases": [] },
+    { "rank": 5, "name": "이대호", "value": "374", "status": "retired", "aliases": [] },
+    { "rank": 6, "name": "강민호", "value": "360", "status": "active", "aliases": [] },
+    { "rank": 7, "name": "양준혁", "value": "351", "status": "retired", "aliases": [] },
+    { "rank": 8, "name": "장종훈", "value": "340", "status": "retired", "aliases": [] },
+    { "rank": 9, "name": "이호준", "value": "337", "status": "retired", "aliases": [] },
+    { "rank": 10, "name": "이범호", "value": "329", "status": "retired", "aliases": [] }
+  ],
+  "sources": [
+    {
+      "name": "KBO 기록실 · 통산 타자 기본기록",
+      "url": "https://www.koreabaseball.com/Record/Player/HitterBasic/BasicTotal.aspx",
+      "accessedAt": "2026-09-06",
+      "role": "primary"
+    }
+  ],
+  "review": {
+    "status": "verified",
+    "reviewedAt": "2026-09-06",
+    "note": "KBO 공식 기록실의 통산 홈런 내림차순 순위 1~10위와 10위 경계를 대조한 고정 스냅샷"
+  }
+}

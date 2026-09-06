@@ -1,5 +1,4 @@
-import careerAveragePuzzle from "@/data/questions/kboten/2026-09-04-career-average.json";
-import careerEraPuzzle from "@/data/questions/kboten/2026-09-05-career-era.json";
+import dailyPuzzles from "@/data/questions/kboten/index.json";
 import historicalIndex from "@/data/player-index/historical.json";
 import historicalPitchers from "@/data/player-index/historical-pitchers.json";
 import activePlayers from "@/public/players.json";
@@ -51,7 +50,7 @@ export interface KboTenPuzzle {
 }
 
 export function getDailyKboTenPuzzle(dateKey: string): KboTenPuzzle {
-  const puzzles = [careerAveragePuzzle, careerEraPuzzle] as KboTenPuzzle[];
+  const puzzles = dailyPuzzles as KboTenPuzzle[];
   const puzzle = puzzles.find((candidate) => candidate.publishDate === dateKey);
   if (!puzzle) throw new Error(`${dateKey} 크보텐 문제를 찾을 수 없습니다.`);
   return puzzle;
