@@ -1,0 +1,99 @@
+[
+  {
+    "id": "kbo5001-career-home-runs-2026-09-06",
+    "game": "kbo5001",
+    "publishDate": "2026-09-06",
+    "revision": 1,
+    "title": "통산 홈런 2,000",
+    "prompt": "후보 12명 중 5명을 골라 통산 홈런 합계 2,000개를 정확히 만들어 보세요.",
+    "statLabel": "통산 홈런",
+    "scopeLabel": "2026-09-06 조회 스냅샷 · 정규시즌",
+    "target": 2000,
+    "selectionCount": 5,
+    "maxSubmissions": 3,
+    "candidates": [
+      {
+        "name": "이호준",
+        "value": 337,
+        "status": "retired"
+      },
+      {
+        "name": "최정",
+        "value": 538,
+        "status": "active"
+      },
+      {
+        "name": "박경완",
+        "value": 314,
+        "status": "retired"
+      },
+      {
+        "name": "이대호",
+        "value": 374,
+        "status": "retired"
+      },
+      {
+        "name": "강민호",
+        "value": 360,
+        "status": "active"
+      },
+      {
+        "name": "이승엽",
+        "value": 467,
+        "status": "retired"
+      },
+      {
+        "name": "이범호",
+        "value": 329,
+        "status": "retired"
+      },
+      {
+        "name": "박병호",
+        "value": 418,
+        "status": "retired"
+      },
+      {
+        "name": "장종훈",
+        "value": 340,
+        "status": "retired"
+      },
+      {
+        "name": "심정수",
+        "value": 328,
+        "status": "retired"
+      },
+      {
+        "name": "최형우",
+        "value": 435,
+        "status": "active"
+      },
+      {
+        "name": "양준혁",
+        "value": 351,
+        "status": "retired"
+      }
+    ],
+    "solutions": [
+      [
+        "이승엽",
+        "최형우",
+        "박병호",
+        "양준혁",
+        "이범호"
+      ]
+    ],
+    "sources": [
+      {
+        "name": "KBO 기록실 · 통산 타자 기본기록",
+        "url": "https://www.koreabaseball.com/Record/Player/HitterBasic/BasicTotal.aspx",
+        "accessedAt": "2026-09-06",
+        "role": "primary"
+      }
+    ],
+    "review": {
+      "status": "verified",
+      "reviewedAt": "2026-09-06",
+      "note": "KBO 공식 기록실의 통산 홈런 상위 12명 수치를 대조하고, 12명 중 5명인 792개 조합을 전수 검사해 유일한 정답 조합을 확인한 고정 스냅샷"
+    }
+  }
+]

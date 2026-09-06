@@ -1,6 +1,6 @@
 export type DailyPlayerProgress = "not-started" | "playing" | "completed";
 export type DailyGameStatus = "playing" | "won" | "lost";
-export type DailyGameId = "daily-player" | "kboten";
+export type DailyGameId = "daily-player" | "kboten" | "kbo5001";
 
 interface StoredDailyPlayerGame {
   version: 1;
@@ -26,6 +26,19 @@ export interface StoredKboTenGame {
   gameStatus: DailyGameStatus;
 }
 
+export interface Kbo5001Submission {
+  names: string[];
+  sum: number;
+}
+
+export interface StoredKbo5001Game {
+  version: 1;
+  puzzleId: string;
+  selectedNames: string[];
+  submissions: Kbo5001Submission[];
+  gameStatus: DailyGameStatus;
+}
+
 export interface StreakSummary {
   current: number;
   best: number;
@@ -36,9 +49,10 @@ export interface StreakSummary {
 const LEGACY_STATS_KEY = "kboryeok:stats:v1";
 const STATS_KEY = "kboryeok:stats:v2";
 const PROGRESS_EVENT = "kboryeok:progress";
-const EMPTY_DASHBOARD_SNAPSHOT = "not-started|0|2|0|0|0";
+const EMPTY_DASHBOARD_SNAPSHOT = "not-started|0|3|0|0|0";
 const EMPTY_KBOTEN_SNAPSHOT = '{"gameStatus":"playing","correctNames":[],"wrongNames":[]}';
-export const DAILY_GAME_COUNT = 2;
+const EMPTY_KBO5001_SNAPSHOT = '{"gameStatus":"playing","selectedNames":[],"submissions":[]}';
+export const DAILY_GAME_COUNT = 3;
 
 export function getKstDateKey(date = new Date()) {
   return new Intl.DateTimeFormat("en-CA", {
@@ -55,6 +69,10 @@ export function getDailyPlayerStorageKey(dateKey = getKstDateKey()) {
 
 export function getKboTenStorageKey(dateKey = getKstDateKey()) {
   return `kboryeok:kboten:v1:${dateKey}`;
+}
+
+export function getKbo5001StorageKey(dateKey = getKstDateKey()) {
+  return `kboryeok:kbo5001:v1:${dateKey}`;
 }
 
 function isBrowser() {
@@ -98,7 +116,7 @@ function loadCompletedGamesByDate(): Record<string, DailyGameId[]> {
             .filter(([date, games]) => /^\d{4}-\d{2}-\d{2}$/.test(date) && Array.isArray(games))
             .map(([date, games]) => [
               date,
-              Array.from(new Set(games.filter((game): game is DailyGameId => game === "daily-player" || game === "kboten"))),
+              Array.from(new Set(games.filter((game): game is DailyGameId => game === "daily-player" || game === "kboten" || game === "kbo5001"))),
             ]),
         );
       }
@@ -198,6 +216,58 @@ export function saveKboTenGame(game: Omit<StoredKboTenGame, "version">, dateKey 
   emitProgressChange();
 }
 
+export function loadKbo5001Game(dateKey = getKstDateKey()): StoredKbo5001Game | null {
+  if (!isBrowser()) return null;
+  try {
+    const raw = window.localStorage.getItem(getKbo5001StorageKey(dateKey));
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as Partial<StoredKbo5001Game>;
+    if (
+      parsed.version !== 1 ||
+      typeof parsed.puzzleId !== "string" ||
+      !Array.isArray(parsed.selectedNames) ||
+      !Array.isArray(parsed.submissions) ||
+      (parsed.gameStatus !== "playing" && parsed.gameStatus !== "won" && parsed.gameStatus !== "lost")
+    ) return null;
+    return {
+      version: 1,
+      puzzleId: parsed.puzzleId,
+      selectedNames: parsed.selectedNames.filter((name): name is string => typeof name === "string"),
+      submissions: parsed.submissions
+        .filter((submission): submission is Kbo5001Submission =>
+          Boolean(submission && Array.isArray(submission.names) && Number.isFinite(submission.sum)))
+        .map((submission) => ({
+          names: submission.names.filter((name): name is string => typeof name === "string"),
+          sum: submission.sum,
+        })),
+      gameStatus: parsed.gameStatus,
+    };
+  } catch {
+    return null;
+  }
+}
+
+export function getKbo5001GameSnapshot(puzzleId: string, dateKey = getKstDateKey()) {
+  const game = loadKbo5001Game(dateKey);
+  if (!game || game.puzzleId !== puzzleId) return EMPTY_KBO5001_SNAPSHOT;
+  return JSON.stringify({
+    gameStatus: game.gameStatus,
+    selectedNames: game.selectedNames,
+    submissions: game.submissions,
+  });
+}
+
+export function getServerKbo5001GameSnapshot() {
+  return EMPTY_KBO5001_SNAPSHOT;
+}
+
+export function saveKbo5001Game(game: Omit<StoredKbo5001Game, "version">, dateKey = getKstDateKey()) {
+  if (!isBrowser()) return;
+  window.localStorage.setItem(getKbo5001StorageKey(dateKey), JSON.stringify({ version: 1, ...game }));
+  if (game.gameStatus === "won" || game.gameStatus === "lost") markDailyGameCompleted("kbo5001", dateKey);
+  emitProgressChange();
+}
+
 function dateOrdinal(dateKey: string) {
   const [year, month, day] = dateKey.split("-").map(Number);
   return Math.floor(Date.UTC(year, month - 1, day) / 86_400_000);
@@ -239,7 +309,8 @@ export function getDailyProgress(): DailyPlayerProgress {
 
   const game = loadDailyPlayerGame();
   const kboTenGame = loadKboTenGame();
-  return completedCount > 0 || (game && game.guessIds.length > 0) || (kboTenGame && (kboTenGame.correctNames.length > 0 || kboTenGame.wrongNames.length > 0))
+  const kbo5001Game = loadKbo5001Game();
+  return completedCount > 0 || (game && game.guessIds.length > 0) || (kboTenGame && (kboTenGame.correctNames.length > 0 || kboTenGame.wrongNames.length > 0)) || (kbo5001Game && (kbo5001Game.selectedNames.length > 0 || kbo5001Game.submissions.length > 0))
     ? "playing"
     : "not-started";
 }

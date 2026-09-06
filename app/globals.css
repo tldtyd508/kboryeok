@@ -77,6 +77,10 @@
   .kboten-life-lost {
     animation: kboten-life-lost 460ms ease-out;
   }
+
+  .kbo5001-correct-pop {
+    animation: kbo5001-correct-pop 620ms cubic-bezier(0.2, 0.85, 0.32, 1.25);
+  }
 }
 
 @keyframes kboten-correct-pop {
@@ -91,9 +95,16 @@
   100% { transform: scale(0.75); opacity: 0.35; }
 }
 
+@keyframes kbo5001-correct-pop {
+  0% { transform: scale(0.94); box-shadow: 0 0 0 0 rgb(16 185 129 / 0); }
+  45% { transform: scale(1.04); box-shadow: 0 0 0 12px rgb(52 211 153 / 0.28); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgb(16 185 129 / 0); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .kboten-correct-pop,
-  .kboten-life-lost {
+  .kboten-life-lost,
+  .kbo5001-correct-pop {
     animation: none;
   }
 }

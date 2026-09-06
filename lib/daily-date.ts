@@ -10,14 +10,14 @@ export function addDays(dateKey: string, amount: number) {
   return date.toISOString().slice(0, 10);
 }
 
-export function resolveDailyDate(requestedDate: string | undefined, todayKey: string) {
+export function resolveDailyDate(requestedDate: string | undefined, todayKey: string, launchDate = DAILY_LAUNCH_DATE) {
   if (!isDateKey(requestedDate)) return todayKey;
-  if (requestedDate < DAILY_LAUNCH_DATE || requestedDate > todayKey) return todayKey;
+  if (requestedDate < launchDate || requestedDate > todayKey) return todayKey;
   return requestedDate;
 }
 
-export function getDailyDayNumber(dateKey: string) {
-  const start = Date.parse(`${DAILY_LAUNCH_DATE}T00:00:00Z`);
+export function getDailyDayNumber(dateKey: string, launchDate = DAILY_LAUNCH_DATE) {
+  const start = Date.parse(`${launchDate}T00:00:00Z`);
   const selected = Date.parse(`${dateKey}T00:00:00Z`);
   return Math.floor((selected - start) / 86_400_000) + 1;
 }

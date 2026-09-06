@@ -61,10 +61,11 @@ export const games: GameDefinition[] = [
   {
     id: "5001",
     title: "크보 5001",
-    description: "선수들의 기록을 조합해 오늘의 목표 숫자를 완성하세요.",
+    description: "후보 선수 중 정해진 인원을 골라 기록 합계로 오늘의 목표 숫자를 완성하세요.",
     category: "기록",
     cadence: "데일리",
-    status: "coming-soon",
+    status: "live",
+    href: "/games/5001",
     icon: Binary,
     accent: "bg-[#8ea7ff] text-slate-950",
   },

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/build-kboten-question-index.mjs",
+    "prebuild": "node scripts/build-kboten-question-index.mjs && node scripts/build-kbo5001-question-index.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
@@ -13,6 +13,8 @@
     "data:sync-kboten-index": "node scripts/sync-kboten-player-index.mjs",
     "data:build-kboten-index": "node scripts/build-kboten-question-index.mjs",
     "data:validate-kboten": "node scripts/validate-kboten-questions.mjs",
+    "data:build-kbo5001-index": "node scripts/build-kbo5001-question-index.mjs",
+    "data:validate-kbo5001": "node scripts/validate-kbo5001-questions.mjs",
     "data:check": "node scripts/check-roster-freshness.mjs"
   },
   "dependencies": {

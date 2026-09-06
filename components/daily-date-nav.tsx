@@ -6,14 +6,16 @@ export function DailyDateNav({
   basePath,
   dateKey,
   todayKey,
+  launchDate = DAILY_LAUNCH_DATE,
 }: {
   basePath: string;
   dateKey: string;
   todayKey: string;
+  launchDate?: string;
 }) {
   const previousDate = addDays(dateKey, -1);
   const nextDate = addDays(dateKey, 1);
-  const hasPrevious = previousDate >= DAILY_LAUNCH_DATE;
+  const hasPrevious = previousDate >= launchDate;
   const hasNext = nextDate <= todayKey;
   const isToday = dateKey === todayKey;
   const dateHref = (targetDate: string) => targetDate === todayKey ? basePath : `${basePath}?date=${targetDate}`;
@@ -31,7 +33,7 @@ export function DailyDateNav({
       <div className="flex min-w-0 items-center gap-3 text-center">
         <span className="hidden size-9 place-items-center rounded-xl bg-primary/10 text-primary sm:grid"><CalendarDays className="size-4" /></span>
         <div>
-          <p className="text-[11px] font-black tracking-[0.16em] text-primary">DAY {getDailyDayNumber(dateKey)}</p>
+          <p className="text-[11px] font-black tracking-[0.16em] text-primary">DAY {getDailyDayNumber(dateKey, launchDate)}</p>
           <p className="text-sm font-black sm:text-base">{formatDailyDate(dateKey)} {isToday ? <span className="ml-1 text-xs text-[#ff6b35]">오늘</span> : null}</p>
         </div>
       </div>

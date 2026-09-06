@@ -1,8 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useRef, useState, useSyncExternalStore, type KeyboardEvent } from "react";
 import Fuse from "fuse.js";
-import { Check, CheckCircle2, CircleHelp, ExternalLink, Heart, Search, Share2, X, XCircle } from "lucide-react";
+import { ArrowRight, Check, CheckCircle2, CircleHelp, ExternalLink, Heart, Search, Share2, X, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -319,7 +320,12 @@ export function KboTenGame({
               <p className="font-black">실수 {wrongNames.length} / {puzzle.maxWrongGuesses}</p>
               <p className="mt-1 text-xs text-muted-foreground">{wrongNames.length > 0 ? wrongNames.join(" · ") : "아직 실수 없이 진행 중"}</p>
             </div>
-            {finished && <Button type="button" onClick={shareResult} className="gap-2"><Share2 className="size-4" /> {shareLabel}</Button>}
+            {finished ? (
+              <div className="flex flex-wrap gap-2">
+                <Button type="button" onClick={shareResult} variant="outline" className="gap-2"><Share2 className="size-4" /> {shareLabel}</Button>
+                <Button asChild className="gap-2"><Link href="/games/5001">같은 기록으로 5001 <ArrowRight className="size-4" /></Link></Button>
+              </div>
+            ) : null}
           </div>
         </div>
       </section>
