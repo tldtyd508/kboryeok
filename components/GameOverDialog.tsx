@@ -32,7 +32,7 @@ export default function GameOverDialog() {
 
 function FinishedGameDialog() {
   const { gameStatus, secretPlayer, guesses, results, activeDate } = useGameStore();
-  const [shareFeedback, setShareFeedback] = useState<"idle" | "shared" | "copied">("idle");
+  const [shareFeedback, setShareFeedback] = useState<"idle" | "copied" | "failed">("idle");
   const [isDialogOpen, setIsDialogOpen] = useState(true);
   const dashboardSnapshot = useSyncExternalStore(
     subscribeToProgress,
@@ -43,7 +43,7 @@ function FinishedGameDialog() {
   const currentStreak = Number(currentValue);
   const bestStreak = Number(bestValue);
 
-  const handleShare = async () => {
+  const handleShare = () => {
     const shareDate = activeDate ?? getKstDateKey();
     const gameUrl = shareDate === getKstDateKey() ? GAME_URL : `${GAME_URL}?date=${shareDate}`;
     const score = gameStatus === "won" ? guesses.length : "X";
@@ -57,25 +57,14 @@ function FinishedGameDialog() {
     ].join("")).join("\n");
     const shareText = `크보력 ${shareDate} ${score}/8\n🔥 ${currentStreak}일 연속\n\n${grid}\n\n크보선수 도전하기`;
 
-    if (navigator.share) {
-      try {
-        await navigator.share({ title: "크보선수 | 크보력", text: shareText, url: gameUrl });
-        setShareFeedback("shared");
-        return;
-      } catch (error) {
-        if (error instanceof DOMException && error.name === "AbortError") return;
-      }
-    }
-
-    copy(`${shareText}\n${gameUrl}`);
-    setShareFeedback("copied");
+    setShareFeedback(copy(`${shareText}\n${gameUrl}`) ? "copied" : "failed");
     window.setTimeout(() => setShareFeedback("idle"), 2000);
   };
 
-  const shareLabel = shareFeedback === "shared"
-    ? "공유 완료"
-    : shareFeedback === "copied"
-      ? "링크 포함 복사 완료"
+  const shareLabel = shareFeedback === "copied"
+    ? "복사 완료"
+    : shareFeedback === "failed"
+      ? "다시 시도"
       : "결과 공유하기";
 
   return (

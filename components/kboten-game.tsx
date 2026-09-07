@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useRef, useState, useSyncExternalStore, type KeyboardEvent } from "react";
+import copy from "copy-to-clipboard";
 import Fuse from "fuse.js";
 import { ArrowRight, Check, CheckCircle2, CircleHelp, Heart, Search, Share2, X, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -169,17 +170,11 @@ export function KboTenGame({
     }
   }
 
-  async function shareResult() {
+  function shareResult() {
     const grid = puzzle.answers.map((answer) => correctNames.includes(answer.name) ? "🟩" : "⬜").join("");
     const gameUrl = isToday ? GAME_URL : `${GAME_URL}?date=${dateKey}`;
     const text = `크보텐 ${dateKey}\n${correctNames.length}/10 · 실수 ${wrongNames.length}/${puzzle.maxWrongGuesses}\n${grid}\n${gameUrl}`;
-    try {
-      if (navigator.share) await navigator.share({ text, url: gameUrl });
-      else await navigator.clipboard.writeText(text);
-      setShareLabel(navigator.share ? "공유 완료" : "복사 완료");
-    } catch {
-      setShareLabel("다시 시도");
-    }
+    setShareLabel(copy(text) ? "복사 완료" : "다시 시도");
   }
 
   const finished = gameStatus !== "playing";

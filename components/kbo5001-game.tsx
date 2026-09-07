@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState, useSyncExternalStore } from "react";
+import copy from "copy-to-clipboard";
 import { ArrowRight, Check, CircleHelp, Heart, Share2, Target, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -117,17 +118,11 @@ export function Kbo5001Game({
     setMessage(won ? "정답!" : "");
   }
 
-  async function shareResult() {
+  function shareResult() {
     const rows = submissions.map((submission) => submission.sum === puzzle.target ? "🟩" : "⬜");
     const gameUrl = isToday ? GAME_URL : `${GAME_URL}?date=${dateKey}`;
     const text = `크보 5001 ${dateKey}\n${gameStatus === "won" ? "성공" : "실패"} · ${submissions.length}/${puzzle.maxSubmissions}회\n${rows.join("\n")}\n${gameUrl}`;
-    try {
-      if (navigator.share) await navigator.share({ text, url: gameUrl });
-      else await navigator.clipboard.writeText(text);
-      setShareLabel(navigator.share ? "공유 완료" : "복사 완료");
-    } catch {
-      setShareLabel("다시 시도");
-    }
+    setShareLabel(copy(text) ? "복사 완료" : "다시 시도");
   }
 
   return (

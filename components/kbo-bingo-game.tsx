@@ -87,17 +87,11 @@ export function KboBingoGame({
     saveTurn({ playerId: currentPlayer.id, cellId: null, correct: false });
   }
 
-  async function shareResult() {
+  function shareResult() {
     const grid = puzzle.board.map((cell, index) => `${filledByCell.has(cell.id) ? "🟩" : "⬜"}${index % 4 === 3 ? "\n" : ""}`).join("").trim();
     const gameUrl = isToday ? GAME_URL : `${GAME_URL}?date=${dateKey}`;
     const text = `크보 빙고 ${dateKey}\n${gameStatus === "won" ? "성공" : "실패"} · ${turns.length}/${puzzle.maxCards}장\n${grid}\n${gameUrl}`;
-    try {
-      if (navigator.share) await navigator.share({ text, url: gameUrl });
-      else copy(text);
-      setShareLabel(navigator.share ? "공유 완료" : "복사 완료");
-    } catch {
-      setShareLabel("다시 시도");
-    }
+    setShareLabel(copy(text) ? "복사 완료" : "다시 시도");
   }
 
   return (
