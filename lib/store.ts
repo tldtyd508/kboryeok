@@ -55,7 +55,8 @@ export const useGameStore = create<GameState>((set, get) => ({
         const secretPlayer = players.find((p: Player) => p.id === secretPlayerId);
 
         if (secretPlayer) {
-          const storedGame = loadDailyPlayerGame(targetDate);
+          const puzzleId = `${targetDate}:${secretPlayer.id}`;
+          const storedGame = loadDailyPlayerGame(targetDate, puzzleId);
           const storedIds = storedGame?.guessIds.slice(0, MAX_GUESSES) ?? [];
           const guesses = storedIds
             .map((id) => players.find((player: Player) => player.id === id))
@@ -106,6 +107,7 @@ export const useGameStore = create<GameState>((set, get) => ({
       saveDailyPlayerGame(
         newGuesses.map((player) => player.id),
         newGameStatus,
+        `${activeDate ?? getKstDateKey()}:${secretPlayer.id}`,
         activeDate ?? getKstDateKey(),
       );
     },

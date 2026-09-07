@@ -3,7 +3,8 @@ export type DailyGameStatus = "playing" | "won" | "lost";
 export type DailyGameId = "daily-player" | "kboten" | "kbo5001" | "kbo-bingo";
 
 interface StoredDailyPlayerGame {
-  version: 1;
+  version: 2;
+  puzzleId: string;
   guessIds: number[];
   gameStatus: DailyGameStatus;
 }
@@ -78,7 +79,7 @@ export function getKstDateKey(date = new Date()) {
 }
 
 export function getDailyPlayerStorageKey(dateKey = getKstDateKey()) {
-  return `kboryeok:daily-player:v1:${dateKey}`;
+  return `kboryeok:daily-player:v2:${dateKey}`;
 }
 
 export function getKboTenStorageKey(dateKey = getKstDateKey()) {
@@ -101,18 +102,20 @@ function emitProgressChange() {
   if (isBrowser()) window.dispatchEvent(new Event(PROGRESS_EVENT));
 }
 
-export function loadDailyPlayerGame(dateKey = getKstDateKey()): StoredDailyPlayerGame | null {
+export function loadDailyPlayerGame(dateKey = getKstDateKey(), expectedPuzzleId?: string): StoredDailyPlayerGame | null {
   if (!isBrowser()) return null;
 
   try {
     const raw = window.localStorage.getItem(getDailyPlayerStorageKey(dateKey));
     if (!raw) return null;
     const parsed = JSON.parse(raw) as Partial<StoredDailyPlayerGame>;
-    if (parsed.version !== 1 || !Array.isArray(parsed.guessIds)) return null;
+    if (parsed.version !== 2 || typeof parsed.puzzleId !== "string" || !Array.isArray(parsed.guessIds)) return null;
+    if (expectedPuzzleId && parsed.puzzleId !== expectedPuzzleId) return null;
     if (parsed.gameStatus !== "playing" && parsed.gameStatus !== "won" && parsed.gameStatus !== "lost") return null;
 
     return {
-      version: 1,
+      version: 2,
+      puzzleId: parsed.puzzleId,
       guessIds: parsed.guessIds.filter((id): id is number => Number.isInteger(id)),
       gameStatus: parsed.gameStatus,
     };
@@ -174,11 +177,12 @@ export function markDailyGameCompleted(gameId: DailyGameId, dateKey = getKstDate
 export function saveDailyPlayerGame(
   guessIds: number[],
   gameStatus: DailyGameStatus,
+  puzzleId: string,
   dateKey = getKstDateKey(),
 ) {
   if (!isBrowser()) return;
 
-  const game: StoredDailyPlayerGame = { version: 1, guessIds, gameStatus };
+  const game: StoredDailyPlayerGame = { version: 2, puzzleId, guessIds, gameStatus };
   window.localStorage.setItem(getDailyPlayerStorageKey(dateKey), JSON.stringify(game));
 
   if (gameStatus === "won" || gameStatus === "lost") {
