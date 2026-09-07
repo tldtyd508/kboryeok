@@ -1,0 +1,53 @@
+{
+  "id": "kbo-bingo-current-roster-2026-09-08",
+  "game": "kbo-bingo",
+  "publishDate": "2026-09-08",
+  "revision": 2,
+  "title": "2026 KBO 선수 빙고 · 스타와 레전드",
+  "prompt": "등장한 선수를 조건 한 칸에만 배치해 4×4 판을 완성하세요.",
+  "board": [
+    { "id": "team-kt", "label": "KT 위즈", "validPlayerIds": [64001, 76290, 78548, 50066, 50030], "examplePlayerId": 64001 },
+    { "id": "team-lotte", "label": "롯데 자이언츠", "validPlayerIds": [78513, 54529, 64021, 52591, 61102], "examplePlayerId": 78513 },
+    { "id": "team-doosan", "label": "두산 베어스", "validPlayerIds": [76232, 68220, 54263, 64153, 79231], "examplePlayerId": 76232 },
+    { "id": "team-nc", "label": "NC 다이노스", "validPlayerIds": [79215, 62907, 51907, 68912, 65933], "examplePlayerId": 79215 },
+    { "id": "position-pitcher", "label": "투수", "validPlayerIds": [76715, 64001, 50030, 64021, 68220, 54263, 65933], "examplePlayerId": 76715 },
+    { "id": "position-catcher", "label": "포수", "validPlayerIds": [76232, 78548, 50066, 61102, 68912], "examplePlayerId": 76232 },
+    { "id": "position-outfielder", "label": "외야수", "validPlayerIds": [62404, 78513, 54529, 76290, 52591, 79231, 79215], "examplePlayerId": 62404 },
+    { "id": "number-10-below", "label": "등번호 10 이하", "validPlayerIds": [62404, 52605, 78513, 64001, 76290, 62907, 51907], "examplePlayerId": 62404 },
+    { "id": "number-21-40", "label": "등번호 21~40", "validPlayerIds": [76232, 54529, 78548, 50030, 64021, 61102, 79231, 79215, 68912], "examplePlayerId": 76232 },
+    { "id": "number-41-plus", "label": "등번호 41 이상", "validPlayerIds": [50066, 68220, 54263, 64153, 65933], "examplePlayerId": 50066 },
+    { "id": "bats-left", "label": "좌타", "validPlayerIds": [62404, 76290, 79231, 62907, 65933], "examplePlayerId": 62404 },
+    { "id": "bats-right", "label": "우타", "validPlayerIds": [76715, 75847, 52605, 76232, 78513, 64001, 78548, 50066, 50030, 64021, 52591, 61102, 68220, 54263, 64153, 79215, 68912], "examplePlayerId": 76715 },
+    { "id": "born-1995-plus", "label": "1995년 이후 출생", "validPlayerIds": [52605, 50066, 50030, 64021, 52591, 68220, 54263, 51907, 68912, 65933], "examplePlayerId": 52605 },
+    { "id": "born-before-1995", "label": "1995년 이전 출생", "validPlayerIds": [76715, 62404, 75847, 76232, 78513, 54529, 64001, 76290, 78548, 61102, 64153, 79231, 79215, 62907], "examplePlayerId": 76715 },
+    { "id": "golden-glove-winner", "label": "KBO 골든글러브 수상 경력", "validPlayerIds": [76715, 62404, 75847, 52605, 76232, 78513, 54529, 76290, 79215, 62907, 51907, 85672, 83540, 93715, 71752, 71564, 75125, 93410, 97109, 72133, 75808, 99222, 75620], "examplePlayerId": 76715 },
+    { "id": "golden-glove-2011", "label": "2011 KBO 골든글러브 수상", "validPlayerIds": [75847, 71564, 72133, 75808, 99222, 75620], "examplePlayerId": 75620 }
+  ],
+  "deck": [
+    76715, 62404, 75847, 52605, 76232, 78513, 54529, 64001,
+    76290, 78548, 50066, 50030, 64021, 52591, 61102, 68220,
+    54263, 64153, 79231, 79215, 62907, 51907, 68912, 65933,
+    85672, 83540, 93715, 71752, 71564, 75125, 93410, 97109,
+    72133, 75808, 99222, 75620
+  ],
+  "maxCards": 36,
+  "sources": [
+    {
+      "name": "KBO 2026 구단별 소속선수 명단",
+      "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+      "accessedAt": "2026-09-08",
+      "role": "primary"
+    },
+    {
+      "name": "KBO 수상 현황 · 골든글러브",
+      "url": "https://www.koreabaseball.com/Player/Awards/GoldenGlove.aspx",
+      "accessedAt": "2026-09-08",
+      "role": "primary"
+    }
+  ],
+  "review": {
+    "status": "verified",
+    "reviewedAt": "2026-09-08",
+    "note": "현역 24명과 은퇴 12명으로 구성했다. 첫 8장은 류현진·구자욱·최정·김도영·양의지·전준우·레이예스·고영표이며, 은퇴 카드는 KBO 공식 골든글러브 수상 이력 조건에도 배치할 수 있다. 구단·포지션·투타·생년월일·등번호는 공식 2026 등록 명단, 수상 조건은 KBO 공식 수상 현황으로 고정했다."
+  }
+}

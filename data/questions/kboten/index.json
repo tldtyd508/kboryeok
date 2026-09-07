@@ -417,5 +417,115 @@
       "reviewedAt": "2026-09-07",
       "note": "KBO 공식 기록실의 통산 승리 내림차순 순위 1~11위를 대조했다. 10위 장원준 132승, 11위 임창용 130승으로 경계 동률이 없음을 확인한 고정 스냅샷"
     }
+  },
+  {
+    "id": "kboten-2025-golden-glove-2026-09-08",
+    "game": "kboten",
+    "publishDate": "2026-09-08",
+    "revision": 1,
+    "title": "2025 KBO 골든글러브 수상자",
+    "prompt": "2025년 KBO 골든글러브 10개 부문 수상자를 모두 찾아보세요. 외야수는 KBO 수상 현황의 표시 순서입니다.",
+    "statLabel": "2025 골든글러브",
+    "scopeLabel": "2025 KBO 정규시즌 · 투수·포수·내야 5개 부문·외야수 3명·지명타자",
+    "maxWrongGuesses": 3,
+    "eligibility": {
+      "recordType": "award-list",
+      "minimum": null,
+      "ruleSource": "KBO 공식 수상 현황 · 골든글러브"
+    },
+    "answers": [
+      {
+        "rank": 1,
+        "name": "폰세",
+        "value": "투수",
+        "status": "inactive",
+        "aliases": [
+          "코디 폰세",
+          "코디폰세"
+        ]
+      },
+      {
+        "rank": 2,
+        "name": "양의지",
+        "value": "포수",
+        "status": "active",
+        "aliases": []
+      },
+      {
+        "rank": 3,
+        "name": "디아즈",
+        "value": "1루수",
+        "status": "active",
+        "aliases": [
+          "르윈 디아즈",
+          "르윈디아즈"
+        ]
+      },
+      {
+        "rank": 4,
+        "name": "신민재",
+        "value": "2루수",
+        "status": "active",
+        "aliases": []
+      },
+      {
+        "rank": 5,
+        "name": "송성문",
+        "value": "3루수",
+        "status": "inactive",
+        "aliases": []
+      },
+      {
+        "rank": 6,
+        "name": "김주원",
+        "value": "유격수",
+        "status": "active",
+        "aliases": []
+      },
+      {
+        "rank": 7,
+        "name": "구자욱",
+        "value": "외야수",
+        "status": "active",
+        "aliases": []
+      },
+      {
+        "rank": 8,
+        "name": "레이예스",
+        "value": "외야수",
+        "status": "active",
+        "aliases": [
+          "빅터 레이예스",
+          "빅터레이예스"
+        ]
+      },
+      {
+        "rank": 9,
+        "name": "안현민",
+        "value": "외야수",
+        "status": "active",
+        "aliases": []
+      },
+      {
+        "rank": 10,
+        "name": "최형우",
+        "value": "지명타자",
+        "status": "active",
+        "aliases": []
+      }
+    ],
+    "sources": [
+      {
+        "name": "KBO 수상 현황 · 골든글러브",
+        "url": "https://www.koreabaseball.com/Player/Awards/GoldenGlove.aspx",
+        "accessedAt": "2026-09-08",
+        "role": "primary"
+      }
+    ],
+    "review": {
+      "status": "verified",
+      "reviewedAt": "2026-09-08",
+      "note": "KBO 공식 골든글러브 수상 현황의 2025년 행을 부문 순서와 함께 대조했다. 외야수 3명은 공식 표의 표시 순서로 고정했고, 수상자 정답은 2025 시즌 스냅샷으로 보존했다."
+    }
   }
 ]

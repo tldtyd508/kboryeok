@@ -32,11 +32,16 @@ for (const file of files) {
   if (new Set(ranks).size !== 10 || ranks.some((rank, index) => rank !== index + 1)) {
     throw new Error(`${file}: 순위는 중복 없이 1~10이어야 합니다.`);
   }
-  const unit = puzzle.eligibility?.minimum?.unit;
-  const candidatePlayers = indexes[unit]?.players ?? [...indexes.PA.players, ...indexes.IP.players];
-  const indexedNames = new Set(candidatePlayers.map((player) => player.name));
-  const missing = puzzle.answers.filter((answer) => !indexedNames.has(answer.name));
-  if (missing.length) throw new Error(`${file}: 공식 후보 풀에 없는 답: ${missing.map((answer) => answer.name).join(", ")}`);
+  const answerNames = puzzle.answers.map((answer) => answer.name);
+  if (new Set(answerNames).size !== 10) throw new Error(`${file}: 답안 선수 이름에 중복이 있습니다.`);
+
+  if (!recordType.startsWith("award-")) {
+    const unit = puzzle.eligibility?.minimum?.unit;
+    const candidatePlayers = indexes[unit]?.players ?? [...indexes.PA.players, ...indexes.IP.players];
+    const indexedNames = new Set(candidatePlayers.map((player) => player.name));
+    const missing = puzzle.answers.filter((answer) => !indexedNames.has(answer.name));
+    if (missing.length) throw new Error(`${file}: 공식 후보 풀에 없는 답: ${missing.map((answer) => answer.name).join(", ")}`);
+  }
 }
 
 console.log(`크보텐 문제 ${files.length}개 검증 완료: 공식 후보 풀과 답안 분리 정상`);
