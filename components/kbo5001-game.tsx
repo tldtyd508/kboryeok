@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState, useSyncExternalStore } from "react";
-import { ArrowRight, Check, CircleHelp, Share2, Target, Trophy } from "lucide-react";
+import { ArrowRight, Check, CircleHelp, Heart, Share2, Target, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -26,12 +26,6 @@ const GAME_URL = "https://kboryeok.vercel.app/games/5001";
 
 function submissionKey(names: string[]) {
   return [...names].sort((a, b) => a.localeCompare(b, "ko-KR")).join("|");
-}
-
-function differenceLabel(sum: number, target: number) {
-  const difference = sum - target;
-  if (difference === 0) return "정답";
-  return difference > 0 ? `${difference.toLocaleString("ko-KR")} 초과` : `${Math.abs(difference).toLocaleString("ko-KR")} 부족`;
 }
 
 export function Kbo5001Game({
@@ -120,14 +114,11 @@ export function Kbo5001Game({
       gameStatus: nextStatus,
     }, dateKey);
     setFeedback(won ? "correct" : "wrong");
-    setMessage(won ? "정답!" : `${currentSum.toLocaleString("ko-KR")} · ${differenceLabel(currentSum, puzzle.target)}`);
+    setMessage(won ? "정답!" : "");
   }
 
   async function shareResult() {
-    const rows = submissions.map((submission) => {
-      const difference = submission.sum - puzzle.target;
-      return difference === 0 ? "🟩 정답" : difference > 0 ? `⬆️ +${difference}` : `⬇️ ${difference}`;
-    });
+    const rows = submissions.map((submission) => submission.sum === puzzle.target ? "🟩" : "⬜");
     const gameUrl = isToday ? GAME_URL : `${GAME_URL}?date=${dateKey}`;
     const text = `크보 5001 ${dateKey}\n${gameStatus === "won" ? "성공" : "실패"} · ${submissions.length}/${puzzle.maxSubmissions}회\n${rows.join("\n")}\n${gameUrl}`;
     try {
@@ -199,7 +190,14 @@ export function Kbo5001Game({
 
           <div className={`mt-4 flex flex-col gap-3 rounded-2xl p-4 transition-colors sm:flex-row sm:items-center sm:justify-between ${feedback === "correct" || gameStatus === "won" ? "kbo5001-correct-pop bg-emerald-500 text-white" : feedback === "wrong" ? "bg-rose-500/12" : "bg-muted/55"}`}>
             <div>
-              <p className="text-sm font-black">제출 기회 <span className={feedback === "correct" || gameStatus === "won" ? "text-white" : "text-[#6d63d8] dark:text-[#aebdff]"}>{remainingSubmissions}회</span></p>
+              <p className="text-sm font-black">남은 기회</p>
+              <div className="mt-2 flex gap-1.5" aria-label={`남은 라이프 ${remainingSubmissions}개`}>
+                {Array.from({ length: puzzle.maxSubmissions }, (_, index) => {
+                  const active = index < remainingSubmissions;
+                  const won = feedback === "correct" || gameStatus === "won";
+                  return <Heart key={index} className={`size-6 transition-colors ${active ? won ? "fill-white text-white" : "fill-rose-500 text-rose-500" : won ? "text-white/45" : "text-foreground/20"}`} />;
+                })}
+              </div>
               {displayMessage ? <p className={`mt-1 text-xs font-semibold ${feedback === "correct" || gameStatus === "won" ? "text-white/85" : "text-muted-foreground"}`} aria-live="polite">{displayMessage}</p> : null}
             </div>
             {!finished ? (
@@ -220,7 +218,7 @@ export function Kbo5001Game({
                 <li key={`${submissionKey(submission.names)}-${index}`} className={`rounded-xl border p-3 ${submission.sum === puzzle.target ? "border-emerald-500 bg-emerald-500/10" : "border-foreground/10 bg-background"}`}>
                   <p className="text-[10px] font-black tracking-[0.12em] text-muted-foreground">{index + 1}차 제출</p>
                   <p className="mt-1 text-lg font-black tabular-nums">{submission.sum.toLocaleString("ko-KR")}</p>
-                  <p className={`text-xs font-bold ${submission.sum === puzzle.target ? "text-emerald-600 dark:text-emerald-300" : "text-muted-foreground"}`}>{differenceLabel(submission.sum, puzzle.target)}</p>
+                  {submission.sum === puzzle.target ? <p className="text-xs font-bold text-emerald-600 dark:text-emerald-300">정답</p> : null}
                 </li>
               ))}
             </ol>

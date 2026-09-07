@@ -15,6 +15,19 @@ for (const file of files) {
   if (!puzzle.sources?.some((source) => source.role === "primary" && source.url.includes("koreabaseball.com"))) {
     throw new Error(`${file}: KBO 공식 1차 출처가 필요합니다.`);
   }
+  const recordType = puzzle.eligibility?.recordType;
+  const supportedRecordTypes = new Set([
+    "career-rate",
+    "career-counting",
+    "season-rate",
+    "season-counting",
+    "award-list",
+    "award-counting",
+  ]);
+  if (!supportedRecordTypes.has(recordType)) throw new Error(`${file}: 지원하지 않는 출제 유형 ${recordType}`);
+  if (recordType.startsWith("award-") && puzzle.eligibility.minimum !== null) {
+    throw new Error(`${file}: 수상 내역 문제에는 타석·이닝 최소 표본을 적용하지 않습니다.`);
+  }
   const ranks = puzzle.answers.map((answer) => answer.rank);
   if (new Set(ranks).size !== 10 || ranks.some((rank, index) => rank !== index + 1)) {
     throw new Error(`${file}: 순위는 중복 없이 1~10이어야 합니다.`);

@@ -31,7 +31,7 @@ export interface KboTenPuzzle {
   scopeLabel: string;
   maxWrongGuesses: number;
   eligibility: {
-    recordType: "career-rate" | "career-counting" | "season-rate" | "season-counting";
+    recordType: "career-rate" | "career-counting" | "season-rate" | "season-counting" | "award-list" | "award-counting";
     minimum: { unit: "PA" | "IP"; value: number } | null;
     ruleSource: string;
   };
