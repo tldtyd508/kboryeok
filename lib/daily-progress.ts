@@ -1,6 +1,6 @@
 export type DailyPlayerProgress = "not-started" | "playing" | "completed";
 export type DailyGameStatus = "playing" | "won" | "lost";
-export type DailyGameId = "daily-player" | "kboten" | "kbo5001";
+export type DailyGameId = "daily-player" | "kboten" | "kbo5001" | "kbo-bingo";
 
 interface StoredDailyPlayerGame {
   version: 1;
@@ -39,6 +39,19 @@ export interface StoredKbo5001Game {
   gameStatus: DailyGameStatus;
 }
 
+export interface KboBingoTurn {
+  playerId: number;
+  cellId: string | null;
+  correct: boolean;
+}
+
+export interface StoredKboBingoGame {
+  version: 1;
+  puzzleId: string;
+  turns: KboBingoTurn[];
+  gameStatus: DailyGameStatus;
+}
+
 export interface StreakSummary {
   current: number;
   best: number;
@@ -49,10 +62,11 @@ export interface StreakSummary {
 const LEGACY_STATS_KEY = "kboryeok:stats:v1";
 const STATS_KEY = "kboryeok:stats:v2";
 const PROGRESS_EVENT = "kboryeok:progress";
-const EMPTY_DASHBOARD_SNAPSHOT = "not-started|0|3|0|0|0";
+const EMPTY_DASHBOARD_SNAPSHOT = "not-started|0|4|0|0|0";
 const EMPTY_KBOTEN_SNAPSHOT = '{"gameStatus":"playing","correctNames":[],"wrongNames":[]}';
 const EMPTY_KBO5001_SNAPSHOT = '{"gameStatus":"playing","selectedNames":[],"submissions":[]}';
-export const DAILY_GAME_COUNT = 3;
+const EMPTY_KBO_BINGO_SNAPSHOT = '{"gameStatus":"playing","turns":[]}';
+export const DAILY_GAME_COUNT = 4;
 
 export function getKstDateKey(date = new Date()) {
   return new Intl.DateTimeFormat("en-CA", {
@@ -73,6 +87,10 @@ export function getKboTenStorageKey(dateKey = getKstDateKey()) {
 
 export function getKbo5001StorageKey(dateKey = getKstDateKey()) {
   return `kboryeok:kbo5001:v1:${dateKey}`;
+}
+
+export function getKboBingoStorageKey(dateKey = getKstDateKey()) {
+  return `kboryeok:kbo-bingo:v1:${dateKey}`;
 }
 
 function isBrowser() {
@@ -116,7 +134,7 @@ function loadCompletedGamesByDate(): Record<string, DailyGameId[]> {
             .filter(([date, games]) => /^\d{4}-\d{2}-\d{2}$/.test(date) && Array.isArray(games))
             .map(([date, games]) => [
               date,
-              Array.from(new Set(games.filter((game): game is DailyGameId => game === "daily-player" || game === "kboten" || game === "kbo5001"))),
+              Array.from(new Set(games.filter((game): game is DailyGameId => game === "daily-player" || game === "kboten" || game === "kbo5001" || game === "kbo-bingo"))),
             ]),
         );
       }
@@ -268,6 +286,51 @@ export function saveKbo5001Game(game: Omit<StoredKbo5001Game, "version">, dateKe
   emitProgressChange();
 }
 
+export function loadKboBingoGame(dateKey = getKstDateKey()): StoredKboBingoGame | null {
+  if (!isBrowser()) return null;
+  try {
+    const raw = window.localStorage.getItem(getKboBingoStorageKey(dateKey));
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as Partial<StoredKboBingoGame>;
+    if (
+      parsed.version !== 1 ||
+      typeof parsed.puzzleId !== "string" ||
+      !Array.isArray(parsed.turns) ||
+      (parsed.gameStatus !== "playing" && parsed.gameStatus !== "won" && parsed.gameStatus !== "lost")
+    ) return null;
+    return {
+      version: 1,
+      puzzleId: parsed.puzzleId,
+      turns: parsed.turns
+        .filter((turn): turn is KboBingoTurn => Boolean(
+          turn && Number.isInteger(turn.playerId) &&
+          (turn.cellId === null || typeof turn.cellId === "string") &&
+          typeof turn.correct === "boolean",
+        )),
+      gameStatus: parsed.gameStatus,
+    };
+  } catch {
+    return null;
+  }
+}
+
+export function getKboBingoGameSnapshot(puzzleId: string, dateKey = getKstDateKey()) {
+  const game = loadKboBingoGame(dateKey);
+  if (!game || game.puzzleId !== puzzleId) return EMPTY_KBO_BINGO_SNAPSHOT;
+  return JSON.stringify({ gameStatus: game.gameStatus, turns: game.turns });
+}
+
+export function getServerKboBingoGameSnapshot() {
+  return EMPTY_KBO_BINGO_SNAPSHOT;
+}
+
+export function saveKboBingoGame(game: Omit<StoredKboBingoGame, "version">, dateKey = getKstDateKey()) {
+  if (!isBrowser()) return;
+  window.localStorage.setItem(getKboBingoStorageKey(dateKey), JSON.stringify({ version: 1, ...game }));
+  if (game.gameStatus === "won" || game.gameStatus === "lost") markDailyGameCompleted("kbo-bingo", dateKey);
+  emitProgressChange();
+}
+
 function dateOrdinal(dateKey: string) {
   const [year, month, day] = dateKey.split("-").map(Number);
   return Math.floor(Date.UTC(year, month - 1, day) / 86_400_000);
@@ -310,7 +373,8 @@ export function getDailyProgress(): DailyPlayerProgress {
   const game = loadDailyPlayerGame();
   const kboTenGame = loadKboTenGame();
   const kbo5001Game = loadKbo5001Game();
-  return completedCount > 0 || (game && game.guessIds.length > 0) || (kboTenGame && (kboTenGame.correctNames.length > 0 || kboTenGame.wrongNames.length > 0)) || (kbo5001Game && (kbo5001Game.selectedNames.length > 0 || kbo5001Game.submissions.length > 0))
+  const kboBingoGame = loadKboBingoGame();
+  return completedCount > 0 || (game && game.guessIds.length > 0) || (kboTenGame && (kboTenGame.correctNames.length > 0 || kboTenGame.wrongNames.length > 0)) || (kbo5001Game && (kbo5001Game.selectedNames.length > 0 || kbo5001Game.submissions.length > 0)) || (kboBingoGame && kboBingoGame.turns.length > 0)
     ? "playing"
     : "not-started";
 }

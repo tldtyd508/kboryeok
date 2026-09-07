@@ -70,6 +70,17 @@ export const games: GameDefinition[] = [
     accent: "bg-[#8ea7ff] text-slate-950",
   },
   {
+    id: "kbo-bingo",
+    title: "크보 빙고",
+    description: "등장하는 선수를 조건 한 칸에 배치해 4×4 판을 완성하세요.",
+    category: "선수",
+    cadence: "데일리",
+    status: "live",
+    href: "/games/bingo",
+    icon: Grid3X3,
+    accent: "bg-[#e98fc6] text-slate-950",
+  },
+  {
     id: "number-history",
     title: "등번호 연대기",
     description: "등번호의 변화만 보고 한 선수의 커리어를 추리하세요.",

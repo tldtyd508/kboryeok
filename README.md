@@ -1,6 +1,6 @@
 # 크보력 (KBORYEOK)
 
-KBO 팬을 위한 데일리 야구 아케이드입니다. 오늘의 크보선수와 기록 TOP 10을 찾는 크보텐을 플레이할 수 있습니다.
+KBO 팬을 위한 데일리 야구 아케이드입니다. 오늘의 크보선수, 크보텐, 크보 5001과 크보 빙고를 플레이할 수 있습니다.
 
 ## 개발
 
@@ -17,3 +17,4 @@ npm run dev
 - [게임 백로그 및 아이디어 풀](./docs/GAME_BACKLOG.md)
 - [개발 로드맵](./docs/ROADMAP.md)
 - [퀴즈 출제 규칙](./docs/QUIZ_AUTHORING_RULES.md)
+- [크보 빙고 제품 설계](./docs/KBO_BINGO_SPEC.md)

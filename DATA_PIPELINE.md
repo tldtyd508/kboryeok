@@ -25,6 +25,8 @@
 - `data/questions/kboten/index.json`: 날짜별 문제 파일에서 빌드 전에 자동 생성하는 런타임 인덱스
 - `data/questions/kbo5001/{YYYY-MM-DD}-{slug}.json`: 후보 선수·기록값·목표값·검증된 정답 조합 스냅샷
 - `data/questions/kbo5001/index.json`: 검증 완료된 크보 5001 문제의 런타임 인덱스
+- `data/questions/kbo-bingo/{YYYY-MM-DD}-{slug}.json`: 4×4 조건판, 36장 선수 덱과 칸별 판정 집합
+- `data/questions/kbo-bingo/index.json`: 검증 완료된 크보 빙고 문제의 런타임 인덱스
 - `data/sources.json`: 출처별 허용 범위와 자동 수집 가능 여부
 
 ## 두 개의 데이터 층
@@ -54,9 +56,11 @@
 
 문제 파일은 하나의 거대한 배열로 합치지 않는다. 게임·공개일별 파일을 Git에서 리뷰하고, 추후 문제 수가 늘면 빌드 단계에서 날짜별 인덱스만 자동 생성한다. CMS를 도입하더라도 배포에 사용한 JSON 스냅샷은 재현과 감사를 위해 저장소에 남긴다.
 
-`npm run build`는 먼저 크보텐과 크보 5001의 `index.json`을 다시 생성한다. 따라서 새 날짜의 JSON을 추가할 때 애플리케이션 import 코드를 수정할 필요가 없다. 이때 `review.status`가 `verified`인 문제만 런타임 인덱스에 포함하므로 검토 중인 초안이 실수로 공개되지 않는다.
+`npm run build`는 먼저 크보텐, 크보 5001과 크보 빙고의 `index.json`을 다시 생성한다. 따라서 새 날짜의 JSON을 추가할 때 애플리케이션 import 코드를 수정할 필요가 없다. 이때 `review.status`가 `verified`인 문제만 런타임 인덱스에 포함하므로 검토 중인 초안이 실수로 공개되지 않는다.
 
 크보 5001은 후보 M명 중 N명을 고르는 모든 조합을 검증 스크립트에서 전수 검사한다. 공개 문제는 정답 조합이 1~3개인 경우만 통과하며, JSON에 기록한 정답과 계산 결과가 다르면 빌드를 중단한다.
+
+크보 빙고는 16개 조건과 36장 선수 덱을 저장한다. 검증기는 전체 판의 이분 매칭, 임의 카드 4장 제거 전수 검사와 카드 8장 제거 10,000개 표본 검사를 실행한다.
 
 ## 문제 출제 흐름
 
@@ -83,6 +87,8 @@ npm run data:sync-players
 npm run data:import -- --source data/source/kbo-team-rosters-2026.xlsx --season 2026 --reviewed-at YYYY-MM-DD
 npm run data:sync-kboten-index
 npm run data:validate-kboten
+npm run data:validate-kbo5001
+npm run data:validate-kbo-bingo
 npm run data:check
 npm run build
 ```
