@@ -194,92 +194,92 @@
     }
   },
   {
-    "id": "kbo5001-season-hits-2026-09-08",
+    "id": "kbo5001-season-doubles-2026-09-08",
     "game": "kbo5001",
     "publishDate": "2026-09-08",
-    "revision": 1,
-    "title": "2026 정규시즌 안타 762",
-    "prompt": "후보 12명 중 5명을 골라 2026 KBO 정규시즌 안타 합계 762개를 정확히 만들어 보세요.",
-    "statLabel": "2026 정규시즌 안타",
-    "scopeLabel": "2026-09-08 KST 조회 스냅샷 · 9월 7일 경기 종료 기준 · 정규시즌",
-    "target": 762,
+    "revision": 2,
+    "title": "2025 정규시즌 2루타 187",
+    "prompt": "후보 12명 중 5명을 골라 2025 KBO 정규시즌 2루타 합계 187개를 정확히 만들어 보세요.",
+    "statLabel": "2025 정규시즌 2루타",
+    "scopeLabel": "2025 KBO 정규시즌 완료 기록 · 2026-09-08 조회 스냅샷",
+    "target": 187,
     "selectionCount": 5,
     "maxSubmissions": 3,
     "candidates": [
       {
         "name": "레이예스",
-        "value": 166,
-        "status": "active"
-      },
-      {
-        "name": "최원준",
-        "value": 160,
-        "status": "active"
-      },
-      {
-        "name": "오스틴",
-        "value": 158,
-        "status": "active"
-      },
-      {
-        "name": "박성한",
-        "value": 152,
-        "status": "active"
-      },
-      {
-        "name": "문현빈",
-        "value": 142,
-        "status": "active"
-      },
-      {
-        "name": "디아즈",
-        "value": 140,
+        "value": 44,
         "status": "active"
       },
       {
         "name": "구자욱",
-        "value": 138,
+        "value": 43,
         "status": "active"
       },
       {
-        "name": "힐리어드",
-        "value": 135,
+        "name": "송성문",
+        "value": 37,
+        "status": "inactive"
+      },
+      {
+        "name": "디아즈",
+        "value": 32,
         "status": "active"
       },
       {
-        "name": "김도영",
-        "value": 135,
+        "name": "최주환",
+        "value": 31,
         "status": "active"
       },
       {
         "name": "최형우",
-        "value": 134,
+        "value": 30,
         "status": "active"
       },
       {
-        "name": "김주원",
-        "value": 132,
+        "name": "문현빈",
+        "value": 30,
         "status": "active"
       },
       {
-        "name": "박찬호",
-        "value": 131,
+        "name": "김성윤",
+        "value": 29,
+        "status": "active"
+      },
+      {
+        "name": "이재현",
+        "value": 29,
+        "status": "active"
+      },
+      {
+        "name": "케이브",
+        "value": 28,
+        "status": "inactive"
+      },
+      {
+        "name": "노시환",
+        "value": 28,
+        "status": "active"
+      },
+      {
+        "name": "양의지",
+        "value": 27,
         "status": "active"
       }
     ],
     "solutions": [
       [
         "레이예스",
-        "최원준",
-        "오스틴",
+        "구자욱",
+        "송성문",
         "디아즈",
-        "구자욱"
+        "최주환"
       ]
     ],
     "sources": [
       {
-        "name": "KBO 기록실 · 2026 정규시즌 타자 기본기록",
-        "url": "https://www.koreabaseball.com/Record/Player/HitterBasic/Basic1.aspx?sort=HIT_CN",
+        "name": "KBO 기록실 · 2025 정규시즌 타자 기본기록",
+        "url": "https://www.koreabaseball.com/Record/Player/HitterBasic/Basic1.aspx",
         "accessedAt": "2026-09-08",
         "role": "primary"
       }
@@ -287,7 +287,7 @@
     "review": {
       "status": "verified",
       "reviewedAt": "2026-09-08",
-      "note": "KBO 공식 타자 기본기록의 안타 내림차순 상위 12명 수치를 9월 7일 경기 종료 기준으로 대조했다. 12명 중 5명 조합 792개를 전수 검사해 정답 1개를 확인했다."
+      "note": "KBO 공식 타자 기본기록에서 시즌 2025, KBO 정규시즌, 2루타 내림차순으로 상위 12명의 수치를 대조했다. 12명 중 5명 조합 792개를 전수 검사해 187개 정답 조합이 1개임을 확인한 완료 시즌 스냅샷이다."
     }
   }
 ]

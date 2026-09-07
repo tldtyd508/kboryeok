@@ -1,3 +1,59 @@
 {
-  "changes": []
+  "changes": [
+    {
+      "op": "remove",
+      "name": "하재훈",
+      "team": "SSG 랜더스",
+      "positionGroup": "OF",
+      "sourceUrl": "https://www.ssglanders.com/media/news/detail?idx=19892&page="
+    },
+    {
+      "op": "remove",
+      "name": "이정범",
+      "team": "SSG 랜더스",
+      "positionGroup": "OF",
+      "sourceUrl": "https://www.ssglanders.com/media/news/detail?idx=19892&page="
+    },
+    {
+      "op": "remove",
+      "name": "박상후",
+      "team": "SSG 랜더스",
+      "positionGroup": "P",
+      "sourceUrl": "https://www.ssglanders.com/media/news/detail?idx=19892&page="
+    },
+    {
+      "op": "remove",
+      "name": "최수호",
+      "team": "SSG 랜더스",
+      "positionGroup": "P",
+      "sourceUrl": "https://www.ssglanders.com/media/news/detail?idx=19892&page="
+    },
+    {
+      "op": "upsert",
+      "name": "길지석",
+      "team": "SSG 랜더스",
+      "positionGroup": "P",
+      "positionDetail": "투수",
+      "note": "2026-06-30 육성선수 영입",
+      "sourceUrl": "https://www.ssglanders.com/media/news/detail?idx=19892&page="
+    },
+    {
+      "op": "upsert",
+      "name": "김예준",
+      "team": "SSG 랜더스",
+      "positionGroup": "IF",
+      "positionDetail": "내야수",
+      "note": "2026-06-30 육성선수 영입",
+      "sourceUrl": "https://www.ssglanders.com/media/news/detail?idx=19892&page="
+    },
+    {
+      "op": "upsert",
+      "name": "임태윤",
+      "team": "SSG 랜더스",
+      "positionGroup": "IF",
+      "positionDetail": "내야수",
+      "note": "2026-06-30 육성선수 영입",
+      "sourceUrl": "https://www.ssglanders.com/media/news/detail?idx=19892&page="
+    }
+  ]
 }

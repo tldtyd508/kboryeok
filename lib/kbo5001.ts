@@ -5,7 +5,7 @@ export const KBO5001_LAUNCH_DATE = "2026-09-06";
 export interface Kbo5001Candidate {
   name: string;
   value: number;
-  status: "active" | "retired";
+  status: "active" | "retired" | "inactive";
 }
 
 export interface Kbo5001Puzzle {
