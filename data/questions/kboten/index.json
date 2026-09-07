@@ -316,5 +316,106 @@
       "reviewedAt": "2026-09-06",
       "note": "KBO 공식 기록실의 통산 홈런 내림차순 순위 1~10위와 10위 경계를 대조한 고정 스냅샷"
     }
+  },
+  {
+    "id": "kboten-career-wins-2026-09-07",
+    "game": "kboten",
+    "publishDate": "2026-09-07",
+    "revision": 1,
+    "title": "KBO 통산 승리 TOP 10",
+    "prompt": "KBO 정규시즌 통산 승리 상위 10명을 모두 찾아보세요.",
+    "statLabel": "통산 승리",
+    "scopeLabel": "2026-09-07 조회 스냅샷 · 정규시즌",
+    "maxWrongGuesses": 3,
+    "eligibility": {
+      "recordType": "career-counting",
+      "minimum": null,
+      "ruleSource": "KBO 공식 통산 투수 기록실 기준"
+    },
+    "answers": [
+      {
+        "rank": 1,
+        "name": "송진우",
+        "value": "210",
+        "status": "retired",
+        "aliases": []
+      },
+      {
+        "rank": 2,
+        "name": "양현종",
+        "value": "196",
+        "status": "active",
+        "aliases": []
+      },
+      {
+        "rank": 3,
+        "name": "김광현",
+        "value": "180",
+        "status": "active",
+        "aliases": []
+      },
+      {
+        "rank": 4,
+        "name": "정민철",
+        "value": "161",
+        "status": "retired",
+        "aliases": []
+      },
+      {
+        "rank": 5,
+        "name": "이강철",
+        "value": "152",
+        "status": "retired",
+        "aliases": []
+      },
+      {
+        "rank": 6,
+        "name": "선동열",
+        "value": "146",
+        "status": "retired",
+        "aliases": []
+      },
+      {
+        "rank": 7,
+        "name": "배영수",
+        "value": "138",
+        "status": "retired",
+        "aliases": []
+      },
+      {
+        "rank": 8,
+        "name": "윤성환",
+        "value": "135",
+        "status": "retired",
+        "aliases": []
+      },
+      {
+        "rank": 9,
+        "name": "김원형",
+        "value": "134",
+        "status": "retired",
+        "aliases": []
+      },
+      {
+        "rank": 10,
+        "name": "장원준",
+        "value": "132",
+        "status": "retired",
+        "aliases": []
+      }
+    ],
+    "sources": [
+      {
+        "name": "KBO 기록실 · 통산 투수 기본기록",
+        "url": "https://www.koreabaseball.com/Record/Player/PitcherBasic/BasicTotal.aspx",
+        "accessedAt": "2026-09-07",
+        "role": "primary"
+      }
+    ],
+    "review": {
+      "status": "verified",
+      "reviewedAt": "2026-09-07",
+      "note": "KBO 공식 기록실의 통산 승리 내림차순 순위 1~11위를 대조했다. 10위 장원준 132승, 11위 임창용 130승으로 경계 동률이 없음을 확인한 고정 스냅샷"
+    }
   }
 ]

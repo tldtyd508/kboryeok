@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 import { DailyDateNav } from "@/components/daily-date-nav";
 import { Kbo5001Game } from "@/components/kbo5001-game";
 import { SiteHeader } from "@/components/site-header";
@@ -29,10 +27,7 @@ export default async function Kbo5001Page({
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
-      <main className="mx-auto max-w-5xl px-5 py-8 sm:px-8 sm:py-12">
-        <Link href="/" className="mb-8 inline-flex items-center gap-2 text-sm font-bold text-muted-foreground transition-colors hover:text-foreground">
-          <ArrowLeft className="size-4" /> 게임 홈
-        </Link>
+      <main className="mx-auto max-w-5xl px-5 py-6 sm:px-8 sm:py-9">
         <DailyDateNav basePath="/games/5001" dateKey={dateKey} todayKey={todayKey} launchDate={KBO5001_LAUNCH_DATE} />
         <Kbo5001Game key={`${puzzle.id}:r${puzzle.revision}`} puzzle={puzzle} dateKey={dateKey} isToday={dateKey === todayKey} />
       </main>

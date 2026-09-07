@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useMemo, useRef, useState, useSyncExternalStore, type KeyboardEvent } from "react";
 import Fuse from "fuse.js";
-import { ArrowRight, Check, CheckCircle2, CircleHelp, ExternalLink, Heart, Search, Share2, X, XCircle } from "lucide-react";
+import { ArrowRight, Check, CheckCircle2, CircleHelp, Heart, Search, Share2, X, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -43,7 +43,7 @@ export function KboTenGame({
   const [input, setInput] = useState("");
   const [activeIndex, setActiveIndex] = useState(0);
   const [isSearchFocused, setIsSearchFocused] = useState(false);
-  const [message, setMessage] = useState("선수를 검색한 뒤 후보를 선택하세요.");
+  const [message, setMessage] = useState("");
   const [feedback, setFeedback] = useState<{ kind: "neutral" | "correct" | "wrong"; playerName: string }>({ kind: "neutral", playerName: "" });
   const [shareLabel, setShareLabel] = useState("결과 공유");
   const searchContainerRef = useRef<HTMLDivElement>(null);
@@ -187,11 +187,8 @@ export function KboTenGame({
 
   return (
     <>
-      <div className="mb-7 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+      <div className="mb-6 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
         <div>
-          <div className="mb-3 flex items-center gap-2 text-sm font-black text-[#ff6b35]">
-            <span className="size-2 animate-pulse rounded-full bg-[#ff6b35]" /> {isToday ? "오늘의 2번 타자" : "지난 크보텐"}
-          </div>
           <h1 className="text-3xl font-black tracking-tight sm:text-4xl">크보텐</h1>
           <p className="mt-2 max-w-2xl text-muted-foreground">{puzzle.prompt}</p>
         </div>
@@ -214,21 +211,14 @@ export function KboTenGame({
         </div>
       </div>
 
-      <section className="overflow-hidden rounded-[2rem] border-2 border-foreground/10 bg-card shadow-[0_18px_60px_rgba(15,23,42,0.08)]">
+      <section className="overflow-hidden rounded-[2rem] border-2 border-foreground/10 bg-card">
         <div className="border-b border-foreground/10 bg-[#d9ff57] px-5 py-5 text-slate-950 sm:px-7">
-          <p className="text-xs font-black tracking-[0.14em]">TODAY&apos;S TOP TEN</p>
-          <div className="mt-1 flex flex-wrap items-end justify-between gap-2">
-            <h2 className="text-2xl font-black">{puzzle.title}</h2>
-            <span className="text-xs font-bold">{puzzle.scopeLabel}</span>
-          </div>
+          <h2 className="text-2xl font-black">{puzzle.title}</h2>
         </div>
 
         <div className="p-4 sm:p-7">
           <div className="mx-auto mb-4 flex max-w-xl items-center justify-between rounded-2xl border border-foreground/10 bg-muted/55 px-4 py-3">
-            <div>
-              <p className="text-[11px] font-black tracking-[0.12em] text-muted-foreground">LIFE</p>
-              <p className="mt-0.5 text-sm font-bold">틀릴 때마다 하나씩 사라져요</p>
-            </div>
+            <p className="text-sm font-black">남은 기회</p>
             <div className="flex gap-1.5" aria-label={`남은 라이프 ${remainingLives}개`}>
               {Array.from({ length: puzzle.maxWrongGuesses }, (_, index) => {
                 const active = index < remainingLives;
@@ -293,51 +283,38 @@ export function KboTenGame({
               </div>
             ) : null}
           </div>
-          <div className={`mx-auto mt-3 flex min-h-11 max-w-xl items-center justify-center gap-2 rounded-xl px-3 text-sm font-black transition-colors ${feedback.kind === "correct" ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/25" : feedback.kind === "wrong" ? "bg-rose-500/12 text-rose-700 dark:text-rose-300" : "text-muted-foreground"}`} aria-live="polite">
-            {feedback.kind === "correct" ? <CheckCircle2 className="size-5" /> : feedback.kind === "wrong" ? <XCircle className="size-5" /> : null}
-            {message}
-          </div>
-
-          <ol className="mt-5 grid gap-2 sm:grid-cols-2">
-            {puzzle.answers.map((answer) => {
-              const found = correctNames.includes(answer.name);
-              const revealed = found || finished;
-              return (
-                <li key={answer.rank} className={`relative flex min-h-16 items-center gap-4 overflow-hidden rounded-2xl border px-4 py-3 transition-colors ${found ? "border-emerald-600 bg-emerald-500 text-white ring-2 ring-emerald-300/70 shadow-md shadow-emerald-500/20" : revealed ? "border-foreground/10 bg-muted/65" : "border-foreground/10 bg-background"} ${feedback.kind === "correct" && feedback.playerName === answer.name ? "kboten-correct-pop" : ""}`}>
-                  <span className={`grid size-8 shrink-0 place-items-center rounded-full text-xs font-black ${found ? "bg-white text-emerald-700" : "bg-foreground text-background"}`}>{answer.rank}</span>
-                  <div className="min-w-0 flex-1">
-                    <p className={`font-black ${revealed ? "" : "text-muted-foreground"}`}>{revealed ? answer.name : "???"}</p>
-                    <p className={`text-xs font-semibold ${found ? "text-white/85" : "text-muted-foreground"}`}>{puzzle.statLabel}</p>
-                  </div>
-                  {found ? <Check className="size-6 stroke-[3] text-white" /> : revealed ? <X className="size-5 text-muted-foreground" /> : null}
-                </li>
-              );
-            })}
-          </ol>
-
-          <div className="mt-5 flex flex-col gap-3 rounded-2xl bg-muted/65 p-4 text-sm sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="font-black">실수 {wrongNames.length} / {puzzle.maxWrongGuesses}</p>
-              <p className="mt-1 text-xs text-muted-foreground">{wrongNames.length > 0 ? wrongNames.join(" · ") : "아직 실수 없이 진행 중"}</p>
+          {message ? (
+            <div className={`mx-auto mt-3 flex min-h-11 max-w-xl items-center justify-center gap-2 rounded-xl px-3 text-sm font-black transition-colors ${feedback.kind === "correct" ? "bg-emerald-500 text-white shadow-lg shadow-emerald-500/25" : "bg-rose-500/12 text-rose-700 dark:text-rose-300"}`} aria-live="polite">
+              {feedback.kind === "correct" ? <CheckCircle2 className="size-5" /> : <XCircle className="size-5" />}
+              {message}
             </div>
-            {finished ? (
-              <div className="flex flex-wrap gap-2">
-                <Button type="button" onClick={shareResult} variant="outline" className="gap-2"><Share2 className="size-4" /> {shareLabel}</Button>
-                <Button asChild className="gap-2"><Link href="/games/5001">같은 기록으로 5001 <ArrowRight className="size-4" /></Link></Button>
-              </div>
-            ) : null}
+          ) : null}
+
+          <div className="mt-5 overflow-x-auto pb-2">
+            <ol className="grid min-w-[760px] grid-cols-10 gap-2">
+              {puzzle.answers.map((answer) => {
+                const found = correctNames.includes(answer.name);
+                const revealed = found || finished;
+                return (
+                  <li key={answer.rank} className={`relative flex min-h-24 flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl border px-2 py-3 text-center transition-colors ${found ? "border-emerald-600 bg-emerald-500 text-white ring-2 ring-emerald-300/70 shadow-md shadow-emerald-500/20" : revealed ? "border-foreground/10 bg-muted/65" : "border-foreground/10 bg-background"} ${feedback.kind === "correct" && feedback.playerName === answer.name ? "kboten-correct-pop" : ""}`}>
+                    <span className={`grid size-7 place-items-center rounded-full text-[11px] font-black ${found ? "bg-white text-emerald-700" : "bg-foreground text-background"}`}>{answer.rank}</span>
+                    <p className={`w-full truncate text-sm font-black ${revealed ? "" : "text-muted-foreground"}`}>{revealed ? answer.name : "???"}</p>
+                    {found ? <Check className="size-4 stroke-[3] text-white" /> : revealed ? <X className="size-4 text-muted-foreground" /> : null}
+                  </li>
+                );
+              })}
+            </ol>
           </div>
+
+          {finished ? (
+            <div className="mt-3 flex flex-wrap justify-end gap-2">
+              <Button type="button" onClick={shareResult} variant="outline" className="gap-2"><Share2 className="size-4" /> {shareLabel}</Button>
+              <Button asChild className="gap-2"><Link href="/games/5001">같은 기록으로 5001 <ArrowRight className="size-4" /></Link></Button>
+            </div>
+          ) : null}
         </div>
       </section>
 
-      <aside className="mt-6 rounded-2xl border border-foreground/10 bg-card p-5 text-sm">
-        <p className="font-black">기록 출처와 기준</p>
-        <p className="mt-2 leading-6 text-muted-foreground">{puzzle.review.note}. 기록 정정이나 시즌 진행으로 원문 수치는 달라질 수 있어, 이 문제의 답은 기준일 스냅샷으로 고정됩니다.</p>
-        <p className="mt-2 leading-6 text-muted-foreground">검색 후보는 이 문제의 정답 10명이 아니라 KBO 공식 통산 기록실의 최소 기준 충족 선수 전체에서 구성합니다.</p>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {puzzle.sources.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full border px-3 py-1.5 text-xs font-bold hover:text-primary">{source.name} · {source.accessedAt}<ExternalLink className="size-3" /></a>)}
-        </div>
-      </aside>
     </>
   );
 }

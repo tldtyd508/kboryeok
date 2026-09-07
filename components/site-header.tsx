@@ -13,11 +13,6 @@ export function SiteHeader() {
           <span className="text-xl font-black tracking-[-0.08em]">크보력</span>
         </Link>
 
-        <nav className="hidden items-center gap-7 text-sm font-semibold sm:flex" aria-label="주요 메뉴">
-          <Link className="transition-colors hover:text-primary" href="/">오늘</Link>
-          <Link className="transition-colors hover:text-primary" href="/#all-games">전체 게임</Link>
-        </nav>
-
         <ThemeToggle />
       </div>
     </header>

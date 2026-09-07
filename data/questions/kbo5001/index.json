@@ -95,5 +95,102 @@
       "reviewedAt": "2026-09-06",
       "note": "KBO 공식 기록실의 통산 홈런 상위 12명 수치를 대조하고, 12명 중 5명인 792개 조합을 전수 검사해 유일한 정답 조합을 확인한 고정 스냅샷"
     }
+  },
+  {
+    "id": "kbo5001-career-wins-2026-09-07",
+    "game": "kbo5001",
+    "publishDate": "2026-09-07",
+    "revision": 2,
+    "title": "통산 승리 500",
+    "prompt": "현역 후보 12명 중 5명을 골라 통산 승리 합계 500승을 정확히 만들어 보세요.",
+    "statLabel": "통산 승리",
+    "scopeLabel": "2026-09-07 조회 스냅샷 · 정규시즌",
+    "target": 500,
+    "selectionCount": 5,
+    "maxSubmissions": 3,
+    "candidates": [
+      {
+        "name": "고영표",
+        "value": 82,
+        "status": "active"
+      },
+      {
+        "name": "김광현",
+        "value": 180,
+        "status": "active"
+      },
+      {
+        "name": "원태인",
+        "value": 75,
+        "status": "active"
+      },
+      {
+        "name": "임찬규",
+        "value": 99,
+        "status": "active"
+      },
+      {
+        "name": "박세웅",
+        "value": 81,
+        "status": "active"
+      },
+      {
+        "name": "양현종",
+        "value": 196,
+        "status": "active"
+      },
+      {
+        "name": "우규민",
+        "value": 88,
+        "status": "active"
+      },
+      {
+        "name": "류현진",
+        "value": 125,
+        "status": "active"
+      },
+      {
+        "name": "한현희",
+        "value": 76,
+        "status": "active"
+      },
+      {
+        "name": "이재학",
+        "value": 85,
+        "status": "active"
+      },
+      {
+        "name": "최원태",
+        "value": 92,
+        "status": "active"
+      },
+      {
+        "name": "노경은",
+        "value": 92,
+        "status": "active"
+      }
+    ],
+    "solutions": [
+      [
+        "김광현",
+        "우규민",
+        "박세웅",
+        "한현희",
+        "원태인"
+      ]
+    ],
+    "sources": [
+      {
+        "name": "KBO 기록실 · 통산 투수 기본기록",
+        "url": "https://www.koreabaseball.com/Record/Player/PitcherBasic/BasicTotal.aspx",
+        "accessedAt": "2026-09-07",
+        "role": "primary"
+      }
+    ],
+    "review": {
+      "status": "verified",
+      "reviewedAt": "2026-09-07",
+      "note": "KBO 공식 기록실의 현역 통산 승리 상위 12명 수치를 대조하고, 12명 중 5명인 792개 조합을 전수 검사해 500승 정답 조합이 1개이며 기록된 정답과 일치함을 확인한 고정 스냅샷"
+    }
   }
 ]

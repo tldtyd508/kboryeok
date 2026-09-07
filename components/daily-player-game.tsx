@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/dialog";
 import { useGameStore } from "@/lib/store";
 
-export function DailyPlayerGame({ dateKey, isToday }: { dateKey: string; isToday: boolean }) {
+export function DailyPlayerGame({ dateKey }: { dateKey: string }) {
   const { isDataLoading, error, actions, guesses } = useGameStore();
 
   useEffect(() => {
@@ -25,21 +25,15 @@ export function DailyPlayerGame({ dateKey, isToday }: { dateKey: string; isToday
 
   return (
     <>
-      <div className="mb-7 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
-        <div>
-          <div className="mb-3 flex items-center gap-2 text-sm font-black text-[#ff6b35]">
-            <span className="size-2 animate-pulse rounded-full bg-[#ff6b35]" /> {isToday ? "오늘의 게임" : "지난 게임"}
-          </div>
-          <h1 className="text-3xl font-black tracking-tight sm:text-4xl">오늘의 크보선수</h1>
-          <p className="mt-2 text-muted-foreground">선수를 입력하고 힌트를 비교해 정답을 찾아보세요.</p>
-        </div>
+      <div className="mb-6 flex items-end justify-between gap-4">
+        <h1 className="text-3xl font-black tracking-tight sm:text-4xl">오늘의 크보선수</h1>
         <div className="rounded-2xl border border-foreground/10 bg-card px-5 py-3 text-center">
           <p className="text-xs font-bold text-muted-foreground">남은 기회</p>
           <p className="text-2xl font-black tabular-nums">{8 - guesses.length}<span className="ml-1 text-sm text-muted-foreground">/ 8</span></p>
         </div>
       </div>
 
-      <div className="rounded-[2rem] border-2 border-foreground/10 bg-card p-4 shadow-[0_18px_60px_rgba(15,23,42,0.08)] sm:p-7">
+      <div className="rounded-[2rem] border-2 border-foreground/10 bg-card p-4 sm:p-7">
         {isDataLoading ? (
           <div className="flex min-h-52 items-center justify-center">
             <Loader2 className="size-7 animate-spin text-primary" />
@@ -70,7 +64,6 @@ export function DailyPlayerGame({ dateKey, isToday }: { dateKey: string; isToday
                       <li className="flex items-center gap-2"><ArrowUp className="size-4 text-sky-600" /> 위 화살표는 정답의 숫자가 더 큽니다.</li>
                       <li className="flex items-center gap-2"><ArrowDown className="size-4 text-violet-600" /> 아래 화살표는 정답의 숫자가 더 작습니다.</li>
                     </ul>
-                    <p className="rounded-xl bg-muted p-3 text-muted-foreground">모든 날짜의 정답은 한국 시간 기준으로 동일합니다.</p>
                   </div>
                 </DialogContent>
               </Dialog>

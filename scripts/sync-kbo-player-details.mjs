@@ -55,7 +55,7 @@ async function getBirthDate(link) {
   const response = await fetch(new URL(link, ORIGIN), { headers: { Referer: `${ORIGIN}/Player/Search.aspx` } });
   if (!response.ok) return "";
   const html = await response.text();
-  const birthday = html.match(/playerProfile_lblBirthday[^>]*>(\d{4})년\s*(\d{2})월\s*(\d{2})일</);
+  const birthday = html.match(/playerProfile_lblBirthday[^>]*>(\d{4})년\s*(\d{2})월\s*(\d{2})일</i);
   return birthday ? `${birthday[1]}-${birthday[2]}-${birthday[3]}` : "";
 }
 
@@ -82,11 +82,19 @@ async function main() {
   const synced = await mapWithConcurrency(targets, 4, async (player) => {
     try {
       const data = await searchPlayer(player.name);
-      const candidates = [...(data.now ?? []), ...(data.retire ?? [])]
+      const nowCandidates = (data.now ?? [])
         .filter((candidate) => compact(candidate.P_NM) === compact(player.name));
+      const candidates = [...nowCandidates, ...(data.retire ?? [])]
+        .filter((candidate) => compact(candidate.P_NM) === compact(player.name));
+      const exactNowCandidates = nowCandidates.filter((candidate) =>
+        candidate.T_ID === TEAM_ID[player.team] && candidate.POS_NO === player.positionDetail);
       const exactCandidates = candidates.filter((candidate) =>
         candidate.T_ID === TEAM_ID[player.team] && candidate.POS_NO === player.positionDetail);
-      let match = exactCandidates.length === 1 ? exactCandidates[0] : null;
+      let match = exactNowCandidates.length === 1
+        ? exactNowCandidates[0]
+        : exactCandidates.length === 1
+          ? exactCandidates[0]
+          : null;
       let birthDate = "";
       const hint = birthDateHint(player.roster?.note);
       if (!match && exactCandidates.length > 1 && hint) {
@@ -98,10 +106,12 @@ async function main() {
         match = selected?.candidate ?? null;
         birthDate = selected?.birthDate ?? "";
       }
-      match ??= candidates.length === 1 ? candidates[0] : null;
+      match ??= nowCandidates.length === 1 ? nowCandidates[0] : candidates.length === 1 ? candidates[0] : null;
       if (!match?.P_LINK) return { player, reason: candidates.length ? "ambiguous" : "not-found" };
       birthDate ||= await getBirthDate(match.P_LINK);
-      const jerseyNumber = Number.parseInt(match.BACK_NO, 10);
+      birthDate ||= player.birthDate ?? "";
+      const parsedJerseyNumber = Number.parseInt(match.BACK_NO, 10);
+      const jerseyNumber = Number.isInteger(parsedJerseyNumber) ? parsedJerseyNumber : player.jerseyNumber;
       const override = {
         id: Number(match.P_ID),
         name: player.name,
@@ -109,8 +119,8 @@ async function main() {
         positionGroup: player.positionGroup,
         positionDetail: player.positionDetail,
         rosterNote: player.roster?.note ?? "",
-        throws: hand(match.P_TYPE, "throws"),
-        bats: hand(match.P_TYPE, "bats"),
+        throws: hand(match.P_TYPE, "throws") || player.throws,
+        bats: hand(match.P_TYPE, "bats") || player.bats,
         birthDate,
         jerseyNumber: Number.isInteger(jerseyNumber) ? jerseyNumber : null,
         sourceUrl: new URL(match.P_LINK, ORIGIN).toString(),
@@ -123,8 +133,9 @@ async function main() {
     }
   });
 
+  // A transient search/profile failure must not erase a previously reviewed
+  // override. Successful refreshes replace the matching entry below.
   const merged = new Map((document.players ?? [])
-    .filter((player) => !player.sourceUrl?.startsWith(ORIGIN))
     .map((player) => [
       `${compact(player.name)}:${player.team}:${player.positionGroup ?? ""}:${player.rosterNote ?? ""}`,
       player,

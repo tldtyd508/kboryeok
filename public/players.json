@@ -2788,6 +2788,40 @@
     }
   },
   {
+    "id": 51301,
+    "name": "김성진",
+    "nameNorm": "김성진",
+    "aliases": [],
+    "team": "키움 히어로즈",
+    "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": "R",
+    "bats": "L",
+    "birthDate": "1997-11-14",
+    "nationality": "KR",
+    "jerseyNumber": 21,
+    "rosterNote": "",
+    "sourceUrl": "https://www.koreabaseball.com/Record/Player/PitcherDetail/Basic.aspx?playerId=51301",
+    "reviewedAt": "2026-09-07",
+    "active": true,
+    "quizEligible": true,
+    "roster": {
+      "season": 2026,
+      "qualifier": null,
+      "note": "",
+      "rookie": false,
+      "foreign": false,
+      "asiaQuota": false
+    },
+    "needsEnrichment": [],
+    "source": {
+      "base": "kbo-official-roster-xlsx",
+      "sourceUrl": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+      "publishedAt": "2026-02-10",
+      "reviewedAt": "2026-09-05"
+    }
+  },
+  {
     "id": 76802,
     "name": "김성현",
     "nameNorm": "김성현",
@@ -3593,6 +3627,40 @@
     "nationality": "KR",
     "jerseyNumber": 30,
     "aliases": [],
+    "active": true,
+    "quizEligible": true,
+    "roster": {
+      "season": 2026,
+      "qualifier": null,
+      "note": "",
+      "rookie": false,
+      "foreign": false,
+      "asiaQuota": false
+    },
+    "needsEnrichment": [],
+    "source": {
+      "base": "kbo-official-roster-xlsx",
+      "sourceUrl": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+      "publishedAt": "2026-02-10",
+      "reviewedAt": "2026-09-05"
+    }
+  },
+  {
+    "id": 53029,
+    "name": "김정운",
+    "nameNorm": "김정운",
+    "aliases": [],
+    "team": "KT 위즈",
+    "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": "R",
+    "bats": "R",
+    "birthDate": "2004-04-21",
+    "nationality": "KR",
+    "jerseyNumber": 61,
+    "rosterNote": "",
+    "sourceUrl": "https://www.koreabaseball.com/Record/Player/PitcherDetail/Basic.aspx?playerId=53029",
+    "reviewedAt": "2026-09-07",
     "active": true,
     "quizEligible": true,
     "roster": {
@@ -5976,6 +6044,40 @@
     }
   },
   {
+    "id": 53139,
+    "name": "박명근",
+    "nameNorm": "박명근",
+    "team": "LG 트윈스",
+    "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": "R",
+    "bats": "R",
+    "birthDate": "2004-03-27",
+    "nationality": "KR",
+    "jerseyNumber": 39,
+    "aliases": [],
+    "rosterNote": "",
+    "sourceUrl": "https://www.koreabaseball.com/Futures/Player/PitcherDetail.aspx?playerId=53139",
+    "reviewedAt": "2026-09-07",
+    "active": true,
+    "quizEligible": true,
+    "roster": {
+      "season": 2026,
+      "qualifier": null,
+      "note": "",
+      "rookie": false,
+      "foreign": false,
+      "asiaQuota": false
+    },
+    "needsEnrichment": [],
+    "source": {
+      "base": "kbo-official-roster-xlsx",
+      "sourceUrl": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+      "publishedAt": "2026-02-10",
+      "reviewedAt": "2026-09-05"
+    }
+  },
+  {
     "id": 50657,
     "name": "박민",
     "nameNorm": "박민",
@@ -7196,6 +7298,40 @@
     "rosterNote": "",
     "sourceUrl": "https://www.koreabaseball.com/Record/Player/PitcherDetail/Basic.aspx?playerId=69994",
     "reviewedAt": "2026-09-05",
+    "active": true,
+    "quizEligible": true,
+    "roster": {
+      "season": 2026,
+      "qualifier": null,
+      "note": "",
+      "rookie": false,
+      "foreign": false,
+      "asiaQuota": false
+    },
+    "needsEnrichment": [],
+    "source": {
+      "base": "kbo-official-roster-xlsx",
+      "sourceUrl": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+      "publishedAt": "2026-02-10",
+      "reviewedAt": "2026-09-05"
+    }
+  },
+  {
+    "id": 54805,
+    "name": "박지환",
+    "nameNorm": "박지환",
+    "aliases": [],
+    "team": "SSG 랜더스",
+    "positionGroup": "OF",
+    "positionDetail": "외야수",
+    "throws": "R",
+    "bats": "R",
+    "birthDate": "2005-07-12",
+    "nationality": "KR",
+    "jerseyNumber": 0,
+    "rosterNote": "",
+    "sourceUrl": "https://www.koreabaseball.com/Futures/Player/HitterDetail.aspx?playerId=54805",
+    "reviewedAt": "2026-09-07",
     "active": true,
     "quizEligible": true,
     "roster": {
@@ -12226,6 +12362,40 @@
     "nationality": "KR",
     "jerseyNumber": 50,
     "aliases": [],
+    "active": true,
+    "quizEligible": true,
+    "roster": {
+      "season": 2026,
+      "qualifier": null,
+      "note": "",
+      "rookie": false,
+      "foreign": false,
+      "asiaQuota": false
+    },
+    "needsEnrichment": [],
+    "source": {
+      "base": "kbo-official-roster-xlsx",
+      "sourceUrl": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+      "publishedAt": "2026-02-10",
+      "reviewedAt": "2026-09-05"
+    }
+  },
+  {
+    "id": 52295,
+    "name": "이원재",
+    "nameNorm": "이원재",
+    "aliases": [],
+    "team": "KT 위즈",
+    "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": "L",
+    "bats": "L",
+    "birthDate": "2003-05-07",
+    "nationality": "KR",
+    "jerseyNumber": 64,
+    "rosterNote": "",
+    "sourceUrl": "https://www.koreabaseball.com/Record/Player/PitcherDetail/Basic.aspx?playerId=52295",
+    "reviewedAt": "2026-09-07",
     "active": true,
     "quizEligible": true,
     "roster": {
