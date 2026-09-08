@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import {
+  resolveBingoBoard,
   resolveBingoDeck,
   resolvePuzzleAttributeBoard,
 } from "./lib/kbo-bingo-rules.mjs";
@@ -63,7 +64,8 @@ for (const file of files) {
   const missingPlayers = puzzle.deck.filter((id) => !playerById.has(id));
   if (missingPlayers.length) throw new Error(`${file}: 선수 인덱스에 없는 ID ${missingPlayers.join(", ")}`);
   const deckIds = new Set(puzzle.deck);
-  const resolvedBoard = resolvePuzzleAttributeBoard(puzzle, playerById, file);
+  const attributeBoard = resolvePuzzleAttributeBoard(puzzle, playerById, file);
+  const resolvedBoard = resolveBingoBoard({ ...puzzle, board: attributeBoard });
 
   for (const cell of resolvedBoard) {
     if (!Array.isArray(cell.validPlayerIds)) throw new Error(`${file}: ${cell.label}의 판정 집합이 없습니다.`);
@@ -73,6 +75,9 @@ for (const file of files) {
     if (!cell.validPlayerIds.includes(cell.examplePlayerId)) throw new Error(`${file}: ${cell.label}의 대표 정답이 판정 집합에 없습니다.`);
   }
   if (puzzle.deckOrder === "balanced-shuffle") {
+    if (resolvedDeck.every((id, index) => id === puzzle.deck[index])) {
+      throw new Error(`${file}: 선수 덱 셔플 결과가 원본 순서와 같습니다.`);
+    }
     const firstEightActive = resolvedDeck.slice(0, 8).filter((id) => playerById.get(id)?.status === "active").length;
     if (firstEightActive < 5) throw new Error(`${file}: 셔플 후 첫 8장의 현역 선수가 5명 미만입니다.`);
     let longestRetiredRun = 0;
@@ -82,6 +87,10 @@ for (const file of files) {
       longestRetiredRun = Math.max(longestRetiredRun, retiredRun);
     }
     if (longestRetiredRun > 2) throw new Error(`${file}: 셔플 후 은퇴 선수가 ${longestRetiredRun}명 연속 배치됩니다.`);
+  }
+  if (puzzle.boardOrder === "seeded-shuffle"
+    && resolvedBoard.every((cell, index) => cell.id === puzzle.board[index].id)) {
+    throw new Error(`${file}: 조건판 셔플 결과가 원본 순서와 같습니다.`);
   }
   if (!canComplete(resolvedBoard, puzzle.deck)) throw new Error(`${file}: 16칸 전체를 채우는 해답이 없습니다.`);
 

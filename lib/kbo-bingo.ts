@@ -21,6 +21,7 @@ export interface KboBingoPuzzle {
   title: string;
   prompt: string;
   board: KboBingoCell[];
+  boardOrder?: "seeded-shuffle";
   deckOrder?: "balanced-shuffle";
   deck: number[];
   maxCards: number;

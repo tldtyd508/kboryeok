@@ -2,7 +2,7 @@
   "id": "kbo-bingo-current-roster-attributes-2026-09-09",
   "game": "kbo-bingo",
   "publishDate": "2026-09-09",
-  "revision": 1,
+  "revision": 2,
   "title": "2026 KBO 선수 빙고 · 현역 속성전",
   "prompt": "등장한 현역 선수를 조건 한 칸에만 배치해 4×4 판을 완성하세요.",
   "board": [
@@ -23,6 +23,8 @@
     { "id": "number-31-50", "label": "등번호 31~50", "rule": { "type": "jerseyNumber", "min": 31, "max": 50 }, "examplePlayerId": 52348 },
     { "id": "number-51-plus", "label": "등번호 51 이상", "rule": { "type": "jerseyNumber", "min": 51 }, "examplePlayerId": 50854 }
   ],
+  "boardOrder": "seeded-shuffle",
+  "deckOrder": "balanced-shuffle",
   "deck": [
     50854, 51868, 51865, 52868, 50007, 50167, 76267, 53312, 53164,
     52348, 53123, 69102, 79365, 50106, 62404, 54400, 74540, 50464,
@@ -47,6 +49,6 @@
   "review": {
     "status": "verified",
     "reviewedAt": "2026-09-09",
-    "note": "2026 공식 등록 명단과 공통 선수 카탈로그의 현재 구단·포지션·투타·생년·등번호를 기준으로 판정한다. 수상·과거 이력 조건 없이 현역 속성 rule만 사용했으며, 36장 전체 해답과 카드 제거 내성을 검증했다."
+    "note": "2026 공식 등록 명단과 공통 선수 카탈로그의 현재 구단·포지션·투타·생년·등번호를 기준으로 판정한다. 수상·과거 이력 조건 없이 현역 속성 rule만 사용했으며, 36장 전체 해답과 카드 제거 내성을 검증했다. revision 2에서 날짜 고정 시드로 선수 덱과 조건판 순서를 각각 섞었다."
   }
 }

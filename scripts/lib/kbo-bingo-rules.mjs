@@ -82,6 +82,11 @@ export function resolveBingoDeck(puzzle, playerById) {
   return result;
 }
 
+export function resolveBingoBoard(puzzle) {
+  if (puzzle.boardOrder !== "seeded-shuffle") return puzzle.board;
+  return seededShuffle(puzzle.board, `${puzzle.id}:r${puzzle.revision}:board`);
+}
+
 export function resolvePuzzleAttributeBoard(puzzle, playerById, context = puzzle.id ?? "크보 빙고 문제") {
   return puzzle.board.map((cell) => {
     if (requiresAttributeRule(cell.id) && !cell.rule) {
