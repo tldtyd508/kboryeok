@@ -1,4 +1,7 @@
 import fs from "node:fs/promises";
+import {
+  resolvePuzzleAttributeBoard,
+} from "./lib/kbo-bingo-rules.mjs";
 
 const directory = "data/questions/kbo-bingo";
 const players = JSON.parse(await fs.readFile("public/players.json", "utf8"));
@@ -64,17 +67,20 @@ for (const file of files) {
   const missingPlayers = puzzle.deck.filter((id) => !playerById.has(id));
   if (missingPlayers.length) throw new Error(`${file}: 선수 인덱스에 없는 ID ${missingPlayers.join(", ")}`);
   const deckIds = new Set(puzzle.deck);
-  for (const cell of puzzle.board) {
+  const resolvedBoard = resolvePuzzleAttributeBoard(puzzle, file);
+
+  for (const cell of resolvedBoard) {
+    if (!Array.isArray(cell.validPlayerIds)) throw new Error(`${file}: ${cell.label}의 판정 집합이 없습니다.`);
     const invalidIds = cell.validPlayerIds.filter((id) => !deckIds.has(id));
     if (invalidIds.length) throw new Error(`${file}: ${cell.label}에 덱 밖의 선수 ID가 있습니다: ${invalidIds.join(", ")}`);
     if (cell.validPlayerIds.length < 5) throw new Error(`${file}: ${cell.label}의 유효 선수가 5명 미만입니다.`);
     if (!cell.validPlayerIds.includes(cell.examplePlayerId)) throw new Error(`${file}: ${cell.label}의 대표 정답이 판정 집합에 없습니다.`);
   }
-  if (!canComplete(puzzle.board, puzzle.deck)) throw new Error(`${file}: 16칸 전체를 채우는 해답이 없습니다.`);
+  if (!canComplete(resolvedBoard, puzzle.deck)) throw new Error(`${file}: 16칸 전체를 채우는 해답이 없습니다.`);
 
   for (const removed of removedSets(puzzle.deck, 4)) {
     const removedIds = new Set(removed);
-    if (!canComplete(puzzle.board, puzzle.deck.filter((id) => !removedIds.has(id)))) {
+    if (!canComplete(resolvedBoard, puzzle.deck.filter((id) => !removedIds.has(id)))) {
       throw new Error(`${file}: 카드 4장 제거 내성 실패 (${removed.join(", ")})`);
     }
   }
@@ -84,7 +90,7 @@ for (const file of files) {
   for (let sample = 0; sample < 10_000; sample += 1) {
     const shuffled = [...puzzle.deck].sort(() => random() - 0.5);
     const removedIds = new Set(shuffled.slice(0, 8));
-    if (canComplete(puzzle.board, puzzle.deck.filter((id) => !removedIds.has(id)))) successfulSamples += 1;
+    if (canComplete(resolvedBoard, puzzle.deck.filter((id) => !removedIds.has(id)))) successfulSamples += 1;
   }
   if (successfulSamples < 9_900) throw new Error(`${file}: 카드 8장 제거 표본 성공률이 ${(successfulSamples / 100).toFixed(2)}%입니다.`);
 }

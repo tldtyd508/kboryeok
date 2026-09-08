@@ -1,12 +1,18 @@
 import fs from "node:fs/promises";
+import { resolvePuzzleAttributeBoard } from "./lib/kbo-bingo-rules.mjs";
 
 const directory = "data/questions/kbo-bingo";
 const outputPath = `${directory}/index.json`;
 const files = (await fs.readdir(directory))
   .filter((file) => file.endsWith(".json") && file !== "index.json")
   .sort();
-const puzzles = await Promise.all(files.map(async (file) =>
-  JSON.parse(await fs.readFile(`${directory}/${file}`, "utf8"))));
+const puzzles = await Promise.all(files.map(async (file) => {
+  const puzzle = JSON.parse(await fs.readFile(`${directory}/${file}`, "utf8"));
+  return {
+    ...puzzle,
+    board: resolvePuzzleAttributeBoard(puzzle, file),
+  };
+}));
 
 const duplicateDates = puzzles.filter((puzzle, index) =>
   puzzles.findIndex((candidate) => candidate.publishDate === puzzle.publishDate) !== index);

@@ -10,6 +10,9 @@ export interface KboBingoCell {
   label: string;
   validPlayerIds: number[];
   examplePlayerId: number;
+  rule?:
+    | { type: "team" | "position" | "bats" | "throws"; values: string[] }
+    | { type: "birthYear" | "jerseyNumber"; min?: number; max?: number };
 }
 
 export interface KboBingoPuzzle {
@@ -20,6 +23,16 @@ export interface KboBingoPuzzle {
   title: string;
   prompt: string;
   board: KboBingoCell[];
+  attributePlayerFacts?: Array<{
+    id: number;
+    team: string;
+    positionGroup: string;
+    throws: string;
+    bats: string;
+    birthYear: number;
+    jerseyNumber: number;
+  }>;
+  attributeExcludedPlayerIds?: number[];
   deck: number[];
   maxCards: number;
   sources: Array<{
