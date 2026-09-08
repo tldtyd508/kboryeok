@@ -190,7 +190,7 @@ function loadGameResults(): StoredGameResults["resultsByDate"] {
     const resultsByDate = parsed?.version === 1 && parsed.resultsByDate
       ? structuredClone(parsed.resultsByDate)
       : {};
-    const legacyKeys: Array<{ prefix: string; gameId: DailyGameId; scoreKey: "guessIds" | "correctNames" | "submissions" | "turns" }> = [
+    const legacyKeys: Array<{ prefix: string; gameId: DailyGameId; scoreKey: "guessIds" | "wrongNames" | "submissions" | "turns" }> = [
       { prefix: "kboryeok:daily-player:v2:", gameId: "daily-player", scoreKey: "guessIds" },
       { prefix: "kboryeok:kboten:v1:", gameId: "kboten", scoreKey: "wrongNames" },
       { prefix: "kboryeok:kbo5001:v1:", gameId: "kbo5001", scoreKey: "submissions" },
