@@ -5,6 +5,7 @@ import { ArrowRight, Check, CircleHelp, Share2, SkipForward, Trophy, X } from "l
 import { useMemo, useState, useSyncExternalStore } from "react";
 import copy from "copy-to-clipboard";
 import { Button } from "@/components/ui/button";
+import { ErrorReportLink } from "@/components/error-report-link";
 import {
   Dialog,
   DialogContent,
@@ -57,6 +58,8 @@ export function KboBingoGame({
   const mistakes = turns.filter((turn) => !turn.correct && turn.cellId !== null).length;
   const passes = turns.filter((turn) => turn.cellId === null).length;
   const remainingCards = Math.max(0, puzzle.maxCards - turns.length);
+  const lastTurn = turns.at(-1);
+  const reportPlayer = lastTurn ? playerById.get(lastTurn.playerId) : currentPlayer;
 
   function saveTurn(turn: KboBingoTurn) {
     if (finished || !currentPlayer) return;
@@ -182,6 +185,18 @@ export function KboBingoGame({
           ) : null}
         </div>
       </section>
+
+      <div className="mt-2 flex justify-end">
+        <ErrorReportLink
+          game="bingo"
+          date={dateKey}
+          puzzleId={puzzle.id}
+          revision={puzzle.revision}
+          player={reportPlayer?.name}
+          context={lastTurn ? `cell=${lastTurn.cellId ?? "pass"}; correct=${lastTurn.correct}; turn=${turns.length}` : `turn=${turns.length + 1}`}
+          pageUrl={isToday ? GAME_URL : `${GAME_URL}?date=${dateKey}`}
+        />
+      </div>
     </>
   );
 }

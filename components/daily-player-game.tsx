@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { ArrowDown, ArrowUp, Check, HelpCircle, Loader2 } from "lucide-react";
 import GameOverDialog from "@/components/GameOverDialog";
+import { ErrorReportLink } from "@/components/error-report-link";
 import PlayerSearch from "@/components/PlayerSearch";
 import ResultBoard from "@/components/ResultBoard";
 import { Button } from "@/components/ui/button";
@@ -17,7 +18,8 @@ import {
 import { useGameStore } from "@/lib/store";
 
 export function DailyPlayerGame({ dateKey }: { dateKey: string }) {
-  const { isDataLoading, error, actions, guesses } = useGameStore();
+  const { isDataLoading, error, actions, guesses, gameStatus } = useGameStore();
+  const lastGuess = guesses.at(-1);
 
   useEffect(() => {
     actions.fetchDataAndStartGame(dateKey);
@@ -71,6 +73,18 @@ export function DailyPlayerGame({ dateKey }: { dateKey: string }) {
             <ResultBoard />
           </>
         )}
+      </div>
+
+      <div className="mt-2 flex justify-end">
+        <ErrorReportLink
+          game="player"
+          date={dateKey}
+          puzzleId={`daily-player-${dateKey}`}
+          revision={1}
+          player={lastGuess?.name}
+          context={`status=${gameStatus}; guesses=${guesses.length}`}
+          pageUrl={`https://kboryeok.vercel.app/games/player?date=${dateKey}`}
+        />
       </div>
 
       <GameOverDialog />

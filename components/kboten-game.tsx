@@ -6,6 +6,7 @@ import copy from "copy-to-clipboard";
 import Fuse from "fuse.js";
 import { ArrowRight, Check, CheckCircle2, CircleHelp, Heart, Search, Share2, X, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ErrorReportLink } from "@/components/error-report-link";
 import { Input } from "@/components/ui/input";
 import {
   Dialog,
@@ -309,6 +310,18 @@ export function KboTenGame({
           ) : null}
         </div>
       </section>
+
+      <div className="mt-2 flex justify-end">
+        <ErrorReportLink
+          game="kboten"
+          date={dateKey}
+          puzzleId={puzzle.id}
+          revision={puzzle.revision}
+          player={feedback.playerName || undefined}
+          context={`status=${gameStatus}; correct=${correctNames.length}; wrong=${wrongNames.length}`}
+          pageUrl={isToday ? GAME_URL : `${GAME_URL}?date=${dateKey}`}
+        />
+      </div>
 
     </>
   );

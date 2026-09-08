@@ -5,6 +5,7 @@ import { useMemo, useState, useSyncExternalStore } from "react";
 import copy from "copy-to-clipboard";
 import { ArrowRight, Check, CircleHelp, Heart, Share2, Target, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ErrorReportLink } from "@/components/error-report-link";
 import {
   Dialog,
   DialogContent,
@@ -254,6 +255,18 @@ export function Kbo5001Game({
           </div>
         </div>
       </section>
+
+      <div className="mt-2 flex justify-end">
+        <ErrorReportLink
+          game="kbo5001"
+          date={dateKey}
+          puzzleId={puzzle.id}
+          revision={puzzle.revision}
+          player={selectedNames.join(", ") || undefined}
+          context={`status=${gameStatus}; submissions=${submissions.length}`}
+          pageUrl={isToday ? GAME_URL : `${GAME_URL}?date=${dateKey}`}
+        />
+      </div>
 
     </>
   );
