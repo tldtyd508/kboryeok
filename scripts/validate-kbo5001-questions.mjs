@@ -13,6 +13,17 @@ function combinations(items, count, start = 0, picked = []) {
   return results;
 }
 
+function shuffledCandidates(candidates, seedText) {
+  let state = Array.from(seedText).reduce((hash, character) => Math.imul(hash ^ character.charCodeAt(0), 16777619), 2166136261) >>> 0;
+  const shuffled = [...candidates];
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    state = (Math.imul(state, 1664525) + 1013904223) >>> 0;
+    const swapIndex = Math.floor((state / 2 ** 32) * (index + 1));
+    [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
+  }
+  return shuffled;
+}
+
 for (const file of files) {
   const puzzle = JSON.parse(await fs.readFile(`${directory}/${file}`, "utf8"));
   if (puzzle.review?.status !== "verified") throw new Error(`${file}: review.status가 verified가 아닙니다.`);
@@ -34,6 +45,13 @@ for (const file of files) {
     .sort((a, b) => a.join("|").localeCompare(b.join("|"), "ko-KR"));
   if (solutions.length === 0 || solutions.length > 3) throw new Error(`${file}: 정답 조합은 1~3개여야 합니다. 현재 ${solutions.length}개입니다.`);
   if (JSON.stringify(solutions) !== JSON.stringify(recordedSolutions)) throw new Error(`${file}: 기록된 정답 조합이 전수 검사 결과와 다릅니다.`);
+  const firstDisplayed = shuffledCandidates(puzzle.candidates, `${puzzle.id}:r${puzzle.revision}`)
+    .slice(0, puzzle.selectionCount)
+    .map((candidate) => candidate.name)
+    .sort((a, b) => a.localeCompare(b, "ko-KR"));
+  if (solutions.some((solution) => JSON.stringify(solution) === JSON.stringify(firstDisplayed))) {
+    throw new Error(`${file}: 화면의 첫 ${puzzle.selectionCount}명이 정답 조합입니다.`);
+  }
 }
 
 console.log(`크보 5001 문제 ${files.length}개 검증 완료: 후보 조합과 정답 일치`);

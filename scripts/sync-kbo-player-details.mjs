@@ -55,7 +55,7 @@ async function getBirthDate(link) {
   const response = await fetch(new URL(link, ORIGIN), { headers: { Referer: `${ORIGIN}/Player/Search.aspx` } });
   if (!response.ok) return "";
   const html = await response.text();
-  const birthday = html.match(/playerProfile_lblBirthday[^>]*>(\d{4})년\s*(\d{2})월\s*(\d{2})일</i);
+  const birthday = html.match(/lblBirthday[^>]*>(\d{4})년\s*(\d{2})월\s*(\d{2})일</i);
   return birthday ? `${birthday[1]}-${birthday[2]}-${birthday[3]}` : "";
 }
 

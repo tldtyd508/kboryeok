@@ -864,6 +864,33 @@
     ]
   },
   {
+    "id": 50811,
+    "name": "길지석",
+    "aliases": [],
+    "status": "active",
+    "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": "R",
+    "bats": "R",
+    "birthYear": 2001,
+    "current": {
+      "team": "SSG 랜더스",
+      "jerseyNumber": 112
+    },
+    "career": {
+      "jerseyNumbers": [
+        112
+      ]
+    },
+    "sources": [
+      {
+        "name": "KBO 등록 선수 명단",
+        "url": "https://www.ssglanders.com/media/news/detail?idx=19892&page=",
+        "role": "primary"
+      }
+    ]
+  },
+  {
     "id": 50812,
     "name": "박시후",
     "aliases": [],
@@ -1453,6 +1480,33 @@
       {
         "name": "KBO 등록 선수 명단",
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+        "role": "primary"
+      }
+    ]
+  },
+  {
+    "id": 51295,
+    "name": "임태윤",
+    "aliases": [],
+    "status": "active",
+    "positionGroup": "IF",
+    "positionDetail": "내야수",
+    "throws": "R",
+    "bats": "R",
+    "birthYear": 2002,
+    "current": {
+      "team": "SSG 랜더스",
+      "jerseyNumber": 118
+    },
+    "career": {
+      "jerseyNumbers": [
+        118
+      ]
+    },
+    "sources": [
+      {
+        "name": "KBO 등록 선수 명단",
+        "url": "https://www.ssglanders.com/media/news/detail?idx=19892&page=",
         "role": "primary"
       }
     ]
@@ -4099,6 +4153,33 @@
       {
         "name": "KBO 등록 선수 명단",
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+        "role": "primary"
+      }
+    ]
+  },
+  {
+    "id": 53708,
+    "name": "김예준",
+    "aliases": [],
+    "status": "active",
+    "positionGroup": "IF",
+    "positionDetail": "내야수",
+    "throws": "R",
+    "bats": "L",
+    "birthYear": 2004,
+    "current": {
+      "team": "SSG 랜더스",
+      "jerseyNumber": 117
+    },
+    "career": {
+      "jerseyNumbers": [
+        117
+      ]
+    },
+    "sources": [
+      {
+        "name": "KBO 등록 선수 명단",
+        "url": "https://www.ssglanders.com/media/news/detail?idx=19892&page=",
         "role": "primary"
       }
     ]
@@ -16022,22 +16103,28 @@
     "id": 74163,
     "name": "이용규",
     "aliases": [],
-    "status": "retired",
-    "positionGroup": null,
-    "throws": null,
-    "bats": null,
-    "birthYear": null,
-    "current": null,
+    "status": "active",
+    "positionGroup": "OF",
+    "throws": "L",
+    "bats": "L",
+    "birthYear": 1985,
+    "current": {
+      "team": "키움 히어로즈",
+      "jerseyNumber": 15
+    },
     "career": {
-      "jerseyNumbers": []
+      "jerseyNumbers": [
+        15
+      ]
     },
     "sources": [
       {
-        "name": "KBO 선수 기록",
-        "url": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=74163",
+        "name": "KBO 등록 선수 명단",
+        "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ]
+    ],
+    "positionDetail": "외야수"
   },
   {
     "id": 74206,

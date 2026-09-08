@@ -19526,20 +19526,23 @@
     }
   },
   {
-    "id": 966322403,
+    "id": 74163,
     "name": "이용규",
     "nameNorm": "이용규",
     "aliases": [],
     "team": "키움 히어로즈",
     "positionGroup": "OF",
     "positionDetail": "외야수",
-    "throws": "",
-    "bats": "",
-    "birthDate": "",
+    "throws": "L",
+    "bats": "L",
+    "birthDate": "1985-08-26",
     "nationality": "KR",
-    "jerseyNumber": null,
+    "jerseyNumber": 15,
+    "rosterNote": "플레잉코치",
+    "sourceUrl": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=74163",
+    "reviewedAt": "2026-09-08",
     "active": true,
-    "quizEligible": false,
+    "quizEligible": true,
     "roster": {
       "season": 2026,
       "qualifier": null,
@@ -19548,12 +19551,7 @@
       "foreign": false,
       "asiaQuota": false
     },
-    "needsEnrichment": [
-      "birthDate",
-      "throws",
-      "bats",
-      "jerseyNumber"
-    ],
+    "needsEnrichment": [],
     "source": {
       "base": "kbo-official-roster-xlsx",
       "sourceUrl": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
@@ -19751,20 +19749,23 @@
     }
   },
   {
-    "id": 984484863,
+    "id": 50811,
     "name": "길지석",
     "nameNorm": "길지석",
     "aliases": [],
     "team": "SSG 랜더스",
     "positionGroup": "P",
     "positionDetail": "투수",
-    "throws": "",
-    "bats": "",
-    "birthDate": "",
+    "throws": "R",
+    "bats": "R",
+    "birthDate": "2001-11-02",
     "nationality": "KR",
-    "jerseyNumber": null,
+    "jerseyNumber": 112,
+    "rosterNote": "2026-06-30 육성선수 영입",
+    "sourceUrl": "https://www.koreabaseball.com/Futures/Player/PitcherDetail.aspx?playerId=50811",
+    "reviewedAt": "2026-09-08",
     "active": true,
-    "quizEligible": false,
+    "quizEligible": true,
     "roster": {
       "season": 2026,
       "qualifier": null,
@@ -19773,12 +19774,7 @@
       "foreign": false,
       "asiaQuota": false
     },
-    "needsEnrichment": [
-      "birthDate",
-      "throws",
-      "bats",
-      "jerseyNumber"
-    ],
+    "needsEnrichment": [],
     "source": {
       "base": "kbo-official-roster-xlsx",
       "sourceUrl": "https://www.ssglanders.com/media/news/detail?idx=19892&page=",
@@ -19787,20 +19783,23 @@
     }
   },
   {
-    "id": 914191209,
+    "id": 53708,
     "name": "김예준",
     "nameNorm": "김예준",
     "aliases": [],
     "team": "SSG 랜더스",
     "positionGroup": "IF",
     "positionDetail": "내야수",
-    "throws": "",
-    "bats": "",
-    "birthDate": "",
+    "throws": "R",
+    "bats": "L",
+    "birthDate": "2004-10-28",
     "nationality": "KR",
-    "jerseyNumber": null,
+    "jerseyNumber": 117,
+    "rosterNote": "2026-06-30 육성선수 영입",
+    "sourceUrl": "https://www.koreabaseball.com/Futures/Player/HitterDetail.aspx?playerId=53708",
+    "reviewedAt": "2026-09-08",
     "active": true,
-    "quizEligible": false,
+    "quizEligible": true,
     "roster": {
       "season": 2026,
       "qualifier": null,
@@ -19809,12 +19808,7 @@
       "foreign": false,
       "asiaQuota": false
     },
-    "needsEnrichment": [
-      "birthDate",
-      "throws",
-      "bats",
-      "jerseyNumber"
-    ],
+    "needsEnrichment": [],
     "source": {
       "base": "kbo-official-roster-xlsx",
       "sourceUrl": "https://www.ssglanders.com/media/news/detail?idx=19892&page=",
@@ -19823,20 +19817,23 @@
     }
   },
   {
-    "id": 935247157,
+    "id": 51295,
     "name": "임태윤",
     "nameNorm": "임태윤",
     "aliases": [],
     "team": "SSG 랜더스",
     "positionGroup": "IF",
     "positionDetail": "내야수",
-    "throws": "",
-    "bats": "",
-    "birthDate": "",
+    "throws": "R",
+    "bats": "R",
+    "birthDate": "2002-08-12",
     "nationality": "KR",
-    "jerseyNumber": null,
+    "jerseyNumber": 118,
+    "rosterNote": "2026-06-30 육성선수 영입",
+    "sourceUrl": "https://www.koreabaseball.com/Futures/Player/HitterDetail.aspx?playerId=51295",
+    "reviewedAt": "2026-09-08",
     "active": true,
-    "quizEligible": false,
+    "quizEligible": true,
     "roster": {
       "season": 2026,
       "qualifier": null,
@@ -19845,12 +19842,7 @@
       "foreign": false,
       "asiaQuota": false
     },
-    "needsEnrichment": [
-      "birthDate",
-      "throws",
-      "bats",
-      "jerseyNumber"
-    ],
+    "needsEnrichment": [],
     "source": {
       "base": "kbo-official-roster-xlsx",
       "sourceUrl": "https://www.ssglanders.com/media/news/detail?idx=19892&page=",

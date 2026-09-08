@@ -60,8 +60,28 @@ export interface StreakSummary {
   completedToday: boolean;
 }
 
+export interface GameStatsSummary {
+  played: number;
+  wins: number;
+  winRate: number;
+  currentStreak: number;
+  bestStreak: number;
+  averageWinningScore: number | null;
+}
+
+interface StoredGameResult {
+  status: "won" | "lost";
+  score: number;
+}
+
+interface StoredGameResults {
+  version: 1;
+  resultsByDate: Record<string, Partial<Record<DailyGameId, StoredGameResult>>>;
+}
+
 const LEGACY_STATS_KEY = "kboryeok:stats:v1";
 const STATS_KEY = "kboryeok:stats:v2";
+const RESULTS_KEY = "kboryeok:game-results:v1";
 const PROGRESS_EVENT = "kboryeok:progress";
 const EMPTY_DASHBOARD_SNAPSHOT = "not-started|0|4|0|0|0";
 const EMPTY_KBOTEN_SNAPSHOT = '{"gameStatus":"playing","correctNames":[],"wrongNames":[]}';
@@ -163,7 +183,51 @@ function loadCompletedDates() {
     .map(([date]) => date);
 }
 
-export function markDailyGameCompleted(gameId: DailyGameId, dateKey = getKstDateKey()) {
+function loadGameResults(): StoredGameResults["resultsByDate"] {
+  if (!isBrowser()) return {};
+  try {
+    const parsed = JSON.parse(window.localStorage.getItem(RESULTS_KEY) ?? "null") as Partial<StoredGameResults> | null;
+    const resultsByDate = parsed?.version === 1 && parsed.resultsByDate
+      ? structuredClone(parsed.resultsByDate)
+      : {};
+    const legacyKeys: Array<{ prefix: string; gameId: DailyGameId; scoreKey: "guessIds" | "correctNames" | "submissions" | "turns" }> = [
+      { prefix: "kboryeok:daily-player:v2:", gameId: "daily-player", scoreKey: "guessIds" },
+      { prefix: "kboryeok:kboten:v1:", gameId: "kboten", scoreKey: "wrongNames" },
+      { prefix: "kboryeok:kbo5001:v1:", gameId: "kbo5001", scoreKey: "submissions" },
+      { prefix: "kboryeok:kbo-bingo:v1:", gameId: "kbo-bingo", scoreKey: "turns" },
+    ];
+    for (let index = 0; index < window.localStorage.length; index += 1) {
+      const key = window.localStorage.key(index);
+      const config = legacyKeys.find((candidate) => key?.startsWith(candidate.prefix));
+      if (!key || !config) continue;
+      const date = key.slice(config.prefix.length);
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || resultsByDate[date]?.[config.gameId]) continue;
+      const game = JSON.parse(window.localStorage.getItem(key) ?? "null") as Record<string, unknown> | null;
+      if (game?.gameStatus !== "won" && game?.gameStatus !== "lost") continue;
+      const scoreValue = game[config.scoreKey];
+      const score = Array.isArray(scoreValue) ? scoreValue.length : 0;
+      resultsByDate[date] = { ...resultsByDate[date], [config.gameId]: { status: game.gameStatus, score } };
+    }
+    return resultsByDate;
+  } catch {
+    return {};
+  }
+}
+
+function saveGameResult(gameId: DailyGameId, status: "won" | "lost", score: number, dateKey: string) {
+  const resultsByDate = loadGameResults();
+  resultsByDate[dateKey] = { ...resultsByDate[dateKey], [gameId]: { status, score } };
+  const recentEntries = Object.entries(resultsByDate).sort(([a], [b]) => a.localeCompare(b)).slice(-400);
+  const stats: StoredGameResults = { version: 1, resultsByDate: Object.fromEntries(recentEntries) };
+  window.localStorage.setItem(RESULTS_KEY, JSON.stringify(stats));
+}
+
+export function markDailyGameCompleted(
+  gameId: DailyGameId,
+  status: "won" | "lost",
+  score: number,
+  dateKey = getKstDateKey(),
+) {
   if (!isBrowser()) return;
   const completedGamesByDate = loadCompletedGamesByDate();
   completedGamesByDate[dateKey] = Array.from(
@@ -172,6 +236,7 @@ export function markDailyGameCompleted(gameId: DailyGameId, dateKey = getKstDate
   const recentEntries = Object.entries(completedGamesByDate).sort(([a], [b]) => a.localeCompare(b)).slice(-400);
   const stats: StoredDailyStatsV2 = { version: 2, completedGamesByDate: Object.fromEntries(recentEntries) };
   window.localStorage.setItem(STATS_KEY, JSON.stringify(stats));
+  saveGameResult(gameId, status, score, dateKey);
 }
 
 export function saveDailyPlayerGame(
@@ -186,7 +251,7 @@ export function saveDailyPlayerGame(
   window.localStorage.setItem(getDailyPlayerStorageKey(dateKey), JSON.stringify(game));
 
   if (gameStatus === "won" || gameStatus === "lost") {
-    markDailyGameCompleted("daily-player", dateKey);
+    markDailyGameCompleted("daily-player", gameStatus, guessIds.length, dateKey);
   }
 
   emitProgressChange();
@@ -234,7 +299,9 @@ export function getServerKboTenGameSnapshot() {
 export function saveKboTenGame(game: Omit<StoredKboTenGame, "version">, dateKey = getKstDateKey()) {
   if (!isBrowser()) return;
   window.localStorage.setItem(getKboTenStorageKey(dateKey), JSON.stringify({ version: 1, ...game }));
-  if (game.gameStatus === "won" || game.gameStatus === "lost") markDailyGameCompleted("kboten", dateKey);
+  if (game.gameStatus === "won" || game.gameStatus === "lost") {
+    markDailyGameCompleted("kboten", game.gameStatus, game.wrongNames.length, dateKey);
+  }
   emitProgressChange();
 }
 
@@ -286,7 +353,9 @@ export function getServerKbo5001GameSnapshot() {
 export function saveKbo5001Game(game: Omit<StoredKbo5001Game, "version">, dateKey = getKstDateKey()) {
   if (!isBrowser()) return;
   window.localStorage.setItem(getKbo5001StorageKey(dateKey), JSON.stringify({ version: 1, ...game }));
-  if (game.gameStatus === "won" || game.gameStatus === "lost") markDailyGameCompleted("kbo5001", dateKey);
+  if (game.gameStatus === "won" || game.gameStatus === "lost") {
+    markDailyGameCompleted("kbo5001", game.gameStatus, game.submissions.length, dateKey);
+  }
   emitProgressChange();
 }
 
@@ -331,7 +400,9 @@ export function getServerKboBingoGameSnapshot() {
 export function saveKboBingoGame(game: Omit<StoredKboBingoGame, "version">, dateKey = getKstDateKey()) {
   if (!isBrowser()) return;
   window.localStorage.setItem(getKboBingoStorageKey(dateKey), JSON.stringify({ version: 1, ...game }));
-  if (game.gameStatus === "won" || game.gameStatus === "lost") markDailyGameCompleted("kbo-bingo", dateKey);
+  if (game.gameStatus === "won" || game.gameStatus === "lost") {
+    markDailyGameCompleted("kbo-bingo", game.gameStatus, game.turns.length, dateKey);
+  }
   emitProgressChange();
 }
 
@@ -367,6 +438,54 @@ export function calculateStreakSummary(completedDates: string[], todayKey = getK
 
 export function getStreakSummary() {
   return calculateStreakSummary(loadCompletedDates());
+}
+
+export function getGameStatsSummary(gameId: DailyGameId, todayKey = getKstDateKey()): GameStatsSummary {
+  const results = Object.entries(loadGameResults())
+    .flatMap(([date, games]) => {
+      const result = games[gameId];
+      return result ? [{ date, ...result }] : [];
+    })
+    .sort((a, b) => a.date.localeCompare(b.date));
+  const wins = results.filter((result) => result.status === "won");
+  const winDates = new Set(wins.map((result) => dateOrdinal(result.date)));
+  const today = dateOrdinal(todayKey);
+  const todayResult = results.find((result) => result.date === todayKey);
+
+  let currentStreak = 0;
+  let cursor = todayResult?.status === "won" ? today : todayResult?.status === "lost" ? Number.NaN : today - 1;
+  while (Number.isFinite(cursor) && winDates.has(cursor)) {
+    currentStreak += 1;
+    cursor -= 1;
+  }
+
+  let bestStreak = 0;
+  let run = 0;
+  let previous: number | null = null;
+  for (const ordinal of [...winDates].sort((a, b) => a - b)) {
+    run = previous !== null && ordinal === previous + 1 ? run + 1 : 1;
+    bestStreak = Math.max(bestStreak, run);
+    previous = ordinal;
+  }
+
+  return {
+    played: results.length,
+    wins: wins.length,
+    winRate: results.length ? Math.round((wins.length / results.length) * 100) : 0,
+    currentStreak,
+    bestStreak,
+    averageWinningScore: wins.length
+      ? wins.reduce((sum, result) => sum + result.score, 0) / wins.length
+      : null,
+  };
+}
+
+export function getGameStatsSnapshot(gameId: DailyGameId, todayKey = getKstDateKey()) {
+  return JSON.stringify(getGameStatsSummary(gameId, todayKey));
+}
+
+export function getServerGameStatsSnapshot() {
+  return '{"played":0,"wins":0,"winRate":0,"currentStreak":0,"bestStreak":0,"averageWinningScore":null}';
 }
 
 export function getDailyProgress(): DailyPlayerProgress {

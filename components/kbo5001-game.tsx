@@ -3,9 +3,10 @@
 import Link from "next/link";
 import { useMemo, useState, useSyncExternalStore } from "react";
 import copy from "copy-to-clipboard";
-import { ArrowRight, Check, CircleHelp, Heart, Share2, Target, Trophy } from "lucide-react";
+import { Check, CircleHelp, Heart, Home, Share2, Target, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ErrorReportLink } from "@/components/error-report-link";
+import { GameResultStats } from "@/components/game-result-stats";
 import {
   Dialog,
   DialogContent,
@@ -16,6 +17,7 @@ import {
 } from "@/components/ui/dialog";
 import {
   getKbo5001GameSnapshot,
+  getGameStatsSummary,
   getServerKbo5001GameSnapshot,
   saveKbo5001Game,
   subscribeToProgress,
@@ -120,9 +122,15 @@ export function Kbo5001Game({
   }
 
   function shareResult() {
-    const rows = submissions.map((submission) => submission.sum === puzzle.target ? "🟩" : "⬜");
+    const rows = submissions.map((submission) => {
+      if (submission.sum === puzzle.target) return "🟩".repeat(puzzle.selectionCount);
+      const isClose = Math.abs(submission.sum - puzzle.target) / puzzle.target <= 0.1;
+      return (isClose ? "🟨" : "⬛").repeat(puzzle.selectionCount);
+    });
     const gameUrl = isToday ? GAME_URL : `${GAME_URL}?date=${dateKey}`;
-    const text = `크보 5001 ${dateKey}\n${gameStatus === "won" ? "성공" : "실패"} · ${submissions.length}/${puzzle.maxSubmissions}회\n${rows.join("\n")}\n${gameUrl}`;
+    const { currentStreak } = getGameStatsSummary("kbo5001", dateKey);
+    const score = gameStatus === "won" ? `${submissions.length}/${puzzle.maxSubmissions}` : `X/${puzzle.maxSubmissions}`;
+    const text = `크보력 5001 ${dateKey} ${score}\n${rows.join("\n")}\n🔥 ${currentStreak}일 연속\n${gameUrl}`;
     setShareLabel(copy(text) ? "복사 완료" : "다시 시도");
   }
 
@@ -201,10 +209,7 @@ export function Kbo5001Game({
                 <Target className="size-4" /> 조합 제출
               </Button>
             ) : (
-              <div className="flex flex-wrap gap-2">
-                <Button type="button" onClick={shareResult} variant="outline" className="gap-2"><Share2 className="size-4" /> {shareLabel}</Button>
-                <Button asChild className="gap-2"><Link href="/games/kboten">크보텐 가기 <ArrowRight className="size-4" /></Link></Button>
-              </div>
+              <p className="text-sm font-black">{gameStatus === "won" ? "오늘의 5001 성공" : "오늘의 도전 종료"}</p>
             )}
           </div>
 
@@ -225,6 +230,16 @@ export function Kbo5001Game({
               <p className="flex items-center gap-2 font-black"><Trophy className="size-4" /> 정답 조합</p>
               <div className="mt-2 space-y-1 text-sm font-semibold text-muted-foreground">
                 {puzzle.solutions.map((solution, index) => <p key={submissionKey(solution)}>{puzzle.solutions.length > 1 ? `${index + 1}. ` : ""}{solution.join(" · ")}</p>)}
+              </div>
+            </div>
+          ) : null}
+
+          {finished ? (
+            <div className="mt-5 rounded-2xl border border-foreground/10 bg-background p-5">
+              <GameResultStats gameId="kbo5001" dateKey={dateKey} averageLabel="제출" />
+              <div className="mt-5 flex flex-col gap-2 sm:flex-row">
+                <Button type="button" onClick={shareResult} className="flex-1 gap-2"><Share2 className="size-4" /> {shareLabel}</Button>
+                <Button asChild variant="secondary" className="flex-1 gap-2"><Link href="/"><Home className="size-4" /> 게임 홈</Link></Button>
               </div>
             </div>
           ) : null}

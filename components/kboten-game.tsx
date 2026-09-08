@@ -4,9 +4,10 @@ import Link from "next/link";
 import { useMemo, useRef, useState, useSyncExternalStore, type KeyboardEvent } from "react";
 import copy from "copy-to-clipboard";
 import Fuse from "fuse.js";
-import { ArrowRight, Check, CheckCircle2, CircleHelp, Heart, Search, Share2, X, XCircle } from "lucide-react";
+import { Check, CheckCircle2, CircleHelp, Heart, Home, Search, Share2, X, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ErrorReportLink } from "@/components/error-report-link";
+import { GameResultStats } from "@/components/game-result-stats";
 import { Input } from "@/components/ui/input";
 import {
   Dialog,
@@ -18,6 +19,7 @@ import {
 } from "@/components/ui/dialog";
 import {
   getKboTenGameSnapshot,
+  getGameStatsSummary,
   getServerKboTenGameSnapshot,
   saveKboTenGame,
   subscribeToProgress,
@@ -174,7 +176,8 @@ export function KboTenGame({
   function shareResult() {
     const grid = puzzle.answers.map((answer) => correctNames.includes(answer.name) ? "🟩" : "⬜").join("");
     const gameUrl = isToday ? GAME_URL : `${GAME_URL}?date=${dateKey}`;
-    const text = `크보텐 ${dateKey}\n${correctNames.length}/10 · 실수 ${wrongNames.length}/${puzzle.maxWrongGuesses}\n${grid}\n${gameUrl}`;
+    const { currentStreak } = getGameStatsSummary("kboten", dateKey);
+    const text = `크보력 크보텐 ${dateKey}\n${correctNames.length}/10\n${grid}\n🔥 ${currentStreak}일 연속\n${gameUrl}`;
     setShareLabel(copy(text) ? "복사 완료" : "다시 시도");
   }
 
@@ -303,9 +306,16 @@ export function KboTenGame({
           </div>
 
           {finished ? (
-            <div className="mt-3 flex flex-wrap justify-end gap-2">
-              <Button type="button" onClick={shareResult} variant="outline" className="gap-2"><Share2 className="size-4" /> {shareLabel}</Button>
-              <Button asChild className="gap-2"><Link href="/games/5001">같은 기록으로 5001 <ArrowRight className="size-4" /></Link></Button>
+            <div className="mt-5 rounded-2xl border border-foreground/10 bg-background p-5">
+              <p className={`text-sm font-black ${gameStatus === "won" ? "text-emerald-600 dark:text-emerald-300" : "text-rose-600 dark:text-rose-300"}`}>
+                {gameStatus === "won" ? "오늘의 크보텐 성공" : "오늘의 도전 종료"}
+              </p>
+              <p className="mt-1 text-3xl font-black">{correctNames.length}/10</p>
+              <GameResultStats gameId="kboten" dateKey={dateKey} averageLabel="실수" />
+              <div className="mt-5 flex flex-col gap-2 sm:flex-row">
+                <Button type="button" onClick={shareResult} className="flex-1 gap-2"><Share2 className="size-4" /> {shareLabel}</Button>
+                <Button asChild variant="secondary" className="flex-1 gap-2"><Link href="/"><Home className="size-4" /> 게임 홈</Link></Button>
+              </div>
             </div>
           ) : null}
         </div>

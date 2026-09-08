@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Check, CircleHelp, Share2, SkipForward, Trophy, X } from "lucide-react";
+import { Check, CircleHelp, Home, Share2, SkipForward, Trophy, X } from "lucide-react";
 import { useMemo, useState, useSyncExternalStore } from "react";
 import copy from "copy-to-clipboard";
 import { Button } from "@/components/ui/button";
 import { ErrorReportLink } from "@/components/error-report-link";
+import { GameResultStats } from "@/components/game-result-stats";
 import {
   Dialog,
   DialogContent,
@@ -16,6 +17,7 @@ import {
 } from "@/components/ui/dialog";
 import {
   getKboBingoGameSnapshot,
+  getGameStatsSummary,
   getServerKboBingoGameSnapshot,
   saveKboBingoGame,
   subscribeToProgress,
@@ -25,6 +27,29 @@ import {
 import type { KboBingoPublicPuzzle } from "@/lib/kbo-bingo";
 
 const GAME_URL = "https://kboryeok.vercel.app/games/bingo";
+
+function cellEmoji(id: string) {
+  if (id.includes("team-lg")) return "🔴";
+  if (id.includes("team-kt")) return "🪄";
+  if (id.includes("team-samsung")) return "🦁";
+  if (id.includes("team-lotte")) return "🐦";
+  if (id.includes("team-kia")) return "🐯";
+  if (id.includes("team-hanwha")) return "🦅";
+  if (id.includes("team-doosan")) return "🐻";
+  if (id.includes("team-nc")) return "🦕";
+  if (id.includes("team-ssg")) return "🚀";
+  if (id.includes("team-kiwoom")) return "🦸";
+  if (id.includes("pitcher")) return "⚾";
+  if (id.includes("catcher")) return "🥎";
+  if (id.includes("infielder")) return "💎";
+  if (id.includes("outfielder")) return "🌳";
+  if (id.includes("number")) return "🔢";
+  if (id.includes("bats-left") || id.includes("throws-left")) return "↙️";
+  if (id.includes("bats-right") || id.includes("throws-right")) return "↗️";
+  if (id.includes("born")) return "🎂";
+  if (id.includes("golden-glove")) return "🏆";
+  return "⚾";
+}
 
 export function KboBingoGame({
   puzzle,
@@ -93,7 +118,8 @@ export function KboBingoGame({
   function shareResult() {
     const grid = puzzle.board.map((cell, index) => `${filledByCell.has(cell.id) ? "🟩" : "⬜"}${index % 4 === 3 ? "\n" : ""}`).join("").trim();
     const gameUrl = isToday ? GAME_URL : `${GAME_URL}?date=${dateKey}`;
-    const text = `크보 빙고 ${dateKey}\n${gameStatus === "won" ? "성공" : "실패"} · ${turns.length}/${puzzle.maxCards}장\n${grid}\n${gameUrl}`;
+    const { currentStreak } = getGameStatsSummary("kbo-bingo", dateKey);
+    const text = `크보력 빙고 ${dateKey}\n${gameStatus === "won" ? `${turns.length}/${puzzle.maxCards}` : `X/${puzzle.maxCards}`}\n${grid}\n🔥 ${currentStreak}일 연속\n${gameUrl}`;
     setShareLabel(copy(text) ? "복사 완료" : "다시 시도");
   }
 
@@ -165,6 +191,7 @@ export function KboBingoGame({
                   disabled={finished || Boolean(player)}
                   className={`aspect-square min-w-0 rounded-xl border p-1.5 text-center transition sm:rounded-2xl sm:p-3 ${player ? "border-emerald-600 bg-emerald-500 text-white" : finished ? "border-foreground/10 bg-muted/55" : "border-foreground/10 bg-background hover:border-[#e98fc6] hover:bg-[#e98fc6]/10"}`}
                 >
+                  <span className="block text-base leading-none sm:text-xl" aria-hidden="true">{cellEmoji(cell.id)}</span>
                   <span className={`block text-[10px] font-bold leading-tight sm:text-xs ${player ? "text-white/80" : "text-muted-foreground"}`}>{cell.label}</span>
                   <span className="mt-1 block truncate text-xs font-black sm:text-base">{player?.name ?? (gameStatus === "lost" ? `예: ${example?.name ?? "-"}` : "")}</span>
                 </button>
@@ -173,13 +200,16 @@ export function KboBingoGame({
           </div>
 
           {finished ? (
-            <div className={`mt-5 rounded-2xl p-5 ${gameStatus === "won" ? "bg-emerald-500 text-white" : "bg-rose-500 text-white"}`}>
-              <p className="flex items-center gap-2 text-sm font-black"><Trophy className="size-4" /> {gameStatus === "won" ? "빙고 완성" : "오늘의 도전 종료"}</p>
-              <p className="mt-2 text-3xl font-black">{filledByCell.size}/16</p>
-              <p className="mt-1 text-sm font-bold text-white/80">사용 {turns.length}장 · 오답 {mistakes} · 패스 {passes}</p>
+            <div className="mt-5 rounded-2xl border border-foreground/10 bg-background p-5">
+              <div className={`rounded-xl p-4 text-white ${gameStatus === "won" ? "bg-emerald-500" : "bg-rose-500"}`}>
+                <p className="flex items-center gap-2 text-sm font-black"><Trophy className="size-4" /> {gameStatus === "won" ? "빙고 완성" : "오늘의 도전 종료"}</p>
+                <p className="mt-2 text-3xl font-black">{filledByCell.size}/16</p>
+                <p className="mt-1 text-sm font-bold text-white/80">사용 {turns.length}장 · 오답 {mistakes} · 패스 {passes}</p>
+              </div>
+              <GameResultStats gameId="kbo-bingo" dateKey={dateKey} averageLabel="카드" />
               <div className="mt-5 flex flex-col gap-2 sm:flex-row">
-                <Button type="button" onClick={shareResult} variant="secondary" className="flex-1 gap-2"><Share2 className="size-4" /> {shareLabel}</Button>
-                <Button asChild variant="outline" className="flex-1 border-white/40 bg-transparent text-white hover:bg-white/10 hover:text-white"><Link href="/">게임 홈 <ArrowRight className="size-4" /></Link></Button>
+                <Button type="button" onClick={shareResult} className="flex-1 gap-2"><Share2 className="size-4" /> {shareLabel}</Button>
+                <Button asChild variant="secondary" className="flex-1 gap-2"><Link href="/"><Home className="size-4" /> 게임 홈</Link></Button>
               </div>
             </div>
           ) : null}

@@ -1,16 +1,15 @@
 import Link from "next/link";
-import { ArrowRight, Flame, Home, Share2, Trophy } from "lucide-react";
-import { useState, useSyncExternalStore } from "react";
+import { Home, Share2 } from "lucide-react";
+import { useState } from "react";
 import copy from "copy-to-clipboard";
 import { useGameStore } from "@/lib/store";
 import {
-  getDashboardSnapshot,
+  getGameStatsSummary,
   getKstDateKey,
-  getServerDashboardSnapshot,
-  subscribeToProgress,
 } from "@/lib/daily-progress";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { GameResultStats } from "@/components/game-result-stats";
 
 const GAME_URL = "https://kboryeok.vercel.app/games/player";
 const RESULT_LABELS = ["팀", "포지션", "투", "타", "나이", "번호"];
@@ -34,17 +33,9 @@ function FinishedGameDialog() {
   const { gameStatus, secretPlayer, guesses, results, activeDate } = useGameStore();
   const [shareFeedback, setShareFeedback] = useState<"idle" | "copied" | "failed">("idle");
   const [isDialogOpen, setIsDialogOpen] = useState(true);
-  const dashboardSnapshot = useSyncExternalStore(
-    subscribeToProgress,
-    getDashboardSnapshot,
-    getServerDashboardSnapshot,
-  );
-  const [, , , currentValue, bestValue] = dashboardSnapshot.split("|");
-  const currentStreak = Number(currentValue);
-  const bestStreak = Number(bestValue);
-
   const handleShare = () => {
     const shareDate = activeDate ?? getKstDateKey();
+    const { currentStreak } = getGameStatsSummary("daily-player", shareDate);
     const gameUrl = shareDate === getKstDateKey() ? GAME_URL : `${GAME_URL}?date=${shareDate}`;
     const score = gameStatus === "won" ? guesses.length : "X";
     const grid = results.map((result) => [
@@ -55,7 +46,7 @@ function FinishedGameDialog() {
       result.age === "correct" ? "🟩" : result.age === "up" ? "🔼" : "🔽",
       result.jerseyNumber === "correct" ? "🟩" : result.jerseyNumber === "up" ? "🔼" : "🔽",
     ].join("")).join("\n");
-    const shareText = `크보력 ${shareDate} ${score}/8\n🔥 ${currentStreak}일 연속\n\n${grid}\n\n크보선수 도전하기`;
+    const shareText = `크보력 크보선수 ${shareDate} ${score}/8\n${grid}\n🔥 ${currentStreak}일 연속`;
 
     setShareFeedback(copy(`${shareText}\n${gameUrl}`) ? "copied" : "failed");
     window.setTimeout(() => setShareFeedback("idle"), 2000);
@@ -94,24 +85,10 @@ function FinishedGameDialog() {
             })}
           </div>
 
-          <div className="mt-6 grid grid-cols-3 divide-x rounded-2xl bg-muted py-4 text-center">
-            <div>
-              <p className="text-xs font-bold text-muted-foreground">시도</p>
-              <p className="mt-1 text-2xl font-black tabular-nums">{guesses.length}</p>
-            </div>
-            <div>
-              <p className="flex items-center justify-center gap-1 text-xs font-bold text-muted-foreground"><Flame className="size-3.5 text-[#ff6b35]" /> 연속</p>
-              <p className="mt-1 text-2xl font-black tabular-nums">{currentStreak}</p>
-            </div>
-            <div>
-              <p className="flex items-center justify-center gap-1 text-xs font-bold text-muted-foreground"><Trophy className="size-3.5 text-primary" /> 최고</p>
-              <p className="mt-1 text-2xl font-black tabular-nums">{bestStreak}</p>
-            </div>
-          </div>
+          <GameResultStats gameId="daily-player" dateKey={activeDate ?? getKstDateKey()} averageLabel="시도" />
 
           <div className="mt-5 flex flex-col gap-2">
             <Button onClick={handleShare} className="w-full"><Share2 className="size-4" /> {shareLabel}</Button>
-            <Button asChild variant="secondary" className="w-full"><Link href="/games/kboten">크보텐 도전 <ArrowRight className="size-4" /></Link></Button>
             <Button asChild variant="ghost" className="w-full"><Link href="/"><Home className="size-4" /> 게임 홈</Link></Button>
           </div>
         </div>
