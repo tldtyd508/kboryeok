@@ -1,17 +1,12 @@
 import fs from "node:fs/promises";
 import {
+  resolveBingoDeck,
   resolvePuzzleAttributeBoard,
 } from "./lib/kbo-bingo-rules.mjs";
 
 const directory = "data/questions/kbo-bingo";
-const players = JSON.parse(await fs.readFile("public/players.json", "utf8"));
-const historicalHitters = JSON.parse(await fs.readFile("data/player-index/historical.json", "utf8"));
-const historicalPitchers = JSON.parse(await fs.readFile("data/player-index/historical-pitchers.json", "utf8"));
-const playerById = new Map([
-  ...historicalHitters.players.map((player) => [player.id, player]),
-  ...historicalPitchers.players.map((player) => [player.id, player]),
-  ...players.map((player) => [player.id, player]),
-]);
+const players = JSON.parse(await fs.readFile("data/players/index.json", "utf8"));
+const playerById = new Map(players.map((player) => [player.id, player]));
 const files = (await fs.readdir(directory)).filter((file) => file.endsWith(".json") && file !== "index.json");
 
 function canComplete(board, availableIds) {
@@ -54,6 +49,7 @@ function seededRandom(seed) {
 
 for (const file of files) {
   const puzzle = JSON.parse(await fs.readFile(`${directory}/${file}`, "utf8"));
+  const resolvedDeck = resolveBingoDeck(puzzle, playerById);
   if (puzzle.game !== "kbo-bingo") throw new Error(`${file}: game 값이 kbo-bingo가 아닙니다.`);
   if (puzzle.board?.length !== 16) throw new Error(`${file}: 조건은 정확히 16개여야 합니다.`);
   if (puzzle.deck?.length !== 36 || puzzle.maxCards !== 36) throw new Error(`${file}: 선수 덱은 정확히 36장이어야 합니다.`);
@@ -67,7 +63,7 @@ for (const file of files) {
   const missingPlayers = puzzle.deck.filter((id) => !playerById.has(id));
   if (missingPlayers.length) throw new Error(`${file}: 선수 인덱스에 없는 ID ${missingPlayers.join(", ")}`);
   const deckIds = new Set(puzzle.deck);
-  const resolvedBoard = resolvePuzzleAttributeBoard(puzzle, file);
+  const resolvedBoard = resolvePuzzleAttributeBoard(puzzle, playerById, file);
 
   for (const cell of resolvedBoard) {
     if (!Array.isArray(cell.validPlayerIds)) throw new Error(`${file}: ${cell.label}의 판정 집합이 없습니다.`);
@@ -75,6 +71,17 @@ for (const file of files) {
     if (invalidIds.length) throw new Error(`${file}: ${cell.label}에 덱 밖의 선수 ID가 있습니다: ${invalidIds.join(", ")}`);
     if (cell.validPlayerIds.length < 5) throw new Error(`${file}: ${cell.label}의 유효 선수가 5명 미만입니다.`);
     if (!cell.validPlayerIds.includes(cell.examplePlayerId)) throw new Error(`${file}: ${cell.label}의 대표 정답이 판정 집합에 없습니다.`);
+  }
+  if (puzzle.deckOrder === "balanced-shuffle") {
+    const firstEightActive = resolvedDeck.slice(0, 8).filter((id) => playerById.get(id)?.status === "active").length;
+    if (firstEightActive < 5) throw new Error(`${file}: 셔플 후 첫 8장의 현역 선수가 5명 미만입니다.`);
+    let longestRetiredRun = 0;
+    let retiredRun = 0;
+    for (const id of resolvedDeck) {
+      retiredRun = playerById.get(id)?.status === "retired" ? retiredRun + 1 : 0;
+      longestRetiredRun = Math.max(longestRetiredRun, retiredRun);
+    }
+    if (longestRetiredRun > 2) throw new Error(`${file}: 셔플 후 은퇴 선수가 ${longestRetiredRun}명 연속 배치됩니다.`);
   }
   if (!canComplete(resolvedBoard, puzzle.deck)) throw new Error(`${file}: 16칸 전체를 채우는 해답이 없습니다.`);
 

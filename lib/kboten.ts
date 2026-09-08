@@ -1,7 +1,5 @@
 import dailyPuzzles from "@/data/questions/kboten/index.json";
-import historicalIndex from "@/data/player-index/historical.json";
-import historicalPitchers from "@/data/player-index/historical-pitchers.json";
-import activePlayers from "@/public/players.json";
+import { playerCatalog } from "@/lib/player-catalog";
 
 export type PlayerStatus = "active" | "retired" | "inactive" | "unknown";
 
@@ -79,21 +77,15 @@ export function normalizePlayerName(name: string) {
 export function getKboTenPlayerOptions(puzzle: Pick<KboTenPublicPuzzle, "answers">): KboTenPlayerOption[] {
   const options = new Map<string, KboTenPlayerOption>();
 
-  for (const player of [...historicalIndex.players, ...historicalPitchers.players]) {
-    options.set(normalizePlayerName(player.name), {
-      id: `historical:${normalizePlayerName(player.name)}`,
-      name: player.name,
-      aliases: player.aliases,
-      detail: "역대 선수",
-    });
-  }
-
-  for (const player of activePlayers) {
-    options.set(normalizePlayerName(player.name), {
+  for (const player of playerCatalog) {
+    const key = normalizePlayerName(player.name);
+    const existing = options.get(key);
+    if (existing && player.status !== "active") continue;
+    options.set(key, {
       id: `kbo:${player.id}`,
       name: player.name,
       aliases: player.aliases ?? [],
-      detail: player.team,
+      detail: player.current?.team ?? "은퇴 선수",
     });
   }
 
@@ -104,7 +96,7 @@ export function getKboTenPlayerOptions(puzzle: Pick<KboTenPublicPuzzle, "answers
       id: existing?.id ?? `answer:${key}`,
       name: answer.name,
       aliases: Array.from(new Set([...(existing?.aliases ?? []), ...answer.aliases])),
-      detail: existing?.detail ?? (answer.status === "active" ? "현역 선수" : answer.status === "retired" ? "역대 선수" : "KBO 경력 선수"),
+      detail: existing?.detail ?? (answer.status === "active" ? "현역 선수" : answer.status === "retired" ? "은퇴 선수" : "KBO 경력 선수"),
     });
   }
 

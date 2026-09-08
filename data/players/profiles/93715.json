@@ -1,0 +1,7 @@
+{
+  "id": 93715, "name": "구대성", "aliases": [], "status": "retired",
+  "positionGroup": "P", "positionDetail": "투수", "throws": "L", "bats": "L", "birthYear": 1969,
+  "current": null, "career": { "jerseyNumbers": [15] },
+  "sources": [{ "name": "KBO 은퇴 선수 기록", "url": "https://www.koreabaseball.com/Record/Retire/Pitcher.aspx?playerId=93715", "role": "primary" }],
+  "review": { "status": "verified", "reviewedAt": "2026-09-08" }
+}

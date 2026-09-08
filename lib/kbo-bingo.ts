@@ -1,7 +1,5 @@
 import dailyPuzzles from "@/data/questions/kbo-bingo/index.json";
-import historicalHitters from "@/data/player-index/historical.json";
-import historicalPitchers from "@/data/player-index/historical-pitchers.json";
-import activePlayers from "@/public/players.json";
+import { playerProfileById } from "@/lib/player-catalog";
 
 export const KBO_BINGO_LAUNCH_DATE = "2026-09-07";
 
@@ -23,16 +21,7 @@ export interface KboBingoPuzzle {
   title: string;
   prompt: string;
   board: KboBingoCell[];
-  attributePlayerFacts?: Array<{
-    id: number;
-    team: string;
-    positionGroup: string;
-    throws: string;
-    bats: string;
-    birthYear: number;
-    jerseyNumber: number;
-  }>;
-  attributeExcludedPlayerIds?: number[];
+  deckOrder?: "balanced-shuffle";
   deck: number[];
   maxCards: number;
   sources: Array<{
@@ -59,18 +48,6 @@ export type KboBingoPublicPuzzle = KboBingoPuzzle & {
   players: KboBingoPlayer[];
 };
 
-const playersById = new Map<number, KboBingoPlayer>();
-
-for (const player of historicalHitters.players) {
-  playersById.set(player.id, { id: player.id, name: player.name, team: "역대 선수", positionDetail: "타자" });
-}
-for (const player of historicalPitchers.players) {
-  playersById.set(player.id, { id: player.id, name: player.name, team: "역대 선수", positionDetail: "투수" });
-}
-for (const player of activePlayers) {
-  playersById.set(player.id, { id: player.id, name: player.name, team: player.team, positionDetail: player.positionDetail });
-}
-
 export function getDailyKboBingoPuzzle(dateKey: string): KboBingoPuzzle {
   const puzzle = (dailyPuzzles as KboBingoPuzzle[]).find((candidate) => candidate.publishDate === dateKey);
   if (!puzzle) throw new Error(`${dateKey} 크보 빙고 문제를 찾을 수 없습니다.`);
@@ -81,9 +58,14 @@ export function toPublicKboBingoPuzzle(puzzle: KboBingoPuzzle): KboBingoPublicPu
   return {
     ...puzzle,
     players: puzzle.deck.map((id) => {
-      const player = playersById.get(id);
+      const player = playerProfileById.get(id);
       if (!player) throw new Error(`크보 빙고 선수 ${id}를 찾을 수 없습니다.`);
-      return player;
+      return {
+        id: player.id,
+        name: player.name,
+        team: player.current?.team ?? "은퇴 선수",
+        positionDetail: player.positionDetail ?? (player.positionGroup === "P" ? "투수" : "타자"),
+      };
     }),
   };
 }

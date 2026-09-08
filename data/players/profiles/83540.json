@@ -1,0 +1,7 @@
+{
+  "id": 83540, "name": "최동원", "aliases": [], "status": "retired",
+  "positionGroup": "P", "positionDetail": "투수", "throws": "R", "bats": "R", "birthYear": 1958,
+  "current": null, "career": { "jerseyNumbers": [11] },
+  "sources": [{ "name": "KBO 은퇴 선수 기록", "url": "https://www.koreabaseball.com/Record/Retire/Pitcher.aspx?playerId=83540", "role": "primary" }],
+  "review": { "status": "verified", "reviewedAt": "2026-09-08" }
+}

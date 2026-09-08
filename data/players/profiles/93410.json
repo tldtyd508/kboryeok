@@ -1,0 +1,7 @@
+{
+  "id": 93410, "name": "양준혁", "aliases": [], "status": "retired",
+  "positionGroup": "OF", "positionDetail": "외야수", "throws": "L", "bats": "L", "birthYear": 1969,
+  "current": null, "career": { "jerseyNumbers": [10] },
+  "sources": [{ "name": "KBO 은퇴 선수 기록", "url": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=93410", "role": "primary" }],
+  "review": { "status": "verified", "reviewedAt": "2026-09-08" }
+}

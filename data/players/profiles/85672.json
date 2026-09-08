@@ -1,0 +1,7 @@
+{
+  "id": 85672, "name": "선동열", "aliases": [], "status": "retired",
+  "positionGroup": "P", "positionDetail": "투수", "throws": "R", "bats": "R", "birthYear": 1963,
+  "current": null, "career": { "jerseyNumbers": [18] },
+  "sources": [{ "name": "KBO 은퇴 선수 기록", "url": "https://www.koreabaseball.com/Record/Retire/Pitcher.aspx?playerId=85672", "role": "primary" }],
+  "review": { "status": "verified", "reviewedAt": "2026-09-08" }
+}

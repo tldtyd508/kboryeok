@@ -1,8 +1,10 @@
 import dailyPuzzles from "@/data/questions/kbo5001/index.json";
+import { getPlayerProfileByName } from "@/lib/player-catalog";
 
 export const KBO5001_LAUNCH_DATE = "2026-09-06";
 
 export interface Kbo5001Candidate {
+  playerId?: number;
   name: string;
   value: number;
   status: "active" | "retired" | "inactive";
@@ -29,5 +31,11 @@ export interface Kbo5001Puzzle {
 export function getDailyKbo5001Puzzle(dateKey: string): Kbo5001Puzzle {
   const puzzle = (dailyPuzzles as Kbo5001Puzzle[]).find((candidate) => candidate.publishDate === dateKey);
   if (!puzzle) throw new Error(`${dateKey} 크보 5001 문제를 찾을 수 없습니다.`);
-  return puzzle;
+  return {
+    ...puzzle,
+    candidates: puzzle.candidates.map((candidate) => {
+      const profile = getPlayerProfileByName(candidate.name);
+      return { ...candidate, playerId: profile?.id, status: profile?.status === "retired" ? "retired" : candidate.status };
+    }),
+  };
 }

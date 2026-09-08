@@ -378,333 +378,6 @@
         ]
       }
     ],
-    "attributePlayerFacts": [
-      {
-        "id": 52605,
-        "team": "KIA 타이거즈",
-        "positionGroup": "IF",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 2003,
-        "jerseyNumber": 5
-      },
-      {
-        "id": 76715,
-        "team": "한화 이글스",
-        "positionGroup": "P",
-        "throws": "L",
-        "bats": "R",
-        "birthYear": 1987,
-        "jerseyNumber": 99
-      },
-      {
-        "id": 62404,
-        "team": "삼성 라이온즈",
-        "positionGroup": "OF",
-        "throws": "R",
-        "bats": "L",
-        "birthYear": 1993,
-        "jerseyNumber": 5
-      },
-      {
-        "id": 53123,
-        "team": "LG 트윈스",
-        "positionGroup": "IF",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 1993,
-        "jerseyNumber": 23
-      },
-      {
-        "id": 75847,
-        "team": "SSG 랜더스",
-        "positionGroup": "IF",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 1987,
-        "jerseyNumber": 14
-      },
-      {
-        "id": 76232,
-        "team": "두산 베어스",
-        "positionGroup": "C",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 1987,
-        "jerseyNumber": 25
-      },
-      {
-        "id": 76290,
-        "team": "KT 위즈",
-        "positionGroup": "OF",
-        "throws": "R",
-        "bats": "L",
-        "birthYear": 1988,
-        "jerseyNumber": 10
-      },
-      {
-        "id": 64021,
-        "team": "롯데 자이언츠",
-        "positionGroup": "P",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 1995,
-        "jerseyNumber": 21
-      },
-      {
-        "id": 62907,
-        "team": "NC 다이노스",
-        "positionGroup": "IF",
-        "throws": "R",
-        "bats": "L",
-        "birthYear": 1993,
-        "jerseyNumber": 2
-      },
-      {
-        "id": 68341,
-        "team": "키움 히어로즈",
-        "positionGroup": "P",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 1999,
-        "jerseyNumber": 41
-      },
-      {
-        "id": 79365,
-        "team": "LG 트윈스",
-        "positionGroup": "C",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 1990,
-        "jerseyNumber": 27
-      },
-      {
-        "id": 69737,
-        "team": "한화 이글스",
-        "positionGroup": "IF",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 2000,
-        "jerseyNumber": 8
-      },
-      {
-        "id": 69446,
-        "team": "삼성 라이온즈",
-        "positionGroup": "P",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 2000,
-        "jerseyNumber": 18
-      },
-      {
-        "id": 62947,
-        "team": "KIA 타이거즈",
-        "positionGroup": "OF",
-        "throws": "L",
-        "bats": "L",
-        "birthYear": 1989,
-        "jerseyNumber": 47
-      },
-      {
-        "id": 77829,
-        "team": "SSG 랜더스",
-        "positionGroup": "P",
-        "throws": "L",
-        "bats": "L",
-        "birthYear": 1988,
-        "jerseyNumber": 29
-      },
-      {
-        "id": 78548,
-        "team": "KT 위즈",
-        "positionGroup": "C",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 1990,
-        "jerseyNumber": 22
-      },
-      {
-        "id": 69102,
-        "team": "LG 트윈스",
-        "positionGroup": "IF",
-        "throws": "R",
-        "bats": "L",
-        "birthYear": 2000,
-        "jerseyNumber": 2
-      },
-      {
-        "id": 68050,
-        "team": "한화 이글스",
-        "positionGroup": "IF",
-        "throws": "R",
-        "bats": "L",
-        "birthYear": 1999,
-        "jerseyNumber": 50
-      },
-      {
-        "id": 74540,
-        "team": "삼성 라이온즈",
-        "positionGroup": "C",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 1985,
-        "jerseyNumber": 47
-      },
-      {
-        "id": 77637,
-        "team": "KIA 타이거즈",
-        "positionGroup": "P",
-        "throws": "L",
-        "bats": "L",
-        "birthYear": 1988,
-        "jerseyNumber": 54
-      },
-      {
-        "id": 66108,
-        "team": "LG 트윈스",
-        "positionGroup": "OF",
-        "throws": "R",
-        "bats": "L",
-        "birthYear": 1993,
-        "jerseyNumber": 51
-      },
-      {
-        "id": 53764,
-        "team": "한화 이글스",
-        "positionGroup": "OF",
-        "throws": "R",
-        "bats": "L",
-        "birthYear": 2004,
-        "jerseyNumber": 51
-      },
-      {
-        "id": 54400,
-        "team": "삼성 라이온즈",
-        "positionGroup": "IF",
-        "throws": "L",
-        "bats": "L",
-        "birthYear": 1996,
-        "jerseyNumber": 0
-      },
-      {
-        "id": 78603,
-        "team": "KIA 타이거즈",
-        "positionGroup": "IF",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 1989,
-        "jerseyNumber": 3
-      },
-      {
-        "id": 67893,
-        "team": "SSG 랜더스",
-        "positionGroup": "IF",
-        "throws": "R",
-        "bats": "L",
-        "birthYear": 1998,
-        "jerseyNumber": 2
-      },
-      {
-        "id": 65933,
-        "team": "NC 다이노스",
-        "positionGroup": "P",
-        "throws": "L",
-        "bats": "L",
-        "birthYear": 1997,
-        "jerseyNumber": 59
-      },
-      {
-        "id": 64001,
-        "team": "KT 위즈",
-        "positionGroup": "P",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 1991,
-        "jerseyNumber": 1
-      },
-      {
-        "id": 52591,
-        "team": "롯데 자이언츠",
-        "positionGroup": "OF",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 2003,
-        "jerseyNumber": 91
-      },
-      {
-        "id": 68220,
-        "team": "두산 베어스",
-        "positionGroup": "P",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 1999,
-        "jerseyNumber": 47
-      },
-      {
-        "id": 50167,
-        "team": "키움 히어로즈",
-        "positionGroup": "OF",
-        "throws": "R",
-        "bats": "L",
-        "birthYear": 2001,
-        "jerseyNumber": 2
-      },
-      {
-        "id": 79109,
-        "team": "LG 트윈스",
-        "positionGroup": "IF",
-        "throws": "R",
-        "bats": "L",
-        "birthYear": 1990,
-        "jerseyNumber": 10
-      },
-      {
-        "id": 53754,
-        "team": "한화 이글스",
-        "positionGroup": "P",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 2004,
-        "jerseyNumber": 44
-      },
-      {
-        "id": 72443,
-        "team": "삼성 라이온즈",
-        "positionGroup": "OF",
-        "throws": "R",
-        "bats": "L",
-        "birthYear": 1983,
-        "jerseyNumber": 34
-      },
-      {
-        "id": 78122,
-        "team": "KIA 타이거즈",
-        "positionGroup": "C",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 1989,
-        "jerseyNumber": 42
-      },
-      {
-        "id": 79215,
-        "team": "NC 다이노스",
-        "positionGroup": "OF",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 1990,
-        "jerseyNumber": 37
-      },
-      {
-        "id": 69517,
-        "team": "롯데 자이언츠",
-        "positionGroup": "IF",
-        "throws": "R",
-        "bats": "L",
-        "birthYear": 2000,
-        "jerseyNumber": 2
-      }
-    ],
-    "attributeExcludedPlayerIds": [],
     "deck": [
       52605,
       76715,
@@ -762,7 +435,7 @@
     "id": "kbo-bingo-current-roster-2026-09-08",
     "game": "kbo-bingo",
     "publishDate": "2026-09-08",
-    "revision": 3,
+    "revision": 4,
     "title": "2026 KBO 선수 빙고 · 스타와 레전드",
     "prompt": "등장한 선수를 조건 한 칸에만 배치해 4×4 판을 완성하세요.",
     "board": [
@@ -777,11 +450,11 @@
         },
         "examplePlayerId": 64001,
         "validPlayerIds": [
-          64001,
-          76290,
-          78548,
           50066,
-          50030
+          50030,
+          78548,
+          76290,
+          64001
         ]
       },
       {
@@ -796,10 +469,10 @@
         "examplePlayerId": 78513,
         "validPlayerIds": [
           78513,
-          54529,
-          64021,
           52591,
-          61102
+          54529,
+          61102,
+          64021
         ]
       },
       {
@@ -813,10 +486,10 @@
         },
         "examplePlayerId": 76232,
         "validPlayerIds": [
-          76232,
-          68220,
-          54263,
           64153,
+          68220,
+          76232,
+          54263,
           79231
         ]
       },
@@ -831,16 +504,16 @@
         },
         "examplePlayerId": 79215,
         "validPlayerIds": [
-          79215,
-          62907,
           51907,
+          79215,
           68912,
-          65933
+          65933,
+          62907
         ]
       },
       {
         "id": "position-pitcher",
-        "label": "현역 투수",
+        "label": "투수",
         "rule": {
           "type": "position",
           "values": [
@@ -849,18 +522,22 @@
         },
         "examplePlayerId": 76715,
         "validPlayerIds": [
-          76715,
-          64001,
-          50030,
-          64021,
           68220,
+          50030,
+          93715,
+          85672,
+          76715,
+          65933,
+          64001,
+          75620,
           54263,
-          65933
+          83540,
+          64021
         ]
       },
       {
         "id": "position-catcher",
-        "label": "현역 포수",
+        "label": "포수",
         "rule": {
           "type": "position",
           "values": [
@@ -869,16 +546,17 @@
         },
         "examplePlayerId": 76232,
         "validPlayerIds": [
-          76232,
-          78548,
           50066,
-          61102,
-          68912
+          78548,
+          68912,
+          99222,
+          76232,
+          61102
         ]
       },
       {
         "id": "position-outfielder",
-        "label": "현역 외야수",
+        "label": "외야수",
         "rule": {
           "type": "position",
           "values": [
@@ -887,36 +565,43 @@
         },
         "examplePlayerId": 62404,
         "validPlayerIds": [
+          72133,
+          93410,
           62404,
           78513,
-          54529,
-          76290,
+          79215,
           52591,
+          76290,
+          54529,
           79231,
-          79215
+          97109
         ]
       },
       {
         "id": "number-10-below",
-        "label": "현역 등번호 10 이하",
+        "label": "등번호 10 이하",
         "rule": {
           "type": "jerseyNumber",
           "max": 10
         },
         "examplePlayerId": 62404,
         "validPlayerIds": [
+          93410,
           62404,
-          52605,
+          51907,
           78513,
-          64001,
           76290,
+          52605,
+          75808,
+          64001,
+          71564,
           62907,
-          51907
+          97109
         ]
       },
       {
         "id": "number-21-40",
-        "label": "현역 등번호 21~40",
+        "label": "등번호 21~40",
         "rule": {
           "type": "jerseyNumber",
           "min": 21,
@@ -924,38 +609,46 @@
         },
         "examplePlayerId": 76232,
         "validPlayerIds": [
-          76232,
-          54529,
-          78548,
+          72133,
           50030,
-          64021,
-          61102,
-          79231,
           79215,
-          68912
+          75125,
+          78548,
+          68912,
+          99222,
+          54529,
+          76232,
+          75620,
+          79231,
+          61102,
+          64021
         ]
       },
       {
         "id": "number-41-plus",
-        "label": "현역 등번호 41 이상",
+        "label": "등번호 41 이상",
         "rule": {
           "type": "jerseyNumber",
           "min": 41
         },
         "examplePlayerId": 76715,
         "validPlayerIds": [
-          76715,
-          50066,
-          52591,
-          68220,
-          54263,
           64153,
-          65933
+          50066,
+          68220,
+          75125,
+          52591,
+          71752,
+          76715,
+          99222,
+          65933,
+          71564,
+          54263
         ]
       },
       {
         "id": "bats-left",
-        "label": "현역 좌타",
+        "label": "좌타",
         "rule": {
           "type": "bats",
           "values": [
@@ -964,16 +657,20 @@
         },
         "examplePlayerId": 62404,
         "validPlayerIds": [
+          72133,
+          93410,
           62404,
+          93715,
           76290,
-          79231,
+          65933,
           62907,
-          65933
+          79231,
+          97109
         ]
       },
       {
         "id": "bats-right",
-        "label": "현역 우타",
+        "label": "우타",
         "rule": {
           "type": "bats",
           "values": [
@@ -982,69 +679,89 @@
         },
         "examplePlayerId": 76715,
         "validPlayerIds": [
-          76715,
-          75847,
-          52605,
-          76232,
-          78513,
-          64001,
-          78548,
-          50066,
-          50030,
-          64021,
-          52591,
-          61102,
-          68220,
-          54263,
           64153,
+          50066,
+          68220,
+          50030,
+          78513,
           79215,
-          68912
+          75125,
+          52591,
+          75847,
+          85672,
+          78548,
+          71752,
+          68912,
+          76715,
+          99222,
+          52605,
+          75808,
+          64001,
+          71564,
+          76232,
+          75620,
+          54263,
+          83540,
+          61102,
+          64021
         ]
       },
       {
         "id": "born-1995-plus",
-        "label": "현역 1995년생 이후",
+        "label": "1995년생 이후",
         "rule": {
           "type": "birthYear",
           "min": 1995
         },
         "examplePlayerId": 52605,
         "validPlayerIds": [
-          52605,
           50066,
-          50030,
-          64021,
-          52591,
           68220,
-          54263,
+          50030,
           51907,
+          52591,
           68912,
-          65933
+          52605,
+          65933,
+          54263,
+          64021
         ]
       },
       {
         "id": "born-before-1995",
-        "label": "현역 1994년생 이전",
+        "label": "1994년생 이전",
         "rule": {
           "type": "birthYear",
           "max": 1994
         },
         "examplePlayerId": 76715,
         "validPlayerIds": [
-          76715,
-          62404,
-          75847,
-          76232,
-          78513,
-          54529,
-          64001,
-          76290,
-          78548,
-          61102,
           64153,
-          79231,
+          72133,
+          93410,
+          62404,
+          93715,
+          78513,
           79215,
-          62907
+          75125,
+          75847,
+          85672,
+          78548,
+          76290,
+          71752,
+          76715,
+          99222,
+          75808,
+          64001,
+          54529,
+          71564,
+          62907,
+          76232,
+          75620,
+          79231,
+          83540,
+          61102,
+          97109
         ]
       },
       {
@@ -1091,275 +808,44 @@
         "examplePlayerId": 75620
       }
     ],
-    "attributePlayerFacts": [
-      {
-        "id": 76715,
-        "team": "한화 이글스",
-        "positionGroup": "P",
-        "throws": "L",
-        "bats": "R",
-        "birthYear": 1987,
-        "jerseyNumber": 99
-      },
-      {
-        "id": 62404,
-        "team": "삼성 라이온즈",
-        "positionGroup": "OF",
-        "throws": "R",
-        "bats": "L",
-        "birthYear": 1993,
-        "jerseyNumber": 5
-      },
-      {
-        "id": 75847,
-        "team": "SSG 랜더스",
-        "positionGroup": "IF",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 1987,
-        "jerseyNumber": 14
-      },
-      {
-        "id": 52605,
-        "team": "KIA 타이거즈",
-        "positionGroup": "IF",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 2003,
-        "jerseyNumber": 5
-      },
-      {
-        "id": 76232,
-        "team": "두산 베어스",
-        "positionGroup": "C",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 1987,
-        "jerseyNumber": 25
-      },
-      {
-        "id": 78513,
-        "team": "롯데 자이언츠",
-        "positionGroup": "OF",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 1986,
-        "jerseyNumber": 8
-      },
-      {
-        "id": 54529,
-        "team": "롯데 자이언츠",
-        "positionGroup": "OF",
-        "throws": "R",
-        "bats": "S",
-        "birthYear": 1994,
-        "jerseyNumber": 29
-      },
-      {
-        "id": 64001,
-        "team": "KT 위즈",
-        "positionGroup": "P",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 1991,
-        "jerseyNumber": 1
-      },
-      {
-        "id": 76290,
-        "team": "KT 위즈",
-        "positionGroup": "OF",
-        "throws": "R",
-        "bats": "L",
-        "birthYear": 1988,
-        "jerseyNumber": 10
-      },
-      {
-        "id": 78548,
-        "team": "KT 위즈",
-        "positionGroup": "C",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 1990,
-        "jerseyNumber": 22
-      },
-      {
-        "id": 50066,
-        "team": "KT 위즈",
-        "positionGroup": "C",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 2001,
-        "jerseyNumber": 55
-      },
-      {
-        "id": 50030,
-        "team": "KT 위즈",
-        "positionGroup": "P",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 2001,
-        "jerseyNumber": 30
-      },
-      {
-        "id": 64021,
-        "team": "롯데 자이언츠",
-        "positionGroup": "P",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 1995,
-        "jerseyNumber": 21
-      },
-      {
-        "id": 52591,
-        "team": "롯데 자이언츠",
-        "positionGroup": "OF",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 2003,
-        "jerseyNumber": 91
-      },
-      {
-        "id": 61102,
-        "team": "롯데 자이언츠",
-        "positionGroup": "C",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 1992,
-        "jerseyNumber": 27
-      },
-      {
-        "id": 68220,
-        "team": "두산 베어스",
-        "positionGroup": "P",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 1999,
-        "jerseyNumber": 47
-      },
-      {
-        "id": 54263,
-        "team": "두산 베어스",
-        "positionGroup": "P",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 2005,
-        "jerseyNumber": 63
-      },
-      {
-        "id": 64153,
-        "team": "두산 베어스",
-        "positionGroup": "IF",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 1991,
-        "jerseyNumber": 53
-      },
-      {
-        "id": 79231,
-        "team": "두산 베어스",
-        "positionGroup": "OF",
-        "throws": "L",
-        "bats": "L",
-        "birthYear": 1990,
-        "jerseyNumber": 31
-      },
-      {
-        "id": 79215,
-        "team": "NC 다이노스",
-        "positionGroup": "OF",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 1990,
-        "jerseyNumber": 37
-      },
-      {
-        "id": 62907,
-        "team": "NC 다이노스",
-        "positionGroup": "IF",
-        "throws": "R",
-        "bats": "L",
-        "birthYear": 1993,
-        "jerseyNumber": 2
-      },
-      {
-        "id": 51907,
-        "team": "NC 다이노스",
-        "positionGroup": "IF",
-        "throws": "R",
-        "bats": "S",
-        "birthYear": 2002,
-        "jerseyNumber": 7
-      },
-      {
-        "id": 68912,
-        "team": "NC 다이노스",
-        "positionGroup": "C",
-        "throws": "R",
-        "bats": "R",
-        "birthYear": 1999,
-        "jerseyNumber": 25
-      },
-      {
-        "id": 65933,
-        "team": "NC 다이노스",
-        "positionGroup": "P",
-        "throws": "L",
-        "bats": "L",
-        "birthYear": 1997,
-        "jerseyNumber": 59
-      }
-    ],
-    "attributeExcludedPlayerIds": [
-      85672,
-      83540,
-      93715,
-      71752,
-      71564,
-      75125,
-      93410,
-      97109,
-      72133,
-      75808,
-      99222,
-      75620
-    ],
+    "deckOrder": "balanced-shuffle",
     "deck": [
-      76715,
-      62404,
-      75847,
-      52605,
-      76232,
-      78513,
-      54529,
-      64001,
-      76290,
-      78548,
-      50066,
-      50030,
-      64021,
-      52591,
-      61102,
-      68220,
-      54263,
       64153,
-      79231,
-      79215,
-      62907,
-      51907,
-      68912,
-      65933,
-      85672,
-      83540,
-      93715,
-      71752,
-      71564,
-      75125,
-      93410,
-      97109,
+      50066,
       72133,
-      75808,
+      68220,
+      50030,
+      93410,
+      62404,
+      51907,
+      93715,
+      78513,
+      79215,
+      75125,
+      52591,
+      75847,
+      85672,
+      78548,
+      76290,
+      71752,
+      68912,
+      76715,
       99222,
-      75620
+      52605,
+      65933,
+      75808,
+      64001,
+      54529,
+      71564,
+      62907,
+      76232,
+      75620,
+      54263,
+      79231,
+      83540,
+      61102,
+      64021,
+      97109
     ],
     "maxCards": 36,
     "sources": [
@@ -1379,7 +865,7 @@
     "review": {
       "status": "verified",
       "reviewedAt": "2026-09-08",
-      "note": "현역 24명과 은퇴 12명으로 구성했다. 첫 8장은 류현진·구자욱·최정·김도영·양의지·전준우·레이예스·고영표이며, 은퇴 카드는 KBO 공식 골든글러브 수상 이력 조건에도 배치할 수 있다. 구단·포지션·투타·생년월일·등번호는 공식 2026 등록 명단의 선수 속성 rule에서 자동 계산하며, 수상 조건은 KBO 공식 수상 현황으로 고정했다. revision 3에서 등번호 41 이상 판정 누락을 수정했다."
+      "note": "현역 24명과 은퇴 12명으로 구성했다. 공통 선수 프로필에서 현역의 현재 등번호와 은퇴 선수의 KBO 등번호 이력을 판정하며, 날짜 고정 균형 셔플로 두 그룹을 섞는다. 구단·포지션·투타·생년월일·등번호는 선수 프로필의 속성 rule에서 자동 계산하고 수상 조건은 KBO 공식 수상 현황으로 고정했다. revision 4에서 은퇴 선수 이력 판정과 카드 순서 혼합을 반영했다."
     }
   }
 ]

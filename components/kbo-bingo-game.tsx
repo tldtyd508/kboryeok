@@ -108,6 +108,7 @@ export function KboBingoGame({
             <div className="space-y-3 text-sm leading-6 text-muted-foreground">
               <p>매 턴 선수 한 명이 등장합니다. 그 선수가 만족하는 빈칸 하나를 선택하세요.</p>
               <p>한 선수는 한 칸에만 쓸 수 있습니다. 여러 조건을 만족하는 선수일수록 어디에 배치할지가 중요합니다.</p>
+              <p>등번호는 현역 선수의 현재 번호, 은퇴 선수의 KBO 선수 시절 사용 번호를 기준으로 판정합니다.</p>
               <p>오답과 패스도 카드를 한 장 사용합니다. 36장이 끝나기 전에 16칸을 모두 채우면 성공입니다.</p>
             </div>
           </DialogContent>

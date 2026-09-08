@@ -21,6 +21,8 @@
 - `data/roster-metadata.json`: 출처와 마지막 월간 검수일
 - `data/player-index/historical.json`: KBO 통산 타자 기록실의 최소 기준 충족 선수 인덱스
 - `data/player-index/historical-pitchers.json`: KBO 통산 투수 기록실의 최소 기준 충족 선수 인덱스
+- `data/players/profiles/{playerId}.json`: 출제에 사용한 은퇴 선수의 공통 프로필과 KBO 등번호 이력
+- `data/players/index.json`: 현역 명단·은퇴 선수 인덱스·개별 프로필을 합친 생성 파일
 - `data/questions/{game}/{YYYY-MM-DD}-{slug}.json`: 출제 당일 검수한 문제별 정답·기록·출처 스냅샷
 - `data/questions/kboten/index.json`: 날짜별 문제 파일에서 빌드 전에 자동 생성하는 런타임 인덱스
 - `data/questions/kbo5001/{YYYY-MM-DD}-{slug}.json`: 후보 선수·기록값·목표값·검증된 정답 조합 스냅샷
@@ -44,7 +46,9 @@
 
 현역 여부는 선수의 영구 속성이 아니라 기준일에 따른 상태다. 해외 진출, 군 복무, 임의해지처럼 은퇴가 아닌 이탈은 `inactive`로 분리한다. 월간 XLSX 갱신은 현재 상태만 병합하며 과거 선수나 이전 이름을 삭제하지 않는다.
 
-검색 자동완성은 현역 명단과 역대 선수 이름 인덱스를 합쳐 만든다. 문제 정답 10명만 후보로 제공하면 자동완성이 정답을 누설하므로, 항상 전체 선수 후보군을 검색하되 문제 파일에는 실제 판정에 필요한 답만 둔다. 사용자는 자유 문자열을 제출하지 않고 자동완성 후보를 선택하므로 오타가 오답으로 기록되지 않는다.
+검색 자동완성은 현역 명단과 은퇴 선수 이름 인덱스를 합쳐 만든다. 문제 정답 10명만 후보로 제공하면 자동완성이 정답을 누설하므로, 항상 전체 선수 후보군을 검색하되 문제 파일에는 실제 판정에 필요한 답만 둔다. 사용자는 자유 문자열을 제출하지 않고 자동완성 후보를 선택하므로 오타가 오답으로 기록되지 않는다.
+
+게임에 처음 출제하는 은퇴 선수는 `data/players/profiles/{playerId}.json`을 추가해 포지션·투타·출생연도와 KBO 선수 시절 사용 등번호를 한 번만 검수한다. 현역 선수의 등번호 조건은 현재 등록 번호, 은퇴 선수는 KBO 선수 시절 사용한 번호 중 하나라도 범위에 들면 충족한다. 해외 구단·국가대표·코칭스태프 번호는 포함하지 않는다. 생성된 `data/players/index.json`은 모든 게임이 공유하며 직접 편집하지 않는다.
 
 ### 2. 문제 스냅샷 — 출제할 때만 보유
 
@@ -60,7 +64,7 @@
 
 크보 5001은 후보 M명 중 N명을 고르는 모든 조합을 검증 스크립트에서 전수 검사한다. 공개 문제는 정답 조합이 1~3개인 경우만 통과하며, JSON에 기록한 정답과 계산 결과가 다르면 빌드를 중단한다.
 
-크보 빙고는 16개 조건과 36장 선수 덱을 저장한다. 구단·포지션·투타·출생연도·등번호처럼 선수 속성으로 결정되는 칸은 `validPlayerIds`를 손으로 적지 않고 날짜별 `attributePlayerFacts`와 `rule`에서 빌드 시 계산한다. 수상·우승·과거 이력처럼 별도 관계 자료가 필요한 칸만 공식 근거로 확정한 `validPlayerIds`를 저장한다. 검증기는 덱 전체가 속성 스냅샷 또는 명시적 제외 목록에 정확히 한 번 포함되는지 확인한 뒤 전체 판의 이분 매칭, 임의 카드 4장 제거 전수 검사와 카드 8장 제거 10,000개 표본 검사를 실행한다.
+크보 빙고는 16개 조건과 36장 선수 덱을 저장한다. 구단·포지션·투타·출생연도·등번호처럼 선수 속성으로 결정되는 칸은 `validPlayerIds`를 손으로 적지 않고 공통 선수 카탈로그와 `rule`에서 빌드 시 계산한다. 수상·우승·과거 이력처럼 별도 관계 자료가 필요한 칸만 공식 근거로 확정한 `validPlayerIds`를 저장한다. 날짜를 시드로 삼은 균형 셔플은 현역과 은퇴 선수를 섞되 모든 사용자에게 같은 순서를 제공한다. 검증기는 전체 판의 이분 매칭, 임의 카드 4장 제거 전수 검사와 카드 8장 제거 10,000개 표본 검사를 실행한다.
 
 ## 문제 출제 흐름
 
@@ -84,6 +88,8 @@
 ```bash
 npm run data:import -- --source data/source/kbo-team-rosters-2026.xlsx --season 2026 --reviewed-at YYYY-MM-DD
 npm run data:sync-players
+npm run data:validate-players
+npm run data:build-players
 npm run data:import -- --source data/source/kbo-team-rosters-2026.xlsx --season 2026 --reviewed-at YYYY-MM-DD
 npm run data:sync-kboten-index
 npm run data:validate-kboten
