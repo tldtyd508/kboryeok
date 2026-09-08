@@ -35,7 +35,10 @@ for (const file of files) {
   const answerNames = puzzle.answers.map((answer) => answer.name);
   if (new Set(answerNames).size !== 10) throw new Error(`${file}: 답안 선수 이름에 중복이 있습니다.`);
 
-  if (!recordType.startsWith("award-")) {
+  // 통산 기록만 최소 표본을 전제로 만든 historical 후보 풀과 대조한다.
+  // 단일 시즌 기록은 해당 시즌의 공식 규정 타석·이닝과 원문 스냅샷으로
+  // 검수하므로, 통산 후보 풀에 없는 선수 때문에 제외하면 안 된다.
+  if (recordType.startsWith("career-")) {
     const unit = puzzle.eligibility?.minimum?.unit;
     const candidatePlayers = indexes[unit]?.players ?? [...indexes.PA.players, ...indexes.IP.players];
     const indexedNames = new Set(candidatePlayers.map((player) => player.name));
