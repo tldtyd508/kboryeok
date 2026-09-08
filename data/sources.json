@@ -22,10 +22,11 @@
       "id": "namuwiki",
       "name": "나무위키",
       "baseUrl": "https://namu.wiki/",
-      "priority": 4,
-      "collectionMode": "discovery-only",
+      "priority": 3,
+      "collectionMode": "manual-reviewed-reference",
       "automatedCollection": false,
-      "note": "개명·별칭·누락 후보 탐색용. 정답 수치의 단독 근거로 사용하지 않는다."
+      "allowedUses": ["retired-player-jersey-history", "alias-discovery", "career-discovery"],
+      "note": "은퇴 선수의 KBO 선수 시절 등번호 이력은 단독 참고 자료로 사용할 수 있다. 기록 수치·수상·현역 현재 등번호의 근거로는 사용하지 않는다. 문장과 표는 복제하지 않고 필요한 번호만 선수별 JSON에 옮긴다."
     }
   ]
 }

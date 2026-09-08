@@ -26,6 +26,11 @@ for (const file of files) {
     throw new Error(`${file}: KBO 선수 시절 등번호 이력이 올바르지 않습니다.`);
   }
   if (new Set(numbers).size !== numbers.length) throw new Error(`${file}: 등번호 이력에 중복이 있습니다.`);
+  const jerseyNumberSources = profile.career?.jerseyNumberSources;
+  if (!Array.isArray(jerseyNumberSources) || jerseyNumberSources.length === 0
+    || jerseyNumberSources.some((source) => !source.url?.startsWith("https://") || !source.accessedAt)) {
+    throw new Error(`${file}: 등번호 참고 문서 URL과 확인일이 필요합니다.`);
+  }
   if (!profile.sources?.some((source) => source.role === "primary" && source.url.includes("koreabaseball.com"))) {
     throw new Error(`${file}: KBO 공식 1차 출처가 필요합니다.`);
   }

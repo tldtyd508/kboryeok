@@ -1,7 +1,7 @@
 {
   "id": 71564, "name": "이대호", "aliases": [], "status": "retired",
   "positionGroup": "IF", "positionDetail": "내야수", "throws": "R", "bats": "R", "birthYear": 1982,
-  "current": null, "career": { "jerseyNumbers": [49, 10] },
+  "current": null, "career": { "jerseyNumbers": [49, 10], "jerseyNumberSources": [{ "name": "나무위키 이대호", "url": "https://namu.wiki/w/이대호", "accessedAt": "2026-09-08" }] },
   "sources": [{ "name": "KBO 은퇴 선수 기록", "url": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=71564", "role": "primary" }, { "name": "롯데 등번호 10번 이력", "url": "https://www.joynews24.com/view/wrlted/722960", "role": "secondary" }],
   "review": { "status": "verified", "reviewedAt": "2026-09-08" }
 }

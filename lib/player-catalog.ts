@@ -11,7 +11,10 @@ export interface PlayerProfile {
   bats: string | null;
   birthYear: number | null;
   current: { team: string; jerseyNumber: number } | null;
-  career: { jerseyNumbers: number[] };
+  career: {
+    jerseyNumbers: number[];
+    jerseyNumberSources?: Array<{ name: string; url: string; accessedAt: string }>;
+  };
 }
 
 export const playerCatalog = catalogData as PlayerProfile[];

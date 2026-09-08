@@ -1,7 +1,7 @@
 {
   "id": 75808, "name": "정근우", "aliases": [], "status": "retired",
   "positionGroup": "IF", "positionDetail": "내야수", "throws": "R", "bats": "R", "birthYear": 1982,
-  "current": null, "career": { "jerseyNumbers": [8] },
+  "current": null, "career": { "jerseyNumbers": [8], "jerseyNumberSources": [{ "name": "나무위키 정근우", "url": "https://namu.wiki/w/정근우", "accessedAt": "2026-09-08" }] },
   "sources": [{ "name": "KBO 은퇴 선수 기록", "url": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=75808", "role": "primary" }],
   "review": { "status": "verified", "reviewedAt": "2026-09-08" }
 }
