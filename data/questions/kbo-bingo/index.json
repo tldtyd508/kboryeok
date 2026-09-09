@@ -1319,5 +1319,457 @@
       "reviewedAt": "2026-09-09",
       "note": "2026 공식 등록 명단과 공통 선수 카탈로그의 현재 구단·포지션·투타·생년·등번호를 기준으로 판정한다. 수상·과거 이력 조건 없이 현역 속성 rule만 사용했으며, 36장 전체 해답과 카드 제거 내성을 검증했다. revision 2에서 날짜 고정 시드로 선수 덱과 조건판 순서를 각각 섞었다."
     }
+  },
+  {
+    "id": "kbo-bingo-current-roster-attributes-2026-09-10",
+    "game": "kbo-bingo",
+    "publishDate": "2026-09-10",
+    "revision": 1,
+    "title": "2026 KBO 선수 빙고 · 현역 속성전",
+    "prompt": "등장한 현역 선수를 조건 한 칸에만 배치해 4×4 판을 완성하세요.",
+    "board": [
+      {
+        "id": "bats-right",
+        "label": "우타",
+        "rule": {
+          "type": "bats",
+          "values": [
+            "R"
+          ]
+        },
+        "examplePlayerId": 51868,
+        "validPlayerIds": [
+          51868,
+          52348,
+          51865,
+          53312,
+          50066,
+          50030,
+          51528,
+          79365,
+          52001,
+          69737,
+          51903,
+          52764,
+          53123,
+          79215,
+          52701,
+          50007,
+          78603,
+          53164,
+          52605,
+          74540
+        ]
+      },
+      {
+        "id": "bats-left",
+        "label": "좌타",
+        "rule": {
+          "type": "bats",
+          "values": [
+            "L"
+          ]
+        },
+        "examplePlayerId": 50854,
+        "validPlayerIds": [
+          76267,
+          50167,
+          53764,
+          50106,
+          62947,
+          69102,
+          50854,
+          50995,
+          50604,
+          52868,
+          62404,
+          50596,
+          54400,
+          50464
+        ]
+      },
+      {
+        "id": "position-outfielder",
+        "label": "외야수",
+        "rule": {
+          "type": "position",
+          "values": [
+            "OF"
+          ]
+        },
+        "examplePlayerId": 50854,
+        "validPlayerIds": [
+          50167,
+          53764,
+          52348,
+          54529,
+          62947,
+          50854,
+          52001,
+          62404,
+          79215
+        ]
+      },
+      {
+        "id": "team-ssg",
+        "label": "현재 SSG 랜더스",
+        "rule": {
+          "type": "team",
+          "values": [
+            "SSG 랜더스"
+          ]
+        },
+        "examplePlayerId": 51868,
+        "validPlayerIds": [
+          51868,
+          51865,
+          50854,
+          52868,
+          50007
+        ]
+      },
+      {
+        "id": "number-51-plus",
+        "label": "등번호 51 이상",
+        "rule": {
+          "type": "jerseyNumber",
+          "min": 51
+        },
+        "examplePlayerId": 50854,
+        "validPlayerIds": [
+          76267,
+          53764,
+          50106,
+          50854,
+          50066,
+          52764,
+          50007,
+          53164
+        ]
+      },
+      {
+        "id": "throws-right",
+        "label": "우투",
+        "rule": {
+          "type": "throws",
+          "values": [
+            "R"
+          ]
+        },
+        "examplePlayerId": 51868,
+        "validPlayerIds": [
+          51868,
+          76267,
+          50167,
+          53764,
+          52348,
+          51865,
+          54529,
+          50106,
+          69102,
+          53312,
+          50854,
+          51907,
+          50066,
+          50030,
+          51528,
+          79365,
+          52001,
+          62404,
+          69737,
+          51903,
+          52764,
+          53123,
+          79215,
+          52701,
+          50007,
+          78603,
+          53164,
+          52605,
+          74540
+        ]
+      },
+      {
+        "id": "position-pitcher",
+        "label": "투수",
+        "rule": {
+          "type": "position",
+          "values": [
+            "P"
+          ]
+        },
+        "examplePlayerId": 52868,
+        "validPlayerIds": [
+          50106,
+          50995,
+          50604,
+          50030,
+          52868,
+          50596,
+          52701,
+          53164,
+          50464
+        ]
+      },
+      {
+        "id": "position-infielder",
+        "label": "내야수",
+        "rule": {
+          "type": "position",
+          "values": [
+            "IF"
+          ]
+        },
+        "examplePlayerId": 51868,
+        "validPlayerIds": [
+          51868,
+          76267,
+          69102,
+          51907,
+          69737,
+          53123,
+          54400,
+          50007,
+          78603,
+          52605
+        ]
+      },
+      {
+        "id": "number-11-30",
+        "label": "등번호 11~30",
+        "rule": {
+          "type": "jerseyNumber",
+          "min": 11,
+          "max": 30
+        },
+        "examplePlayerId": 51868,
+        "validPlayerIds": [
+          51868,
+          51865,
+          54529,
+          53312,
+          50030,
+          51528,
+          79365,
+          52001,
+          53123,
+          50464
+        ]
+      },
+      {
+        "id": "position-catcher",
+        "label": "포수",
+        "rule": {
+          "type": "position",
+          "values": [
+            "C"
+          ]
+        },
+        "examplePlayerId": 51865,
+        "validPlayerIds": [
+          51865,
+          53312,
+          50066,
+          51528,
+          79365,
+          51903,
+          52764,
+          74540
+        ]
+      },
+      {
+        "id": "team-kiwoom",
+        "label": "현재 키움 히어로즈",
+        "rule": {
+          "type": "team",
+          "values": [
+            "키움 히어로즈"
+          ]
+        },
+        "examplePlayerId": 50167,
+        "validPlayerIds": [
+          76267,
+          50167,
+          52348,
+          53312,
+          53164
+        ]
+      },
+      {
+        "id": "throws-left",
+        "label": "좌투",
+        "rule": {
+          "type": "throws",
+          "values": [
+            "L"
+          ]
+        },
+        "examplePlayerId": 52868,
+        "validPlayerIds": [
+          62947,
+          50995,
+          50604,
+          52868,
+          50596,
+          54400,
+          50464
+        ]
+      },
+      {
+        "id": "number-31-50",
+        "label": "등번호 31~50",
+        "rule": {
+          "type": "jerseyNumber",
+          "min": 31,
+          "max": 50
+        },
+        "examplePlayerId": 52348,
+        "validPlayerIds": [
+          52348,
+          62947,
+          51903,
+          79215,
+          50596,
+          74540
+        ]
+      },
+      {
+        "id": "born-2000-plus",
+        "label": "2000년생 이후",
+        "rule": {
+          "type": "birthYear",
+          "min": 2000
+        },
+        "examplePlayerId": 51868,
+        "validPlayerIds": [
+          51868,
+          50167,
+          53764,
+          52348,
+          51865,
+          69102,
+          53312,
+          51907,
+          50995,
+          50604,
+          50066,
+          50030,
+          51528,
+          52001,
+          52868,
+          69737,
+          52764,
+          50596,
+          52701,
+          50007,
+          53164,
+          52605,
+          50464
+        ]
+      },
+      {
+        "id": "born-before-1995",
+        "label": "1994년생 이전",
+        "rule": {
+          "type": "birthYear",
+          "max": 1994
+        },
+        "examplePlayerId": 76267,
+        "validPlayerIds": [
+          76267,
+          54529,
+          62947,
+          79365,
+          62404,
+          53123,
+          79215,
+          78603,
+          74540
+        ]
+      },
+      {
+        "id": "number-10-below",
+        "label": "등번호 10 이하",
+        "rule": {
+          "type": "jerseyNumber",
+          "max": 10
+        },
+        "examplePlayerId": 52868,
+        "validPlayerIds": [
+          50167,
+          69102,
+          51907,
+          50995,
+          50604,
+          52868,
+          62404,
+          69737,
+          54400,
+          52701,
+          78603,
+          52605
+        ]
+      }
+    ],
+    "boardOrder": "seeded-shuffle",
+    "deckOrder": "balanced-shuffle",
+    "deck": [
+      51868,
+      76267,
+      50167,
+      53764,
+      52348,
+      51865,
+      54529,
+      50106,
+      62947,
+      69102,
+      53312,
+      50854,
+      51907,
+      50995,
+      50604,
+      50066,
+      50030,
+      51528,
+      79365,
+      52001,
+      52868,
+      62404,
+      69737,
+      51903,
+      52764,
+      53123,
+      79215,
+      50596,
+      54400,
+      52701,
+      50007,
+      78603,
+      53164,
+      52605,
+      50464,
+      74540
+    ],
+    "maxCards": 36,
+    "sources": [
+      {
+        "name": "KBO 2026 구단별 소속선수 명단",
+        "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+        "accessedAt": "2026-09-10",
+        "role": "primary"
+      },
+      {
+        "name": "KBO 선수 기록실 · 선수 프로필",
+        "url": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=69825",
+        "accessedAt": "2026-09-10",
+        "role": "primary"
+      }
+    ],
+    "review": {
+      "status": "verified",
+      "reviewedAt": "2026-09-10",
+      "note": "2026 공식 등록 명단과 공통 선수 카탈로그의 현재 구단·포지션·투타·생년·등번호를 기준으로 판정한다. 수상·과거 이력 조건 없이 현역 속성 rule만 사용했으며, 36장 전체 해답과 카드 제거 내성을 검증했다. 날짜 고정 시드로 선수 덱과 조건판 순서를 각각 섞는다."
+    }
   }
 ]

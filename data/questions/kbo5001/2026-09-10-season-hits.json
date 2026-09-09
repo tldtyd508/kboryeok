@@ -1,0 +1,43 @@
+{
+  "id": "kbo5001-season-hits-2026-09-10",
+  "game": "kbo5001",
+  "publishDate": "2026-09-10",
+  "revision": 1,
+  "title": "2025 정규시즌 안타 755",
+  "prompt": "후보 12명 중 5명을 골라 2025 KBO 정규시즌 안타 합계 755를 정확히 만들어 보세요.",
+  "statLabel": "2025 정규시즌 안타",
+  "scopeLabel": "2025 KBO 정규시즌 완료 기록 · 2026-09-10 조회 스냅샷",
+  "target": 755,
+  "selectionCount": 5,
+  "maxSubmissions": 3,
+  "candidates": [
+    { "name": "레이예스", "value": 187, "status": "active" },
+    { "name": "송성문", "value": 181, "status": "inactive" },
+    { "name": "디아즈", "value": 173, "status": "active" },
+    { "name": "구자욱", "value": 169, "status": "active" },
+    { "name": "문현빈", "value": 169, "status": "active" },
+    { "name": "케이브", "value": 161, "status": "inactive" },
+    { "name": "김주원", "value": 156, "status": "active" },
+    { "name": "양의지", "value": 153, "status": "active" },
+    { "name": "김성윤", "value": 151, "status": "active" },
+    { "name": "박찬호", "value": 148, "status": "active" },
+    { "name": "최지훈", "value": 147, "status": "active" },
+    { "name": "문성주", "value": 145, "status": "active" }
+  ],
+  "solutions": [
+    ["김주원", "양의지", "김성윤", "박찬호", "최지훈"]
+  ],
+  "sources": [
+    {
+      "name": "KBO 기록실 · 2025 정규시즌 타자 기본기록",
+      "url": "https://www.koreabaseball.com/Record/Player/HitterBasic/Basic1.aspx",
+      "accessedAt": "2026-09-10",
+      "role": "primary"
+    }
+  ],
+  "review": {
+    "status": "verified",
+    "reviewedAt": "2026-09-10",
+    "note": "KBO 공식 타자 기본기록에서 시즌 2025, KBO 정규시즌, 안타 내림차순 상위 12명의 수치를 대조했다. 후보 12명 중 5명 조합 792개를 전수 검사해 755안타 정답 조합은 김주원·양의지·김성윤·박찬호·최지훈 1개임을 확인한 완료 시즌 스냅샷이다."
+  }
+}
