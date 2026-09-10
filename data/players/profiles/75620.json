@@ -1,7 +1,50 @@
 {
-  "id": 75620, "name": "윤석민", "aliases": [], "status": "retired",
-  "positionGroup": "P", "positionDetail": "투수", "throws": "R", "bats": "R", "birthYear": 1986,
-  "current": null, "career": { "jerseyNumbers": [20, 28, 21, 24], "jerseyNumberSources": [{ "name": "나무위키 윤석민(투수)", "url": "https://namu.wiki/w/윤석민(투수)", "accessedAt": "2026-09-08" }] },
-  "sources": [{ "name": "KBO 은퇴 선수 기록", "url": "https://www.koreabaseball.com/Record/Retire/Pitcher.aspx?playerId=75620", "role": "primary" }, { "name": "KIA 등번호 20·21 변경 이력", "url": "https://www.yna.co.kr/view/AKR20150307035000007", "role": "secondary" }],
-  "review": { "status": "verified", "reviewedAt": "2026-09-08" }
+  "schemaVersion": 1,
+  "id": 75620,
+  "name": "윤석민",
+  "aliases": [],
+  "status": "retired",
+  "bio": {
+    "birthYear": 1986,
+    "throws": "R",
+    "bats": "R",
+    "positionGroup": "P",
+    "positionDetail": "투수"
+  },
+  "current": null,
+  "career": {
+    "debutYear": null,
+    "retirementYear": null,
+    "jerseyNumbers": [
+      20,
+      21,
+      24,
+      28
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 윤석민(투수)",
+        "url": "https://namu.wiki/w/윤석민(투수)",
+        "accessedAt": "2026-09-08"
+      }
+    ],
+    "teamStints": []
+  },
+  "sources": [
+    {
+      "name": "KBO 은퇴 선수 기록",
+      "url": "https://www.koreabaseball.com/Record/Retire/Pitcher.aspx?playerId=75620",
+      "role": "primary"
+    },
+    {
+      "name": "KIA 등번호 20·21 변경 이력",
+      "url": "https://www.yna.co.kr/view/AKR20150307035000007",
+      "role": "secondary"
+    }
+  ],
+  "review": {
+    "status": "verified",
+    "reviewedAt": "2026-09-08",
+    "completeness": "game-ready"
+  }
 }

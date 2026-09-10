@@ -977,6 +977,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "OF",
+    "positionDetail": "외야수",
     "throws": "R",
     "bats": "L",
     "birthYear": 1997,
@@ -995,8 +996,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "외야수"
+    ]
   },
   {
     "id": 50859,
@@ -8726,6 +8726,10 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": "R",
+    "bats": "R",
+    "birthYear": 1990,
     "current": {
       "team": "NC 다이노스",
       "jerseyNumber": 51
@@ -8741,11 +8745,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "투수",
-    "throws": "R",
-    "bats": "R",
-    "birthYear": 1990
+    ]
   },
   {
     "id": 60337,
@@ -8801,6 +8801,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "OF",
+    "positionDetail": "외야수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1991,
@@ -8819,8 +8820,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "외야수"
+    ]
   },
   {
     "id": 60559,
@@ -8882,6 +8882,10 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": "R",
+    "bats": "R",
+    "birthYear": 1991,
     "current": {
       "team": "SSG 랜더스",
       "jerseyNumber": 50
@@ -8897,11 +8901,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "투수",
-    "throws": "R",
-    "bats": "R",
-    "birthYear": 1991
+    ]
   },
   {
     "id": 61101,
@@ -8909,6 +8909,10 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": "R",
+    "bats": "R",
+    "birthYear": 1992,
     "current": {
       "team": "LG 트윈스",
       "jerseyNumber": 1
@@ -8924,11 +8928,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "투수",
-    "throws": "R",
-    "bats": "R",
-    "birthYear": 1992
+    ]
   },
   {
     "id": 61102,
@@ -8936,6 +8936,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "C",
+    "positionDetail": "포수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1992,
@@ -8954,8 +8955,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "포수"
+    ]
   },
   {
     "id": 61145,
@@ -8990,6 +8990,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -9035,6 +9039,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "OF",
+    "positionDetail": "외야수",
     "throws": "R",
     "bats": "L",
     "birthYear": 1989,
@@ -9053,8 +9058,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "외야수"
+    ]
   },
   {
     "id": 61404,
@@ -9062,6 +9066,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "OF",
+    "positionDetail": "외야수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1988,
@@ -9080,8 +9085,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "외야수"
+    ]
   },
   {
     "id": 61643,
@@ -9170,6 +9174,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "L",
     "birthYear": 1994,
@@ -9188,8 +9193,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "내야수"
+    ]
   },
   {
     "id": 62244,
@@ -9278,6 +9282,10 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": "R",
+    "bats": "R",
+    "birthYear": 1993,
     "current": {
       "team": "롯데 자이언츠",
       "jerseyNumber": 1
@@ -9293,11 +9301,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "투수",
-    "throws": "R",
-    "bats": "R",
-    "birthYear": 1993
+    ]
   },
   {
     "id": 62404,
@@ -9305,6 +9309,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "OF",
+    "positionDetail": "외야수",
     "throws": "R",
     "bats": "L",
     "birthYear": 1993,
@@ -9323,8 +9328,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "외야수"
+    ]
   },
   {
     "id": 62415,
@@ -9332,6 +9336,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "OF",
+    "positionDetail": "외야수",
     "throws": "R",
     "bats": "L",
     "birthYear": 1990,
@@ -9350,8 +9355,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "외야수"
+    ]
   },
   {
     "id": 62528,
@@ -9413,6 +9417,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -9431,6 +9439,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "L",
     "birthYear": 1994,
@@ -9449,8 +9458,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "내야수"
+    ]
   },
   {
     "id": 62754,
@@ -9539,6 +9547,10 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": "R",
+    "bats": "R",
+    "birthYear": 1989,
     "current": {
       "team": "SSG 랜더스",
       "jerseyNumber": 42
@@ -9554,11 +9566,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "투수",
-    "throws": "R",
-    "bats": "R",
-    "birthYear": 1989
+    ]
   },
   {
     "id": 62884,
@@ -9593,6 +9601,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "OF",
+    "positionDetail": "외야수",
     "throws": "R",
     "bats": "L",
     "birthYear": 1989,
@@ -9611,8 +9620,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "외야수"
+    ]
   },
   {
     "id": 62907,
@@ -9620,6 +9628,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "L",
     "birthYear": 1993,
@@ -9638,8 +9647,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "내야수"
+    ]
   },
   {
     "id": 62931,
@@ -9647,6 +9655,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "L",
     "birthYear": 1989,
@@ -9665,8 +9674,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "내야수"
+    ]
   },
   {
     "id": 62934,
@@ -9701,6 +9709,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "OF",
+    "positionDetail": "외야수",
     "throws": "L",
     "bats": "L",
     "birthYear": 1989,
@@ -9719,8 +9728,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "외야수"
+    ]
   },
   {
     "id": 62951,
@@ -9755,6 +9763,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1994,
@@ -9773,8 +9782,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "내야수"
+    ]
   },
   {
     "id": 63145,
@@ -10160,6 +10168,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "OF",
+    "positionDetail": "외야수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1990,
@@ -10178,8 +10187,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "외야수"
+    ]
   },
   {
     "id": 64001,
@@ -10187,6 +10195,10 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": "R",
+    "bats": "R",
+    "birthYear": 1991,
     "current": {
       "team": "KT 위즈",
       "jerseyNumber": 1
@@ -10202,11 +10214,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "투수",
-    "throws": "R",
-    "bats": "R",
-    "birthYear": 1991
+    ]
   },
   {
     "id": 64004,
@@ -10214,6 +10222,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "OF",
+    "positionDetail": "외야수",
     "throws": "R",
     "bats": "L",
     "birthYear": 1995,
@@ -10232,8 +10241,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "외야수"
+    ]
   },
   {
     "id": 64006,
@@ -10241,6 +10249,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1995,
@@ -10259,8 +10268,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "내야수"
+    ]
   },
   {
     "id": 64007,
@@ -10295,6 +10303,10 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": "R",
+    "bats": "R",
+    "birthYear": 1995,
     "current": {
       "team": "롯데 자이언츠",
       "jerseyNumber": 21
@@ -10310,11 +10322,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "투수",
-    "throws": "R",
-    "bats": "R",
-    "birthYear": 1995
+    ]
   },
   {
     "id": 64022,
@@ -10403,6 +10411,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1991,
@@ -10421,8 +10430,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "내야수"
+    ]
   },
   {
     "id": 64166,
@@ -10430,6 +10438,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "OF",
+    "positionDetail": "외야수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1995,
@@ -10448,8 +10457,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "외야수"
+    ]
   },
   {
     "id": 64300,
@@ -10694,6 +10702,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1995,
@@ -10712,8 +10721,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "내야수"
+    ]
   },
   {
     "id": 64768,
@@ -11126,6 +11134,10 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": "R",
+    "bats": "R",
+    "birthYear": 1997,
     "current": {
       "team": "삼성 라이온즈",
       "jerseyNumber": 3
@@ -11141,11 +11153,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "투수",
-    "throws": "R",
-    "bats": "R",
-    "birthYear": 1997
+    ]
   },
   {
     "id": 65343,
@@ -11714,6 +11722,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "OF",
+    "positionDetail": "외야수",
     "throws": "R",
     "bats": "L",
     "birthYear": 1993,
@@ -11732,8 +11741,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "외야수"
+    ]
   },
   {
     "id": 66112,
@@ -11984,6 +11992,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "OF",
+    "positionDetail": "외야수",
     "throws": "R",
     "bats": "L",
     "birthYear": 1997,
@@ -12002,8 +12011,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "외야수"
+    ]
   },
   {
     "id": 66609,
@@ -12938,6 +12946,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "L",
     "birthYear": 1998,
@@ -12956,8 +12965,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "내야수"
+    ]
   },
   {
     "id": 67900,
@@ -13100,6 +13108,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "L",
     "birthYear": 1999,
@@ -13118,8 +13127,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "내야수"
+    ]
   },
   {
     "id": 68089,
@@ -14801,6 +14809,10 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": "R",
+    "bats": "R",
+    "birthYear": 2000,
     "current": {
       "team": "삼성 라이온즈",
       "jerseyNumber": 18
@@ -14816,11 +14828,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "투수",
-    "throws": "R",
-    "bats": "R",
-    "birthYear": 2000
+    ]
   },
   {
     "id": 69508,
@@ -15044,6 +15052,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "R",
     "birthYear": 2000,
@@ -15062,8 +15071,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "내야수"
+    ]
   },
   {
     "id": 69745,
@@ -15368,6 +15376,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -15407,6 +15419,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -15488,6 +15504,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -15569,14 +15589,15 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1982,
     "current": null,
     "career": {
       "jerseyNumbers": [
-        49,
-        10
+        10,
+        49
       ],
       "jerseyNumberSources": [
         {
@@ -15597,12 +15618,7 @@
         "url": "https://www.joynews24.com/view/wrlted/722960",
         "role": "secondary"
       }
-    ],
-    "positionDetail": "내야수",
-    "review": {
-      "status": "verified",
-      "reviewedAt": "2026-09-08"
-    }
+    ]
   },
   {
     "id": 71610,
@@ -15631,6 +15647,7 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1982,
@@ -15653,12 +15670,7 @@
         "url": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=71752",
         "role": "primary"
       }
-    ],
-    "positionDetail": "내야수",
-    "review": {
-      "status": "verified",
-      "reviewedAt": "2026-09-08"
-    }
+    ]
   },
   {
     "id": 71837,
@@ -15687,6 +15699,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -15726,6 +15742,7 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "OF",
+    "positionDetail": "외야수",
     "throws": "R",
     "bats": "L",
     "birthYear": 1979,
@@ -15748,12 +15765,7 @@
         "url": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=72133",
         "role": "primary"
       }
-    ],
-    "positionDetail": "외야수",
-    "review": {
-      "status": "verified",
-      "reviewedAt": "2026-09-08"
-    }
+    ]
   },
   {
     "id": 72443,
@@ -15761,6 +15773,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "OF",
+    "positionDetail": "외야수",
     "throws": "R",
     "bats": "L",
     "birthYear": 1983,
@@ -15779,8 +15792,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "외야수"
+    ]
   },
   {
     "id": 72466,
@@ -15830,6 +15842,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -15850,6 +15866,10 @@
     ],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -15889,6 +15909,10 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": "R",
+    "bats": "R",
+    "birthYear": 1985,
     "current": {
       "team": "KT 위즈",
       "jerseyNumber": 12
@@ -15904,11 +15928,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "투수",
-    "throws": "R",
-    "bats": "R",
-    "birthYear": 1985
+    ]
   },
   {
     "id": 73136,
@@ -15979,6 +15999,10 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": "R",
+    "bats": "R",
+    "birthYear": 1984,
     "current": {
       "team": "SSG 랜더스",
       "jerseyNumber": 38
@@ -15994,11 +16018,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "투수",
-    "throws": "R",
-    "bats": "R",
-    "birthYear": 1984
+    ]
   },
   {
     "id": 73213,
@@ -16069,6 +16089,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -16087,6 +16111,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -16105,6 +16133,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "OF",
+    "positionDetail": "외야수",
     "throws": "L",
     "bats": "L",
     "birthYear": 1985,
@@ -16123,8 +16152,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "외야수"
+    ]
   },
   {
     "id": 74206,
@@ -16195,6 +16223,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -16234,6 +16266,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -16252,6 +16288,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "C",
+    "positionDetail": "포수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1985,
@@ -16270,8 +16307,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "포수"
+    ]
   },
   {
     "id": 74729,
@@ -16321,6 +16357,7 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1986,
@@ -16342,6 +16379,11 @@
     "sources": [
       {
         "name": "KBO 선수 기록",
+        "url": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=75125",
+        "role": "primary"
+      },
+      {
+        "name": "KBO 선수 기록",
         "url": "https://www.koreabaseball.com/Record/Player/HitterDetail/Total.aspx?playerId=75125",
         "role": "primary"
       },
@@ -16350,12 +16392,7 @@
         "url": "https://www.osen.co.kr/article/G1112345214",
         "role": "secondary"
       }
-    ],
-    "positionDetail": "내야수",
-    "review": {
-      "status": "verified",
-      "reviewedAt": "2026-09-08"
-    }
+    ]
   },
   {
     "id": 75151,
@@ -16426,13 +16463,17 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": "R",
+    "bats": "R",
+    "birthYear": 1986,
     "current": null,
     "career": {
       "jerseyNumbers": [
         20,
-        28,
         21,
-        24
+        24,
+        28
       ],
       "jerseyNumberSources": [
         {
@@ -16453,15 +16494,7 @@
         "url": "https://www.yna.co.kr/view/AKR20150307035000007",
         "role": "secondary"
       }
-    ],
-    "positionDetail": "투수",
-    "throws": "R",
-    "bats": "R",
-    "birthYear": 1986,
-    "review": {
-      "status": "verified",
-      "reviewedAt": "2026-09-08"
-    }
+    ]
   },
   {
     "id": 75808,
@@ -16469,6 +16502,7 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1982,
@@ -16491,12 +16525,7 @@
         "url": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=75808",
         "role": "primary"
       }
-    ],
-    "positionDetail": "내야수",
-    "review": {
-      "status": "verified",
-      "reviewedAt": "2026-09-08"
-    }
+    ]
   },
   {
     "id": 75847,
@@ -16504,6 +16533,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1987,
@@ -16522,8 +16552,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "내야수"
+    ]
   },
   {
     "id": 75867,
@@ -16612,6 +16641,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "C",
+    "positionDetail": "포수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1987,
@@ -16630,8 +16660,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "포수"
+    ]
   },
   {
     "id": 76249,
@@ -16660,6 +16689,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "L",
     "birthYear": 1988,
@@ -16678,8 +16708,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "내야수"
+    ]
   },
   {
     "id": 76290,
@@ -16687,6 +16716,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "OF",
+    "positionDetail": "외야수",
     "throws": "R",
     "bats": "L",
     "birthYear": 1988,
@@ -16705,8 +16735,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "외야수"
+    ]
   },
   {
     "id": 76313,
@@ -16756,6 +16785,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -16801,6 +16834,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -16819,6 +16856,10 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": "L",
+    "bats": "R",
+    "birthYear": 1987,
     "current": {
       "team": "한화 이글스",
       "jerseyNumber": 99
@@ -16834,11 +16875,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "투수",
-    "throws": "L",
-    "bats": "R",
-    "birthYear": 1987
+    ]
   },
   {
     "id": 76753,
@@ -16867,6 +16904,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1987,
@@ -16885,8 +16923,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "내야수"
+    ]
   },
   {
     "id": 76812,
@@ -16894,6 +16931,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "C",
+    "positionDetail": "포수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1988,
@@ -16912,8 +16950,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "포수"
+    ]
   },
   {
     "id": 76849,
@@ -16942,6 +16979,10 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": "R",
+    "bats": "R",
+    "birthYear": 1989,
     "current": {
       "team": "두산 베어스",
       "jerseyNumber": 45
@@ -16957,11 +16998,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "투수",
-    "throws": "R",
-    "bats": "R",
-    "birthYear": 1989
+    ]
   },
   {
     "id": 77248,
@@ -17044,6 +17081,10 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": "L",
+    "bats": "L",
+    "birthYear": 1987,
     "current": {
       "team": "삼성 라이온즈",
       "jerseyNumber": 29
@@ -17059,11 +17100,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "투수",
-    "throws": "L",
-    "bats": "L",
-    "birthYear": 1987
+    ]
   },
   {
     "id": 77463,
@@ -17092,6 +17129,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "OF",
+    "positionDetail": "외야수",
     "throws": "R",
     "bats": "L",
     "birthYear": 1988,
@@ -17110,8 +17148,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "외야수"
+    ]
   },
   {
     "id": 77564,
@@ -17119,6 +17156,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1988,
@@ -17137,8 +17175,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "내야수"
+    ]
   },
   {
     "id": 77591,
@@ -17146,6 +17183,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -17164,6 +17205,10 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": "L",
+    "bats": "L",
+    "birthYear": 1988,
     "current": {
       "team": "KIA 타이거즈",
       "jerseyNumber": 54
@@ -17179,11 +17224,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "투수",
-    "throws": "L",
-    "bats": "L",
-    "birthYear": 1988
+    ]
   },
   {
     "id": 77829,
@@ -17191,6 +17232,10 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": "L",
+    "bats": "L",
+    "birthYear": 1988,
     "current": {
       "team": "SSG 랜더스",
       "jerseyNumber": 29
@@ -17206,11 +17251,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "투수",
-    "throws": "L",
-    "bats": "L",
-    "birthYear": 1988
+    ]
   },
   {
     "id": 78122,
@@ -17272,6 +17313,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "L",
     "birthYear": 1989,
@@ -17290,8 +17332,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "내야수"
+    ]
   },
   {
     "id": 78224,
@@ -17299,6 +17340,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "OF",
+    "positionDetail": "외야수",
     "throws": "R",
     "bats": "L",
     "birthYear": 1988,
@@ -17317,8 +17359,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "외야수"
+    ]
   },
   {
     "id": 78288,
@@ -17326,6 +17367,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "C",
+    "positionDetail": "포수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1989,
@@ -17344,8 +17386,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "포수"
+    ]
   },
   {
     "id": 78513,
@@ -17353,6 +17394,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "OF",
+    "positionDetail": "외야수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1986,
@@ -17371,8 +17413,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "외야수"
+    ]
   },
   {
     "id": 78548,
@@ -17380,6 +17421,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "C",
+    "positionDetail": "포수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1990,
@@ -17398,8 +17440,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "포수"
+    ]
   },
   {
     "id": 78603,
@@ -17407,6 +17448,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1989,
@@ -17425,8 +17467,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "내야수"
+    ]
   },
   {
     "id": 78629,
@@ -17503,6 +17544,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "L",
     "birthYear": 1990,
@@ -17521,8 +17563,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "내야수"
+    ]
   },
   {
     "id": 79140,
@@ -17557,6 +17598,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1990,
@@ -17575,8 +17617,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "내야수"
+    ]
   },
   {
     "id": 79215,
@@ -17584,6 +17625,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "OF",
+    "positionDetail": "외야수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1990,
@@ -17602,8 +17644,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "외야수"
+    ]
   },
   {
     "id": 79229,
@@ -17611,6 +17652,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -17629,6 +17674,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "OF",
+    "positionDetail": "외야수",
     "throws": "L",
     "bats": "L",
     "birthYear": 1990,
@@ -17647,8 +17693,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "외야수"
+    ]
   },
   {
     "id": 79240,
@@ -17656,6 +17701,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1990,
@@ -17674,8 +17720,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "내야수"
+    ]
   },
   {
     "id": 79365,
@@ -17683,6 +17728,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "C",
+    "positionDetail": "포수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1990,
@@ -17701,8 +17747,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "포수"
+    ]
   },
   {
     "id": 79402,
@@ -17710,6 +17755,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1990,
@@ -17728,8 +17774,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "내야수"
+    ]
   },
   {
     "id": 79456,
@@ -17737,6 +17782,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "C",
+    "positionDetail": "포수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1986,
@@ -17755,8 +17801,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "포수"
+    ]
   },
   {
     "id": 79608,
@@ -17764,6 +17809,7 @@
     "aliases": [],
     "status": "active",
     "positionGroup": "IF",
+    "positionDetail": "내야수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1990,
@@ -17782,8 +17828,7 @@
         "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
-    ],
-    "positionDetail": "내야수"
+    ]
   },
   {
     "id": 82116,
@@ -17833,6 +17878,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -17851,6 +17900,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -17869,6 +17922,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -18034,6 +18091,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -18052,6 +18113,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -18070,6 +18135,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -18109,6 +18178,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -18148,6 +18221,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": "R",
+    "bats": "R",
+    "birthYear": 1958,
     "current": null,
     "career": {
       "jerseyNumbers": [
@@ -18167,15 +18244,7 @@
         "url": "https://www.koreabaseball.com/Record/Retire/Pitcher.aspx?playerId=83540",
         "role": "primary"
       }
-    ],
-    "positionDetail": "투수",
-    "throws": "R",
-    "bats": "R",
-    "birthYear": 1958,
-    "review": {
-      "status": "verified",
-      "reviewedAt": "2026-09-08"
-    }
+    ]
   },
   {
     "id": 83999,
@@ -18183,6 +18252,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -18243,6 +18316,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -18303,6 +18380,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -18321,6 +18402,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -18402,6 +18487,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -18462,6 +18551,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": "R",
+    "bats": "R",
+    "birthYear": 1963,
     "current": null,
     "career": {
       "jerseyNumbers": [
@@ -18481,15 +18574,7 @@
         "url": "https://www.koreabaseball.com/Record/Retire/Pitcher.aspx?playerId=85672",
         "role": "primary"
       }
-    ],
-    "positionDetail": "투수",
-    "throws": "R",
-    "bats": "R",
-    "birthYear": 1963,
-    "review": {
-      "status": "verified",
-      "reviewedAt": "2026-09-08"
-    }
+    ]
   },
   {
     "id": 86110,
@@ -18497,6 +18582,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -18557,6 +18646,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -18575,6 +18668,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -18593,6 +18690,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -18632,6 +18733,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -18671,6 +18776,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -18710,6 +18819,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -18770,6 +18883,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -18851,6 +18968,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -18890,6 +19011,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -18908,6 +19033,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -18968,6 +19097,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -18986,6 +19119,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -19004,6 +19141,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -19022,6 +19163,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -19040,6 +19185,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -19058,6 +19207,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -19097,6 +19250,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -19136,6 +19293,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -19217,6 +19378,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -19319,6 +19484,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -19337,6 +19506,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -19397,6 +19570,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -19415,6 +19592,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -19433,6 +19614,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -19451,6 +19636,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -19511,6 +19700,7 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "OF",
+    "positionDetail": "외야수",
     "throws": "L",
     "bats": "L",
     "birthYear": 1969,
@@ -19533,12 +19723,7 @@
         "url": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=93410",
         "role": "primary"
       }
-    ],
-    "positionDetail": "외야수",
-    "review": {
-      "status": "verified",
-      "reviewedAt": "2026-09-08"
-    }
+    ]
   },
   {
     "id": 93607,
@@ -19567,6 +19752,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -19585,6 +19774,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": "L",
+    "bats": "L",
+    "birthYear": 1969,
     "current": null,
     "career": {
       "jerseyNumbers": [
@@ -19604,15 +19797,7 @@
         "url": "https://www.koreabaseball.com/Record/Retire/Pitcher.aspx?playerId=93715",
         "role": "primary"
       }
-    ],
-    "positionDetail": "투수",
-    "throws": "L",
-    "bats": "L",
-    "birthYear": 1969,
-    "review": {
-      "status": "verified",
-      "reviewedAt": "2026-09-08"
-    }
+    ]
   },
   {
     "id": 93728,
@@ -19620,6 +19805,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -19659,6 +19848,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -19782,6 +19975,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -19800,6 +19997,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -19839,6 +20040,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -19857,6 +20062,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -19896,6 +20105,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -19998,6 +20211,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -20016,6 +20233,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -20097,6 +20318,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -20115,6 +20340,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -20154,6 +20383,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -20193,6 +20426,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -20318,6 +20555,7 @@
     ],
     "status": "retired",
     "positionGroup": "OF",
+    "positionDetail": "외야수",
     "throws": "L",
     "bats": "L",
     "birthYear": 1974,
@@ -20340,12 +20578,7 @@
         "url": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=97109",
         "role": "primary"
       }
-    ],
-    "positionDetail": "외야수",
-    "review": {
-      "status": "verified",
-      "reviewedAt": "2026-09-08"
-    }
+    ]
   },
   {
     "id": 97202,
@@ -20374,6 +20607,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -20392,6 +20629,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -20410,6 +20651,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -20470,6 +20715,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -20488,6 +20737,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -20548,6 +20801,7 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "C",
+    "positionDetail": "포수",
     "throws": "R",
     "bats": "R",
     "birthYear": 1976,
@@ -20576,12 +20830,7 @@
         "url": "https://www.donga.com/news/Sports/article/all/20121120/50990916/5",
         "role": "secondary"
       }
-    ],
-    "positionDetail": "포수",
-    "review": {
-      "status": "verified",
-      "reviewedAt": "2026-09-08"
-    }
+    ]
   },
   {
     "id": 99314,
@@ -20589,6 +20838,10 @@
     "aliases": [],
     "status": "retired",
     "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
     "current": null,
     "career": {
       "jerseyNumbers": []
@@ -20684,6 +20937,406 @@
       {
         "name": "KBO 선수 기록",
         "url": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=99810",
+        "role": "primary"
+      }
+    ]
+  },
+  {
+    "id": 901533632,
+    "name": "카메론",
+    "aliases": [],
+    "status": "active",
+    "positionGroup": "OF",
+    "positionDetail": "외야수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
+    "current": {
+      "team": "두산 베어스",
+      "jerseyNumber": null
+    },
+    "career": {
+      "jerseyNumbers": []
+    },
+    "sources": [
+      {
+        "name": "KBO 등록 선수 명단",
+        "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+        "role": "primary"
+      }
+    ]
+  },
+  {
+    "id": 914636573,
+    "name": "데일",
+    "aliases": [],
+    "status": "active",
+    "positionGroup": "IF",
+    "positionDetail": "내야수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
+    "current": {
+      "team": "KIA 타이거즈",
+      "jerseyNumber": null
+    },
+    "career": {
+      "jerseyNumbers": []
+    },
+    "sources": [
+      {
+        "name": "KBO 등록 선수 명단",
+        "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+        "role": "primary"
+      }
+    ]
+  },
+  {
+    "id": 922122943,
+    "name": "매닝",
+    "aliases": [],
+    "status": "active",
+    "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
+    "current": {
+      "team": "삼성 라이온즈",
+      "jerseyNumber": null
+    },
+    "career": {
+      "jerseyNumbers": []
+    },
+    "sources": [
+      {
+        "name": "KBO 등록 선수 명단",
+        "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+        "role": "primary"
+      }
+    ]
+  },
+  {
+    "id": 925120174,
+    "name": "미야지",
+    "aliases": [],
+    "status": "active",
+    "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
+    "current": {
+      "team": "삼성 라이온즈",
+      "jerseyNumber": null
+    },
+    "career": {
+      "jerseyNumbers": []
+    },
+    "sources": [
+      {
+        "name": "KBO 등록 선수 명단",
+        "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+        "role": "primary"
+      }
+    ]
+  },
+  {
+    "id": 933384254,
+    "name": "보쉴리",
+    "aliases": [],
+    "status": "active",
+    "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
+    "current": {
+      "team": "KT 위즈",
+      "jerseyNumber": null
+    },
+    "career": {
+      "jerseyNumbers": []
+    },
+    "sources": [
+      {
+        "name": "KBO 등록 선수 명단",
+        "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+        "role": "primary"
+      }
+    ]
+  },
+  {
+    "id": 941633347,
+    "name": "브룩스",
+    "aliases": [],
+    "status": "active",
+    "positionGroup": "OF",
+    "positionDetail": "외야수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
+    "current": {
+      "team": "키움 히어로즈",
+      "jerseyNumber": null
+    },
+    "career": {
+      "jerseyNumbers": []
+    },
+    "sources": [
+      {
+        "name": "KBO 등록 선수 명단",
+        "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+        "role": "primary"
+      }
+    ]
+  },
+  {
+    "id": 945422610,
+    "name": "사우어",
+    "aliases": [],
+    "status": "active",
+    "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
+    "current": {
+      "team": "KT 위즈",
+      "jerseyNumber": null
+    },
+    "career": {
+      "jerseyNumbers": []
+    },
+    "sources": [
+      {
+        "name": "KBO 등록 선수 명단",
+        "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+        "role": "primary"
+      }
+    ]
+  },
+  {
+    "id": 948484266,
+    "name": "플렉센",
+    "aliases": [],
+    "status": "active",
+    "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
+    "current": {
+      "team": "두산 베어스",
+      "jerseyNumber": null
+    },
+    "career": {
+      "jerseyNumbers": []
+    },
+    "sources": [
+      {
+        "name": "KBO 등록 선수 명단",
+        "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+        "role": "primary"
+      }
+    ]
+  },
+  {
+    "id": 951128844,
+    "name": "베니지아노",
+    "aliases": [],
+    "status": "active",
+    "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
+    "current": {
+      "team": "SSG 랜더스",
+      "jerseyNumber": null
+    },
+    "career": {
+      "jerseyNumbers": []
+    },
+    "sources": [
+      {
+        "name": "KBO 등록 선수 명단",
+        "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+        "role": "primary"
+      }
+    ]
+  },
+  {
+    "id": 964570681,
+    "name": "박준영",
+    "aliases": [],
+    "status": "active",
+    "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
+    "current": {
+      "team": "한화 이글스",
+      "jerseyNumber": null
+    },
+    "career": {
+      "jerseyNumbers": []
+    },
+    "sources": [
+      {
+        "name": "KBO 등록 선수 명단",
+        "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+        "role": "primary"
+      }
+    ]
+  },
+  {
+    "id": 967454105,
+    "name": "에르난데스",
+    "aliases": [],
+    "status": "active",
+    "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
+    "current": {
+      "team": "한화 이글스",
+      "jerseyNumber": null
+    },
+    "career": {
+      "jerseyNumbers": []
+    },
+    "sources": [
+      {
+        "name": "KBO 등록 선수 명단",
+        "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+        "role": "primary"
+      }
+    ]
+  },
+  {
+    "id": 973108499,
+    "name": "와일스",
+    "aliases": [],
+    "status": "active",
+    "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
+    "current": {
+      "team": "키움 히어로즈",
+      "jerseyNumber": null
+    },
+    "career": {
+      "jerseyNumbers": []
+    },
+    "sources": [
+      {
+        "name": "KBO 등록 선수 명단",
+        "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+        "role": "primary"
+      }
+    ]
+  },
+  {
+    "id": 973925725,
+    "name": "타무라",
+    "aliases": [],
+    "status": "active",
+    "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
+    "current": {
+      "team": "두산 베어스",
+      "jerseyNumber": null
+    },
+    "career": {
+      "jerseyNumbers": []
+    },
+    "sources": [
+      {
+        "name": "KBO 등록 선수 명단",
+        "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+        "role": "primary"
+      }
+    ]
+  },
+  {
+    "id": 975561058,
+    "name": "쿄야마",
+    "aliases": [],
+    "status": "active",
+    "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
+    "current": {
+      "team": "롯데 자이언츠",
+      "jerseyNumber": null
+    },
+    "career": {
+      "jerseyNumbers": []
+    },
+    "sources": [
+      {
+        "name": "KBO 등록 선수 명단",
+        "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+        "role": "primary"
+      }
+    ]
+  },
+  {
+    "id": 975891954,
+    "name": "웰스",
+    "aliases": [],
+    "status": "active",
+    "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
+    "current": {
+      "team": "LG 트윈스",
+      "jerseyNumber": null
+    },
+    "career": {
+      "jerseyNumbers": []
+    },
+    "sources": [
+      {
+        "name": "KBO 등록 선수 명단",
+        "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+        "role": "primary"
+      }
+    ]
+  },
+  {
+    "id": 985689221,
+    "name": "이주호",
+    "aliases": [],
+    "status": "active",
+    "positionGroup": "P",
+    "positionDetail": "투수",
+    "throws": null,
+    "bats": null,
+    "birthYear": null,
+    "current": {
+      "team": "두산 베어스",
+      "jerseyNumber": null
+    },
+    "career": {
+      "jerseyNumbers": []
+    },
+    "sources": [
+      {
+        "name": "KBO 등록 선수 명단",
+        "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
         "role": "primary"
       }
     ]

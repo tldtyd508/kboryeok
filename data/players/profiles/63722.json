@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": 63722,
+  "name": "한승택",
+  "aliases": [],
+  "status": "active",
+  "bio": {
+    "birthYear": 1994,
+    "throws": "R",
+    "bats": "R",
+    "positionGroup": "C",
+    "positionDetail": "포수"
+  },
+  "current": {
+    "season": 2026,
+    "teamId": "KT",
+    "team": "KT 위즈",
+    "jerseyNumber": 45
+  },
+  "career": {
+    "debutYear": null,
+    "retirementYear": null,
+    "jerseyNumbers": [
+      45
+    ],
+    "teamStints": [
+      {
+        "teamId": "KT",
+        "team": "KT 위즈",
+        "from": 2026,
+        "to": 2026
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "KBO 등록 선수 명단",
+      "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+      "role": "primary"
+    }
+  ],
+  "review": {
+    "status": "generated",
+    "reviewedAt": "2026-09-08",
+    "completeness": "game-ready"
+  }
+}

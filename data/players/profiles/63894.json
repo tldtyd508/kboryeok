@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": 63894,
+  "name": "김사윤",
+  "aliases": [],
+  "status": "active",
+  "bio": {
+    "birthYear": 1994,
+    "throws": "L",
+    "bats": "L",
+    "positionGroup": "P",
+    "positionDetail": "투수"
+  },
+  "current": {
+    "season": 2026,
+    "teamId": "HT",
+    "team": "KIA 타이거즈",
+    "jerseyNumber": 21
+  },
+  "career": {
+    "debutYear": null,
+    "retirementYear": null,
+    "jerseyNumbers": [
+      21
+    ],
+    "teamStints": [
+      {
+        "teamId": "HT",
+        "team": "KIA 타이거즈",
+        "from": 2026,
+        "to": 2026
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "KBO 등록 선수 명단",
+      "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+      "role": "primary"
+    }
+  ],
+  "review": {
+    "status": "generated",
+    "reviewedAt": "2026-09-08",
+    "completeness": "game-ready"
+  }
+}

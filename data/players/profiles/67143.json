@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": 67143,
+  "name": "손주영",
+  "aliases": [],
+  "status": "active",
+  "bio": {
+    "birthYear": 1998,
+    "throws": "L",
+    "bats": "L",
+    "positionGroup": "P",
+    "positionDetail": "투수"
+  },
+  "current": {
+    "season": 2026,
+    "teamId": "LG",
+    "team": "LG 트윈스",
+    "jerseyNumber": 29
+  },
+  "career": {
+    "debutYear": null,
+    "retirementYear": null,
+    "jerseyNumbers": [
+      29
+    ],
+    "teamStints": [
+      {
+        "teamId": "LG",
+        "team": "LG 트윈스",
+        "from": 2026,
+        "to": 2026
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "KBO 등록 선수 명단",
+      "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+      "role": "primary"
+    }
+  ],
+  "review": {
+    "status": "generated",
+    "reviewedAt": "2026-09-08",
+    "completeness": "game-ready"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": 54400,
+  "name": "디아즈",
+  "aliases": [],
+  "status": "active",
+  "bio": {
+    "birthYear": 1996,
+    "throws": "L",
+    "bats": "L",
+    "positionGroup": "IF",
+    "positionDetail": "내야수"
+  },
+  "current": {
+    "season": 2026,
+    "teamId": "SS",
+    "team": "삼성 라이온즈",
+    "jerseyNumber": 0
+  },
+  "career": {
+    "debutYear": null,
+    "retirementYear": null,
+    "jerseyNumbers": [
+      0
+    ],
+    "teamStints": [
+      {
+        "teamId": "SS",
+        "team": "삼성 라이온즈",
+        "from": 2026,
+        "to": 2026
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "KBO 등록 선수 명단",
+      "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+      "role": "primary"
+    }
+  ],
+  "review": {
+    "status": "generated",
+    "reviewedAt": "2026-09-08",
+    "completeness": "game-ready"
+  }
+}

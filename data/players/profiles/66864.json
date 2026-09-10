@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": 66864,
+  "name": "안상현",
+  "aliases": [],
+  "status": "active",
+  "bio": {
+    "birthYear": 1997,
+    "throws": "R",
+    "bats": "R",
+    "positionGroup": "IF",
+    "positionDetail": "내야수"
+  },
+  "current": {
+    "season": 2026,
+    "teamId": "SK",
+    "team": "SSG 랜더스",
+    "jerseyNumber": 10
+  },
+  "career": {
+    "debutYear": null,
+    "retirementYear": null,
+    "jerseyNumbers": [
+      10
+    ],
+    "teamStints": [
+      {
+        "teamId": "SK",
+        "team": "SSG 랜더스",
+        "from": 2026,
+        "to": 2026
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "KBO 등록 선수 명단",
+      "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+      "role": "primary"
+    }
+  ],
+  "review": {
+    "status": "generated",
+    "reviewedAt": "2026-09-08",
+    "completeness": "game-ready"
+  }
+}

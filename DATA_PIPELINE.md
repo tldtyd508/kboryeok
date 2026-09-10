@@ -21,8 +21,12 @@
 - `data/roster-metadata.json`: 출처와 마지막 월간 검수일
 - `data/player-index/historical.json`: KBO 통산 타자 기록실의 최소 기준 충족 선수 인덱스
 - `data/player-index/historical-pitchers.json`: KBO 통산 투수 기록실의 최소 기준 충족 선수 인덱스
-- `data/players/profiles/{playerId}.json`: 출제에 사용한 은퇴 선수의 공통 프로필과 KBO 등번호 이력
-- `data/players/index.json`: 현역 명단·은퇴 선수 인덱스·개별 프로필을 합친 생성 파일
+- `data/players/profiles/{playerId}.json`: 현역·은퇴 선수를 모두 포함한 선수별 원본 프로필
+- `data/players/index.json`: 선수별 원본에서 만드는 게임용 경량 생성 파일(직접 편집 금지)
+- `data/relations/teams.json`: 변하지 않는 구단 ID·표기명
+- `data/relations/team-seasons/{season}.json`: 시즌별 구단·감독·선수 명단 관계
+- `data/relations/awards/history.json`: KBO 공식 출처로 검수한 수상 이력
+- `data/relations/index.json`: 빙고 판정을 위한 관계형 생성 인덱스(직접 편집 금지)
 - `data/questions/{game}/{YYYY-MM-DD}-{slug}.json`: 출제 당일 검수한 문제별 정답·기록·출처 스냅샷
 - `data/questions/kboten/index.json`: 날짜별 문제 파일에서 빌드 전에 자동 생성하는 런타임 인덱스
 - `data/questions/kbo5001/{YYYY-MM-DD}-{slug}.json`: 후보 선수·기록값·목표값·검증된 정답 조합 스냅샷
@@ -35,7 +39,7 @@
 
 ### 1. 선수 인덱스 — 상시 보유
 
-게임 검색과 동명이인 판정을 위한 최소 정보만 유지한다.
+`data/players/profiles/{playerId}.json`을 선수 정보의 단일 원본으로 유지한다. 게임 검색과 동명이인 판정에 필요한 최소 정보는 여기서 `data/players/index.json`으로 생성한다.
 
 - 내부 `playerId`
 - KBO 선수 ID 등 공개 식별자
@@ -48,7 +52,11 @@
 
 검색 자동완성은 현역 명단과 은퇴 선수 이름 인덱스를 합쳐 만든다. 문제 정답 10명만 후보로 제공하면 자동완성이 정답을 누설하므로, 항상 전체 선수 후보군을 검색하되 문제 파일에는 실제 판정에 필요한 답만 둔다. 사용자는 자유 문자열을 제출하지 않고 자동완성 후보를 선택하므로 오타가 오답으로 기록되지 않는다.
 
-게임에 처음 출제하는 은퇴 선수는 `data/players/profiles/{playerId}.json`을 추가해 포지션·투타·출생연도와 KBO 선수 시절 사용 등번호를 한 번만 검수한다. 등번호는 나무위키 선수 문서를 참고할 수 있으며 `career.jerseyNumberSources`에 문서 URL과 확인일을 저장한다. 현역 선수의 등번호 조건은 현재 등록 번호, 은퇴 선수는 KBO 선수 시절 사용한 번호 중 하나라도 범위에 들면 충족한다. 해외 구단·국가대표·코칭스태프 번호는 포함하지 않는다. 생성된 `data/players/index.json`은 모든 게임이 공유하며 직접 편집하지 않는다.
+모든 선수는 ID와 같은 이름의 개별 JSON을 가진다. 현역은 `current`에 해당 시즌 구단과 등번호를 두고, 은퇴 선수는 `current: null`로 둔다. 포지션·투타·출생연도·등번호가 모두 갖춰진 선수는 `game-ready`, 이름과 KBO ID만 확보한 선수는 `index-only`로 구분해 불완전한 정보가 게임 판정에 섞이지 않게 한다.
+
+은퇴 선수의 등번호는 나무위키 선수 문서를 참고할 수 있으며 `career.jerseyNumberSources`에 문서 URL과 확인일을 저장한다. 현역 선수의 등번호 조건은 현재 등록 번호, 은퇴 선수는 KBO 선수 시절 사용한 번호 중 하나라도 범위에 들면 충족한다. 해외 구단·국가대표·코칭스태프 번호는 포함하지 않는다.
+
+팀메이트를 각 선수 JSON에 서로 복제하지 않는다. `data/relations/team-seasons/{season}.json`의 같은 시즌·같은 구단 소속으로 계산한다. 감독도 같은 파일에 한 번만 저장한다. 수상 이력은 `data/relations/awards/`에 정규화하고 선수 ID로 연결한다. 빙고의 팀메이트·감독·수상 조건은 이 관계 원본에서 계산하되, 공개 문제에는 계산된 `validPlayerIds`를 함께 고정해 이후 이력 보강이 과거 문제의 정답을 바꾸지 못하게 한다.
 
 ### 2. 문제 스냅샷 — 출제할 때만 보유
 
@@ -64,7 +72,7 @@
 
 크보 5001은 후보 M명 중 N명을 고르는 모든 조합을 검증 스크립트에서 전수 검사한다. 공개 문제는 정답 조합이 1~3개인 경우만 통과하며, JSON에 기록한 정답과 계산 결과가 다르면 빌드를 중단한다.
 
-크보 빙고는 16개 조건과 36장 선수 덱을 저장한다. 구단·포지션·투타·출생연도·등번호처럼 선수 속성으로 결정되는 칸은 `validPlayerIds`를 손으로 적지 않고 공통 선수 카탈로그와 `rule`에서 빌드 시 계산한다. 수상·우승·과거 이력처럼 별도 관계 자료가 필요한 칸만 공식 근거로 확정한 `validPlayerIds`를 저장한다. 날짜를 시드로 삼은 균형 셔플은 현역과 은퇴 선수를 섞되 모든 사용자에게 같은 순서를 제공한다. 검증기는 전체 판의 이분 매칭, 임의 카드 4장 제거 전수 검사와 카드 8장 제거 10,000개 표본 검사를 실행한다.
+크보 빙고는 16개 조건과 36장 선수 덱을 저장한다. 구단·포지션·투타·출생연도·등번호처럼 선수 속성으로 결정되는 칸은 공통 선수 카탈로그의 `rule`에서 계산한다. 팀 시즌·팀메이트·감독·수상은 관계 인덱스의 `teamSeason`, `teammate`, `managedBy`, `award` 규칙으로 계산하고, 공개 당시 계산 결과를 `validPlayerIds`에 고정한다. 날짜를 시드로 삼은 균형 셔플은 현역과 은퇴 선수를 섞되 모든 사용자에게 같은 순서를 제공한다. 검증기는 전체 판의 이분 매칭, 임의 카드 4장 제거 전수 검사와 카드 8장 제거 10,000개 표본 검사를 실행한다.
 
 ## 문제 출제 흐름
 
@@ -88,9 +96,12 @@
 ```bash
 npm run data:import -- --source data/source/kbo-team-rosters-2026.xlsx --season 2026 --reviewed-at YYYY-MM-DD
 npm run data:sync-players
+npm run data:sync-player-profiles
 npm run data:validate-players
 npm run data:build-players
-npm run data:import -- --source data/source/kbo-team-rosters-2026.xlsx --season 2026 --reviewed-at YYYY-MM-DD
+npm run data:sync-relations
+npm run data:build-relations
+npm run data:validate-relations
 npm run data:sync-kboten-index
 npm run data:validate-kboten
 npm run data:validate-kbo5001

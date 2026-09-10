@@ -1,7 +1,48 @@
 {
-  "id": 99222, "name": "홍성흔", "aliases": [], "status": "retired",
-  "positionGroup": "C", "positionDetail": "포수", "throws": "R", "bats": "R", "birthYear": 1976,
-  "current": null, "career": { "jerseyNumbers": [22, 49], "jerseyNumberSources": [{ "name": "나무위키 홍성흔", "url": "https://namu.wiki/w/홍성흔", "accessedAt": "2026-09-08" }] },
-  "sources": [{ "name": "KBO 은퇴 선수 기록", "url": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=99222", "role": "primary" }, { "name": "두산·롯데 등번호 변경 이력", "url": "https://www.donga.com/news/Sports/article/all/20121120/50990916/5", "role": "secondary" }],
-  "review": { "status": "verified", "reviewedAt": "2026-09-08" }
+  "schemaVersion": 1,
+  "id": 99222,
+  "name": "홍성흔",
+  "aliases": [],
+  "status": "retired",
+  "bio": {
+    "birthYear": 1976,
+    "throws": "R",
+    "bats": "R",
+    "positionGroup": "C",
+    "positionDetail": "포수"
+  },
+  "current": null,
+  "career": {
+    "debutYear": null,
+    "retirementYear": null,
+    "jerseyNumbers": [
+      22,
+      49
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 홍성흔",
+        "url": "https://namu.wiki/w/홍성흔",
+        "accessedAt": "2026-09-08"
+      }
+    ],
+    "teamStints": []
+  },
+  "sources": [
+    {
+      "name": "KBO 은퇴 선수 기록",
+      "url": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=99222",
+      "role": "primary"
+    },
+    {
+      "name": "두산·롯데 등번호 변경 이력",
+      "url": "https://www.donga.com/news/Sports/article/all/20121120/50990916/5",
+      "role": "secondary"
+    }
+  ],
+  "review": {
+    "status": "verified",
+    "reviewedAt": "2026-09-08",
+    "completeness": "game-ready"
+  }
 }

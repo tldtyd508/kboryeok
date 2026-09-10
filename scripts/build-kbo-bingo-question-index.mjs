@@ -4,6 +4,7 @@ import { resolveBingoBoard, resolveBingoDeck, resolvePuzzleAttributeBoard } from
 const directory = "data/questions/kbo-bingo";
 const outputPath = `${directory}/index.json`;
 const playerCatalog = JSON.parse(await fs.readFile("data/players/index.json", "utf8"));
+const relationIndex = JSON.parse(await fs.readFile("data/relations/index.json", "utf8"));
 const playerById = new Map(playerCatalog.map((player) => [player.id, player]));
 const files = (await fs.readdir(directory))
   .filter((file) => file.endsWith(".json") && file !== "index.json")
@@ -11,7 +12,7 @@ const files = (await fs.readdir(directory))
 const puzzles = await Promise.all(files.map(async (file) => {
   const puzzle = JSON.parse(await fs.readFile(`${directory}/${file}`, "utf8"));
   const deck = resolveBingoDeck(puzzle, playerById);
-  const board = resolvePuzzleAttributeBoard({ ...puzzle, deck }, playerById, file);
+  const board = resolvePuzzleAttributeBoard({ ...puzzle, deck }, playerById, file, relationIndex);
   return {
     ...puzzle,
     deck,

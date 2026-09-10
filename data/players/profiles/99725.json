@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": 99725,
+  "name": "데이비스",
+  "aliases": [
+    "제이 데이비스",
+    "제이데이비스"
+  ],
+  "status": "retired",
+  "bio": {
+    "birthYear": null,
+    "throws": null,
+    "bats": null,
+    "positionGroup": null,
+    "positionDetail": null
+  },
+  "current": null,
+  "career": {
+    "debutYear": null,
+    "retirementYear": null,
+    "jerseyNumbers": [],
+    "teamStints": []
+  },
+  "sources": [
+    {
+      "name": "KBO 선수 기록",
+      "url": "https://www.koreabaseball.com/Record/Retire/Hitter.aspx?playerId=99725",
+      "role": "primary"
+    }
+  ],
+  "review": {
+    "status": "generated",
+    "reviewedAt": null,
+    "completeness": "index-only"
+  }
+}

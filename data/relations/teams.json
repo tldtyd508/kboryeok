@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "teams": [
+    { "id": "LG", "name": "LG 트윈스", "aliases": ["LG"] },
+    { "id": "HH", "name": "한화 이글스", "aliases": ["한화"] },
+    { "id": "SK", "name": "SSG 랜더스", "aliases": ["SSG"] },
+    { "id": "SS", "name": "삼성 라이온즈", "aliases": ["삼성"] },
+    { "id": "NC", "name": "NC 다이노스", "aliases": ["NC"] },
+    { "id": "KT", "name": "KT 위즈", "aliases": ["KT"] },
+    { "id": "LT", "name": "롯데 자이언츠", "aliases": ["롯데"] },
+    { "id": "HT", "name": "KIA 타이거즈", "aliases": ["KIA"] },
+    { "id": "OB", "name": "두산 베어스", "aliases": ["두산"] },
+    { "id": "WO", "name": "키움 히어로즈", "aliases": ["키움"] }
+  ]
+}

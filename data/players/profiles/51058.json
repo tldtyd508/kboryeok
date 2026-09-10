@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": 51058,
+  "name": "한차현",
+  "aliases": [],
+  "status": "active",
+  "bio": {
+    "birthYear": 1998,
+    "throws": "R",
+    "bats": "R",
+    "positionGroup": "P",
+    "positionDetail": "투수"
+  },
+  "current": {
+    "season": 2026,
+    "teamId": "KT",
+    "team": "KT 위즈",
+    "jerseyNumber": 59
+  },
+  "career": {
+    "debutYear": null,
+    "retirementYear": null,
+    "jerseyNumbers": [
+      59
+    ],
+    "teamStints": [
+      {
+        "teamId": "KT",
+        "team": "KT 위즈",
+        "from": 2026,
+        "to": 2026
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "KBO 등록 선수 명단",
+      "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+      "role": "primary"
+    }
+  ],
+  "review": {
+    "status": "generated",
+    "reviewedAt": "2026-09-08",
+    "completeness": "game-ready"
+  }
+}

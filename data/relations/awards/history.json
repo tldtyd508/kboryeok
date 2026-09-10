@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "records": [
+    {
+      "awardId": "regular-season-mvp",
+      "award": "KBO 정규시즌 MVP",
+      "year": 2015,
+      "playerId": null,
+      "playerName": "테임즈",
+      "sourceQuestionId": "kboten-2015-2024-regular-season-mvp-2026-09-10"
+    },
+    {
+      "awardId": "regular-season-mvp",
+      "award": "KBO 정규시즌 MVP",
+      "year": 2016,
+      "playerId": 61240,
+      "playerName": "니퍼트",
+      "sourceQuestionId": "kboten-2015-2024-regular-season-mvp-2026-09-10"
+    },
+    {
+      "awardId": "regular-season-mvp",
+      "award": "KBO 정규시즌 MVP",
+      "year": 2017,
+      "playerId": 77637,
+      "playerName": "양현종",
+      "sourceQuestionId": "kboten-2015-2024-regular-season-mvp-2026-09-10"
+    },
+    {
+      "awardId": "regular-season-mvp",
+      "award": "KBO 정규시즌 MVP",
+      "year": 2018,
+      "playerId": 78224,
+      "playerName": "김재환",
+      "sourceQuestionId": "kboten-2015-2024-regular-season-mvp-2026-09-10"
+    },
+    {
+      "awardId": "regular-season-mvp",
+      "award": "KBO 정규시즌 MVP",
+      "year": 2019,
+      "playerId": null,
+      "playerName": "린드블럼",
+      "sourceQuestionId": "kboten-2015-2024-regular-season-mvp-2026-09-10"
+    },
+    {
+      "awardId": "regular-season-mvp",
+      "award": "KBO 정규시즌 MVP",
+      "year": 2020,
+      "playerId": 67025,
+      "playerName": "로하스",
+      "sourceQuestionId": "kboten-2015-2024-regular-season-mvp-2026-09-10"
+    },
+    {
+      "awardId": "regular-season-mvp",
+      "award": "KBO 정규시즌 MVP",
+      "year": 2021,
+      "playerId": null,
+      "playerName": "미란다",
+      "sourceQuestionId": "kboten-2015-2024-regular-season-mvp-2026-09-10"
+    },
+    {
+      "awardId": "regular-season-mvp",
+      "award": "KBO 정규시즌 MVP",
+      "year": 2022,
+      "playerId": 71564,
+      "playerName": "이대호",
+      "sourceQuestionId": "kboten-2015-2024-regular-season-mvp-2026-09-10"
+    },
+    {
+      "awardId": "regular-season-mvp",
+      "award": "KBO 정규시즌 MVP",
+      "year": 2023,
+      "playerId": null,
+      "playerName": "페디",
+      "sourceQuestionId": "kboten-2015-2024-regular-season-mvp-2026-09-10"
+    },
+    {
+      "awardId": "regular-season-mvp",
+      "award": "KBO 정규시즌 MVP",
+      "year": 2024,
+      "playerId": 52605,
+      "playerName": "김도영",
+      "sourceQuestionId": "kboten-2015-2024-regular-season-mvp-2026-09-10"
+    },
+    {
+      "awardId": "golden-glove",
+      "award": "KBO 골든글러브",
+      "year": 2025,
+      "category": "외야수",
+      "playerId": 62404,
+      "playerName": "구자욱",
+      "sourceQuestionId": "kboten-2025-golden-glove-2026-09-08"
+    },
+    {
+      "awardId": "golden-glove",
+      "award": "KBO 골든글러브",
+      "year": 2025,
+      "category": "유격수",
+      "playerId": 51907,
+      "playerName": "김주원",
+      "sourceQuestionId": "kboten-2025-golden-glove-2026-09-08"
+    },
+    {
+      "awardId": "golden-glove",
+      "award": "KBO 골든글러브",
+      "year": 2025,
+      "category": "1루수",
+      "playerId": 54400,
+      "playerName": "디아즈",
+      "sourceQuestionId": "kboten-2025-golden-glove-2026-09-08"
+    },
+    {
+      "awardId": "golden-glove",
+      "award": "KBO 골든글러브",
+      "year": 2025,
+      "category": "외야수",
+      "playerId": 54529,
+      "playerName": "레이예스",
+      "sourceQuestionId": "kboten-2025-golden-glove-2026-09-08"
+    },
+    {
+      "awardId": "golden-glove",
+      "award": "KBO 골든글러브",
+      "year": 2025,
+      "category": "3루수",
+      "playerId": 65357,
+      "playerName": "송성문",
+      "sourceQuestionId": "kboten-2025-golden-glove-2026-09-08"
+    },
+    {
+      "awardId": "golden-glove",
+      "award": "KBO 골든글러브",
+      "year": 2025,
+      "category": "2루수",
+      "playerId": 65207,
+      "playerName": "신민재",
+      "sourceQuestionId": "kboten-2025-golden-glove-2026-09-08"
+    },
+    {
+      "awardId": "golden-glove",
+      "award": "KBO 골든글러브",
+      "year": 2025,
+      "category": "외야수",
+      "playerId": 52001,
+      "playerName": "안현민",
+      "sourceQuestionId": "kboten-2025-golden-glove-2026-09-08"
+    },
+    {
+      "awardId": "golden-glove",
+      "award": "KBO 골든글러브",
+      "year": 2025,
+      "category": "포수",
+      "playerId": 76232,
+      "playerName": "양의지",
+      "sourceQuestionId": "kboten-2025-golden-glove-2026-09-08"
+    },
+    {
+      "awardId": "golden-glove",
+      "award": "KBO 골든글러브",
+      "year": 2025,
+      "category": "지명타자",
+      "playerId": 72443,
+      "playerName": "최형우",
+      "sourceQuestionId": "kboten-2025-golden-glove-2026-09-08"
+    },
+    {
+      "awardId": "golden-glove",
+      "award": "KBO 골든글러브",
+      "year": 2025,
+      "category": "투수",
+      "playerId": null,
+      "playerName": "폰세",
+      "sourceQuestionId": "kboten-2025-golden-glove-2026-09-08"
+    }
+  ],
+  "sources": [
+    {
+      "name": "KBO 수상 현황 · 골든글러브",
+      "url": "https://www.koreabaseball.com/Player/Awards/GoldenGlove.aspx",
+      "accessedAt": "2026-09-08",
+      "role": "primary"
+    },
+    {
+      "name": "KBO 수상 현황 · MVP·신인상",
+      "url": "https://www.koreabaseball.com/player/awards/playerprize.aspx",
+      "accessedAt": "2026-09-10",
+      "role": "primary"
+    }
+  ],
+  "review": {
+    "status": "verified",
+    "reviewedAt": "2026-09-10",
+    "note": "KBO 공식 출처로 검수된 기존 문제 스냅샷에서 관계형 수상 이력을 초기 이관했다."
+  }
+}

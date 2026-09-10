@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/build-player-catalog.mjs && node scripts/build-kboten-question-index.mjs && node scripts/build-kbo5001-question-index.mjs && node scripts/build-kbo-bingo-question-index.mjs",
+    "prebuild": "node scripts/build-player-catalog.mjs && node scripts/build-player-relations.mjs && node scripts/build-kboten-question-index.mjs && node scripts/build-kbo5001-question-index.mjs && node scripts/build-kbo-bingo-question-index.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
@@ -19,6 +19,10 @@
     "data:validate-kbo-bingo": "node scripts/validate-kbo-bingo-questions.mjs",
     "data:build-players": "node scripts/build-player-catalog.mjs",
     "data:validate-players": "node scripts/validate-player-profiles.mjs",
+    "data:sync-player-profiles": "node scripts/sync-player-profiles.mjs",
+    "data:sync-relations": "node scripts/sync-player-relations.mjs",
+    "data:build-relations": "node scripts/build-player-relations.mjs",
+    "data:validate-relations": "node scripts/validate-player-relations.mjs",
     "data:check": "node scripts/check-roster-freshness.mjs"
   },
   "dependencies": {

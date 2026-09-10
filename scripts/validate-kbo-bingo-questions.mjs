@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import {
+  isRelationshipRule,
   resolveBingoBoard,
   resolveBingoDeck,
   resolvePuzzleAttributeBoard,
@@ -7,6 +8,7 @@ import {
 
 const directory = "data/questions/kbo-bingo";
 const players = JSON.parse(await fs.readFile("data/players/index.json", "utf8"));
+const relationIndex = JSON.parse(await fs.readFile("data/relations/index.json", "utf8"));
 const playerById = new Map(players.map((player) => [player.id, player]));
 const files = (await fs.readdir(directory)).filter((file) => file.endsWith(".json") && file !== "index.json");
 
@@ -64,7 +66,12 @@ for (const file of files) {
   const missingPlayers = puzzle.deck.filter((id) => !playerById.has(id));
   if (missingPlayers.length) throw new Error(`${file}: 선수 인덱스에 없는 ID ${missingPlayers.join(", ")}`);
   const deckIds = new Set(puzzle.deck);
-  const attributeBoard = resolvePuzzleAttributeBoard(puzzle, playerById, file);
+  for (const cell of puzzle.board) {
+    if (isRelationshipRule(cell.rule) && !Array.isArray(cell.validPlayerIds)) {
+      throw new Error(`${file}: 관계 조건 ${cell.label}은 공개 당시 validPlayerIds 스냅샷이 필요합니다.`);
+    }
+  }
+  const attributeBoard = resolvePuzzleAttributeBoard(puzzle, playerById, file, relationIndex);
   const resolvedBoard = resolveBingoBoard({ ...puzzle, board: attributeBoard });
 
   for (const cell of resolvedBoard) {

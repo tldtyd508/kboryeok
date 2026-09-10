@@ -1,7 +1,42 @@
 {
-  "id": 93715, "name": "구대성", "aliases": [], "status": "retired",
-  "positionGroup": "P", "positionDetail": "투수", "throws": "L", "bats": "L", "birthYear": 1969,
-  "current": null, "career": { "jerseyNumbers": [15], "jerseyNumberSources": [{ "name": "나무위키 구대성", "url": "https://namu.wiki/w/구대성", "accessedAt": "2026-09-08" }] },
-  "sources": [{ "name": "KBO 은퇴 선수 기록", "url": "https://www.koreabaseball.com/Record/Retire/Pitcher.aspx?playerId=93715", "role": "primary" }],
-  "review": { "status": "verified", "reviewedAt": "2026-09-08" }
+  "schemaVersion": 1,
+  "id": 93715,
+  "name": "구대성",
+  "aliases": [],
+  "status": "retired",
+  "bio": {
+    "birthYear": 1969,
+    "throws": "L",
+    "bats": "L",
+    "positionGroup": "P",
+    "positionDetail": "투수"
+  },
+  "current": null,
+  "career": {
+    "debutYear": null,
+    "retirementYear": null,
+    "jerseyNumbers": [
+      15
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 구대성",
+        "url": "https://namu.wiki/w/구대성",
+        "accessedAt": "2026-09-08"
+      }
+    ],
+    "teamStints": []
+  },
+  "sources": [
+    {
+      "name": "KBO 은퇴 선수 기록",
+      "url": "https://www.koreabaseball.com/Record/Retire/Pitcher.aspx?playerId=93715",
+      "role": "primary"
+    }
+  ],
+  "review": {
+    "status": "verified",
+    "reviewedAt": "2026-09-08",
+    "completeness": "game-ready"
+  }
 }

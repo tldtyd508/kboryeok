@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": 50357,
+  "name": "박주홍",
+  "aliases": [],
+  "status": "active",
+  "bio": {
+    "birthYear": 2001,
+    "throws": "L",
+    "bats": "L",
+    "positionGroup": "OF",
+    "positionDetail": "외야수"
+  },
+  "current": {
+    "season": 2026,
+    "teamId": "WO",
+    "team": "키움 히어로즈",
+    "jerseyNumber": 57
+  },
+  "career": {
+    "debutYear": null,
+    "retirementYear": null,
+    "jerseyNumbers": [
+      57
+    ],
+    "teamStints": [
+      {
+        "teamId": "WO",
+        "team": "키움 히어로즈",
+        "from": 2026,
+        "to": 2026
+      }
+    ]
+  },
+  "sources": [
+    {
+      "name": "KBO 등록 선수 명단",
+      "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+      "role": "primary"
+    }
+  ],
+  "review": {
+    "status": "generated",
+    "reviewedAt": "2026-09-08",
+    "completeness": "game-ready"
+  }
+}

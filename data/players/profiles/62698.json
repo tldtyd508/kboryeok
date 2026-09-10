@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": 62698,
+  "name": "소사",
+  "aliases": [],
+  "status": "retired",
+  "bio": {
+    "birthYear": null,
+    "throws": null,
+    "bats": null,
+    "positionGroup": "P",
+    "positionDetail": "투수"
+  },
+  "current": null,
+  "career": {
+    "debutYear": null,
+    "retirementYear": null,
+    "jerseyNumbers": [],
+    "teamStints": []
+  },
+  "sources": [
+    {
+      "name": "KBO 선수 기록",
+      "url": "https://www.koreabaseball.com/Record/Retire/Pitcher.aspx?playerId=62698",
+      "role": "primary"
+    }
+  ],
+  "review": {
+    "status": "generated",
+    "reviewedAt": null,
+    "completeness": "index-only"
+  }
+}

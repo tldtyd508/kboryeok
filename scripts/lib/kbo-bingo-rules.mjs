@@ -1,11 +1,25 @@
-const ATTRIBUTE_CELL_PREFIXES = ["team-", "position-", "bats-", "throws-", "born-", "number-"];
+const ATTRIBUTE_CELL_PREFIXES = [
+  "team-", "position-", "bats-", "throws-", "born-", "number-",
+  "team-season-", "teammate-", "manager-", "award-",
+];
+const RELATION_RULE_TYPES = new Set(["teamSeason", "teammate", "managedBy", "award"]);
+
+export function isRelationshipRule(rule) {
+  return RELATION_RULE_TYPES.has(rule?.type);
+}
 
 export function requiresAttributeRule(cellId) {
   return ATTRIBUTE_CELL_PREFIXES.some((prefix) => cellId.startsWith(prefix));
 }
 
-export function resolveAttributeRulePlayerIds(rule, deck, playerById) {
+export function resolveAttributeRulePlayerIds(rule, deck, playerById, relationIndex = null) {
   if (!rule || typeof rule !== "object") throw new Error("속성 조건의 rule이 없습니다.");
+
+  if (isRelationshipRule(rule) && !relationIndex) throw new Error(`${rule.type} 조건에는 선수 관계 인덱스가 필요합니다.`);
+
+  const matchesSeason = (season) => !rule.seasons || rule.seasons.includes(season);
+  const teamMemberships = (playerId) => (relationIndex?.byPlayer?.[playerId]?.teamSeasons ?? [])
+    .filter((membership) => matchesSeason(membership.season));
 
   return deck.filter((playerId) => {
     const player = playerById.get(playerId);
@@ -28,6 +42,23 @@ export function resolveAttributeRulePlayerIds(rule, deck, playerById) {
       return numbers.some((number) =>
         (rule.min === undefined || number >= rule.min)
         && (rule.max === undefined || number <= rule.max));
+    }
+    if (rule.type === "teamSeason") {
+      return teamMemberships(playerId).some((membership) => rule.values?.includes(membership.teamId));
+    }
+    if (rule.type === "teammate") {
+      const targetKeys = new Set(teamMemberships(rule.playerId).map((membership) => `${membership.season}:${membership.teamId}`));
+      return playerId !== rule.playerId
+        && teamMemberships(playerId).some((membership) => targetKeys.has(`${membership.season}:${membership.teamId}`));
+    }
+    if (rule.type === "managedBy") {
+      return teamMemberships(playerId).some((membership) => rule.values?.includes(membership.manager));
+    }
+    if (rule.type === "award") {
+      return (relationIndex.byPlayer?.[playerId]?.awards ?? []).some((award) =>
+        rule.values?.includes(award.awardId)
+        && (!rule.years || rule.years.includes(award.year))
+        && (!rule.categories || rule.categories.includes(award.category)));
     }
 
     throw new Error(`지원하지 않는 크보 빙고 속성 조건: ${rule.type}`);
@@ -87,7 +118,7 @@ export function resolveBingoBoard(puzzle) {
   return seededShuffle(puzzle.board, `${puzzle.id}:r${puzzle.revision}:board`);
 }
 
-export function resolvePuzzleAttributeBoard(puzzle, playerById, context = puzzle.id ?? "크보 빙고 문제") {
+export function resolvePuzzleAttributeBoard(puzzle, playerById, context = puzzle.id ?? "크보 빙고 문제", relationIndex = null) {
   return puzzle.board.map((cell) => {
     if (requiresAttributeRule(cell.id) && !cell.rule) {
       throw new Error(`${context}: ${cell.label}은 선수 속성 rule로 판정해야 합니다.`);
@@ -109,7 +140,7 @@ export function resolvePuzzleAttributeBoard(puzzle, playerById, context = puzzle
       if (cell.rule.type === "throws" && !player.throws) throw new Error(`${context}: 선수 ${playerId}의 투구손 이력이 없습니다.`);
       if (cell.rule.type === "birthYear" && !Number.isInteger(player.birthYear)) throw new Error(`${context}: 선수 ${playerId}의 출생연도가 없습니다.`);
     }
-    const validPlayerIds = resolveAttributeRulePlayerIds(cell.rule, puzzle.deck, playerById);
+    const validPlayerIds = resolveAttributeRulePlayerIds(cell.rule, puzzle.deck, playerById, relationIndex);
     if (cell.validPlayerIds && !samePlayerIds(cell.validPlayerIds, validPlayerIds)) {
       throw new Error(`${context}: ${cell.label}의 수동 판정 목록이 선수 속성 rule과 다릅니다.`);
     }
