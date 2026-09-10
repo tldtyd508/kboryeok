@@ -750,5 +750,106 @@
       "reviewedAt": "2026-09-10",
       "note": "KBO 공식 기록실에서 시즌 2025, KBO 정규시즌, 안타 내림차순으로 상위 10명을 대조했다. 구자욱·문현빈은 169안타 공동 기록이며 정답 슬롯은 KBO 표시 순서대로 4·5번에 고정했다. 11번째 표시 선수 최지훈은 147안타로 TOP 10 경계 밖임을 확인한 완료 시즌 스냅샷이다."
     }
+  },
+  {
+    "id": "kboten-2025-walks-2026-09-11",
+    "game": "kboten",
+    "publishDate": "2026-09-11",
+    "revision": 1,
+    "title": "2025 KBO 정규시즌 볼넷 TOP 10",
+    "prompt": "2025년 KBO 정규시즌 볼넷 상위 10명을 모두 찾아보세요. 동률 선수는 KBO 기록실의 표시 순서로 정답 슬롯을 고정합니다.",
+    "statLabel": "2025 정규시즌 볼넷",
+    "scopeLabel": "2025 KBO 정규시즌 완료 기록 · 2026-09-11 조회 스냅샷",
+    "maxWrongGuesses": 3,
+    "eligibility": {
+      "recordType": "season-counting",
+      "minimum": null,
+      "ruleSource": "KBO 공식 2025 정규시즌 타자 기본기록 · 볼넷 내림차순"
+    },
+    "answers": [
+      {
+        "rank": 1,
+        "name": "문보경",
+        "value": "79",
+        "status": "active",
+        "aliases": []
+      },
+      {
+        "rank": 2,
+        "name": "박성한",
+        "value": "79",
+        "status": "active",
+        "aliases": []
+      },
+      {
+        "rank": 3,
+        "name": "권희동",
+        "value": "77",
+        "status": "active",
+        "aliases": []
+      },
+      {
+        "rank": 4,
+        "name": "안현민",
+        "value": "75",
+        "status": "active",
+        "aliases": []
+      },
+      {
+        "rank": 5,
+        "name": "구자욱",
+        "value": "73",
+        "status": "active",
+        "aliases": []
+      },
+      {
+        "rank": 6,
+        "name": "노시환",
+        "value": "70",
+        "status": "active",
+        "aliases": []
+      },
+      {
+        "rank": 7,
+        "name": "이재현",
+        "value": "69",
+        "status": "active",
+        "aliases": []
+      },
+      {
+        "rank": 8,
+        "name": "박해민",
+        "value": "68",
+        "status": "active",
+        "aliases": []
+      },
+      {
+        "rank": 9,
+        "name": "송성문",
+        "value": "68",
+        "status": "inactive",
+        "aliases": []
+      },
+      {
+        "rank": 10,
+        "name": "최형우",
+        "value": "67",
+        "status": "active",
+        "aliases": []
+      }
+    ],
+    "sources": [
+      {
+        "name": "KBO 기록실 · 2025 정규시즌 타자 기본기록",
+        "url": "https://www.koreabaseball.com/Record/Player/HitterBasic/Basic2.aspx",
+        "accessedAt": "2026-09-11",
+        "role": "primary"
+      }
+    ],
+    "review": {
+      "status": "verified",
+      "reviewedAt": "2026-09-11",
+      "note": "KBO 공식 기록실에서 시즌 2025, KBO 정규시즌, 볼넷 내림차순으로 첫 10개 표시 선수를 대조했다. 문보경·박성한은 79볼넷, 박해민·송성문은 68볼넷 공동 기록이며 KBO 표시 순서대로 슬롯을 고정했다. 11번째 김성윤은 65볼넷으로 경계 밖임을 확인했다."
+    }
   }
 ]

@@ -483,5 +483,109 @@
       "reviewedAt": "2026-09-10",
       "note": "KBO 공식 타자 기본기록에서 시즌 2025, KBO 정규시즌, 안타 내림차순 상위 12명의 수치를 대조했다. 후보 12명 중 5명 조합 792개를 전수 검사해 755안타 정답 조합은 김주원·양의지·김성윤·박찬호·최지훈 1개임을 확인한 완료 시즌 스냅샷이다."
     }
+  },
+  {
+    "id": "kbo5001-season-stolen-bases-2026-09-11",
+    "game": "kbo5001",
+    "publishDate": "2026-09-11",
+    "revision": 1,
+    "title": "2025 정규시즌 도루 180",
+    "prompt": "후보 12명 중 5명을 골라 2025 KBO 정규시즌 도루 합계 180을 정확히 만들어 보세요.",
+    "statLabel": "2025 정규시즌 도루",
+    "scopeLabel": "2025 KBO 정규시즌 완료 기록 · 2026-09-11 조회 스냅샷",
+    "target": 180,
+    "selectionCount": 5,
+    "maxSubmissions": 3,
+    "candidates": [
+      {
+        "name": "박해민",
+        "value": 49,
+        "status": "active"
+      },
+      {
+        "name": "김주원",
+        "value": 44,
+        "status": "active"
+      },
+      {
+        "name": "정준재",
+        "value": 37,
+        "status": "active"
+      },
+      {
+        "name": "조수행",
+        "value": 30,
+        "status": "active"
+      },
+      {
+        "name": "최정원",
+        "value": 30,
+        "status": "active"
+      },
+      {
+        "name": "최지훈",
+        "value": 28,
+        "status": "active"
+      },
+      {
+        "name": "박민우",
+        "value": 28,
+        "status": "active"
+      },
+      {
+        "name": "박찬호",
+        "value": 27,
+        "status": "active"
+      },
+      {
+        "name": "김성윤",
+        "value": 26,
+        "status": "active"
+      },
+      {
+        "name": "정수빈",
+        "value": 26,
+        "status": "active"
+      },
+      {
+        "name": "오태곤",
+        "value": 25,
+        "status": "active"
+      },
+      {
+        "name": "황성빈",
+        "value": 25,
+        "status": "active"
+      }
+    ],
+    "solutions": [
+      [
+        "박해민",
+        "김주원",
+        "정준재",
+        "오태곤",
+        "황성빈"
+      ],
+      [
+        "박해민",
+        "김주원",
+        "조수행",
+        "최정원",
+        "박찬호"
+      ]
+    ],
+    "sources": [
+      {
+        "name": "KBO 기록실 · 2025 정규시즌 선수 주루기록",
+        "url": "https://www.koreabaseball.com/Record/Player/Runner/Basic.aspx",
+        "accessedAt": "2026-09-11",
+        "role": "primary"
+      }
+    ],
+    "review": {
+      "status": "verified",
+      "reviewedAt": "2026-09-11",
+      "note": "KBO 공식 주루기록에서 시즌 2025, 도루 내림차순 상위권 후보 12명의 수치를 대조했다. 후보 12명 중 5명 조합 792개를 전수 검사해 180도루 정답 조합은 2개임을 확인한 완료 시즌 스냅샷이다."
+    }
   }
 ]

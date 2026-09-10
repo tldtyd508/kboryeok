@@ -1,0 +1,54 @@
+{
+  "id": "kbo-bingo-current-roster-attributes-2026-09-11",
+  "game": "kbo-bingo",
+  "publishDate": "2026-09-11",
+  "revision": 1,
+  "title": "2026 KBO 선수 빙고 · 현역 속성전",
+  "prompt": "등장한 현역 선수를 조건 한 칸에만 배치해 4×4 판을 완성하세요.",
+  "board": [
+    { "id": "team-lg", "label": "현재 LG 트윈스", "rule": { "type": "team", "values": ["LG 트윈스"] }, "examplePlayerId": 53123 },
+    { "id": "team-samsung", "label": "현재 삼성 라이온즈", "rule": { "type": "team", "values": ["삼성 라이온즈"] }, "examplePlayerId": 62404 },
+    { "id": "position-catcher", "label": "포수", "rule": { "type": "position", "values": ["C"] }, "examplePlayerId": 51865 },
+    { "id": "position-pitcher", "label": "투수", "rule": { "type": "position", "values": ["P"] }, "examplePlayerId": 52868 },
+    { "id": "position-infielder", "label": "내야수", "rule": { "type": "position", "values": ["IF"] }, "examplePlayerId": 51868 },
+    { "id": "position-outfielder", "label": "외야수", "rule": { "type": "position", "values": ["OF"] }, "examplePlayerId": 50854 },
+    { "id": "bats-left", "label": "좌타", "rule": { "type": "bats", "values": ["L"] }, "examplePlayerId": 50854 },
+    { "id": "bats-right", "label": "우타", "rule": { "type": "bats", "values": ["R"] }, "examplePlayerId": 51868 },
+    { "id": "throws-left", "label": "좌투", "rule": { "type": "throws", "values": ["L"] }, "examplePlayerId": 52868 },
+    { "id": "throws-right", "label": "우투", "rule": { "type": "throws", "values": ["R"] }, "examplePlayerId": 51868 },
+    { "id": "born-2000-plus", "label": "2000년생 이후", "rule": { "type": "birthYear", "min": 2000 }, "examplePlayerId": 51868 },
+    { "id": "born-before-1995", "label": "1994년생 이전", "rule": { "type": "birthYear", "max": 1994 }, "examplePlayerId": 76267 },
+    { "id": "number-10-below", "label": "등번호 10 이하", "rule": { "type": "jerseyNumber", "max": 10 }, "examplePlayerId": 52868 },
+    { "id": "number-11-30", "label": "등번호 11~30", "rule": { "type": "jerseyNumber", "min": 11, "max": 30 }, "examplePlayerId": 51868 },
+    { "id": "number-31-50", "label": "등번호 31~50", "rule": { "type": "jerseyNumber", "min": 31, "max": 50 }, "examplePlayerId": 52348 },
+    { "id": "number-51-plus", "label": "등번호 51 이상", "rule": { "type": "jerseyNumber", "min": 51 }, "examplePlayerId": 50854 }
+  ],
+  "boardOrder": "seeded-shuffle",
+  "deckOrder": "balanced-shuffle",
+  "deck": [
+    50854, 51868, 51865, 52868, 52415, 50054, 76267, 53312, 53164,
+    52348, 53123, 69102, 79365, 50106, 62404, 54400, 74540, 50464,
+    52605, 62947, 78603, 50604, 52001, 50030, 50066, 51907, 79215,
+    51903, 50995, 54529, 51528, 50596, 69737, 53764, 52764, 52701
+  ],
+  "maxCards": 36,
+  "sources": [
+    {
+      "name": "KBO 2026 구단별 소속선수 명단",
+      "url": "https://www.koreabaseball.com/MediaNews/Notice/View.aspx?bdSe=11831",
+      "accessedAt": "2026-09-11",
+      "role": "primary"
+    },
+    {
+      "name": "KBO 선수 기록실 · 선수 프로필",
+      "url": "https://www.koreabaseball.com/Record/Player/HitterDetail/Basic.aspx?playerId=78513",
+      "accessedAt": "2026-09-11",
+      "role": "primary"
+    }
+  ],
+  "review": {
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "note": "2026 공식 등록 명단과 공통 선수 프로필의 현재 구단·포지션·투타·생년·등번호를 기준으로 판정한다. LG·삼성 팀 조건을 포함한 16칸과 36장 덱의 전체 해답 및 카드 제거 내성을 검증한다. 날짜와 revision의 고정 시드로 선수 덱과 조건판을 각각 섞는다."
+  }
+}
