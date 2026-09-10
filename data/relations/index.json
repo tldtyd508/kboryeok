@@ -793,86 +793,6 @@
   ],
   "awards": [
     {
-      "awardId": "regular-season-mvp",
-      "award": "KBO 정규시즌 MVP",
-      "year": 2015,
-      "playerId": null,
-      "playerName": "테임즈",
-      "sourceQuestionId": "kboten-2015-2024-regular-season-mvp-2026-09-10"
-    },
-    {
-      "awardId": "regular-season-mvp",
-      "award": "KBO 정규시즌 MVP",
-      "year": 2016,
-      "playerId": 61240,
-      "playerName": "니퍼트",
-      "sourceQuestionId": "kboten-2015-2024-regular-season-mvp-2026-09-10"
-    },
-    {
-      "awardId": "regular-season-mvp",
-      "award": "KBO 정규시즌 MVP",
-      "year": 2017,
-      "playerId": 77637,
-      "playerName": "양현종",
-      "sourceQuestionId": "kboten-2015-2024-regular-season-mvp-2026-09-10"
-    },
-    {
-      "awardId": "regular-season-mvp",
-      "award": "KBO 정규시즌 MVP",
-      "year": 2018,
-      "playerId": 78224,
-      "playerName": "김재환",
-      "sourceQuestionId": "kboten-2015-2024-regular-season-mvp-2026-09-10"
-    },
-    {
-      "awardId": "regular-season-mvp",
-      "award": "KBO 정규시즌 MVP",
-      "year": 2019,
-      "playerId": null,
-      "playerName": "린드블럼",
-      "sourceQuestionId": "kboten-2015-2024-regular-season-mvp-2026-09-10"
-    },
-    {
-      "awardId": "regular-season-mvp",
-      "award": "KBO 정규시즌 MVP",
-      "year": 2020,
-      "playerId": 67025,
-      "playerName": "로하스",
-      "sourceQuestionId": "kboten-2015-2024-regular-season-mvp-2026-09-10"
-    },
-    {
-      "awardId": "regular-season-mvp",
-      "award": "KBO 정규시즌 MVP",
-      "year": 2021,
-      "playerId": null,
-      "playerName": "미란다",
-      "sourceQuestionId": "kboten-2015-2024-regular-season-mvp-2026-09-10"
-    },
-    {
-      "awardId": "regular-season-mvp",
-      "award": "KBO 정규시즌 MVP",
-      "year": 2022,
-      "playerId": 71564,
-      "playerName": "이대호",
-      "sourceQuestionId": "kboten-2015-2024-regular-season-mvp-2026-09-10"
-    },
-    {
-      "awardId": "regular-season-mvp",
-      "award": "KBO 정규시즌 MVP",
-      "year": 2023,
-      "playerId": null,
-      "playerName": "페디",
-      "sourceQuestionId": "kboten-2015-2024-regular-season-mvp-2026-09-10"
-    },
-    {
-      "awardId": "regular-season-mvp",
-      "award": "KBO 정규시즌 MVP",
-      "year": 2024,
-      "playerId": 52605,
-      "playerName": "김도영",
-      "sourceQuestionId": "kboten-2015-2024-regular-season-mvp-2026-09-10"
-    },
-    {
       "awardId": "golden-glove",
       "award": "KBO 골든글러브",
       "year": 2025,
@@ -2044,12 +1964,7 @@
           "manager": "이범호"
         }
       ],
-      "awards": [
-        {
-          "awardId": "regular-season-mvp",
-          "year": 2024
-        }
-      ]
+      "awards": []
     },
     "52628": {
       "teamSeasons": [
@@ -4313,15 +4228,6 @@
       ],
       "awards": []
     },
-    "61240": {
-      "teamSeasons": [],
-      "awards": [
-        {
-          "awardId": "regular-season-mvp",
-          "year": 2016
-        }
-      ]
-    },
     "61268": {
       "teamSeasons": [
         {
@@ -5564,15 +5470,6 @@
       ],
       "awards": []
     },
-    "67025": {
-      "teamSeasons": [],
-      "awards": [
-        {
-          "awardId": "regular-season-mvp",
-          "year": 2020
-        }
-      ]
-    },
     "67048": {
       "teamSeasons": [
         {
@@ -6663,15 +6560,6 @@
       ],
       "awards": []
     },
-    "71564": {
-      "teamSeasons": [],
-      "awards": [
-        {
-          "awardId": "regular-season-mvp",
-          "year": 2022
-        }
-      ]
-    },
     "72443": {
       "teamSeasons": [
         {
@@ -6912,12 +6800,7 @@
           "manager": "이범호"
         }
       ],
-      "awards": [
-        {
-          "awardId": "regular-season-mvp",
-          "year": 2017
-        }
-      ]
+      "awards": []
     },
     "77829": {
       "teamSeasons": [
@@ -6967,12 +6850,7 @@
           "manager": "이숭용"
         }
       ],
-      "awards": [
-        {
-          "awardId": "regular-season-mvp",
-          "year": 2018
-        }
-      ]
+      "awards": []
     },
     "78288": {
       "teamSeasons": [
