@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1972,
     "throws": null,
     "bats": null,
     "positionGroup": null,
@@ -13,10 +13,54 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1992,
+    "retirementYear": 2006,
+    "jerseyNumbers": [
+      70,
+      37,
+      25,
+      40,
+      24,
+      52
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 70,
+        "period": "1991~1994"
+      },
+      {
+        "number": 37,
+        "period": "1995~2000"
+      },
+      {
+        "number": 25,
+        "period": "2001~2002"
+      },
+      {
+        "number": 37,
+        "period": "2003"
+      },
+      {
+        "number": 40,
+        "period": "2004"
+      },
+      {
+        "number": 24,
+        "period": "2005~2005. 7. 24."
+      },
+      {
+        "number": 52,
+        "period": "2005. 7. 25.~2006. 6. 29."
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 신동주(야구)",
+        "url": "https://namu.wiki/w/신동주(야구)",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +70,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

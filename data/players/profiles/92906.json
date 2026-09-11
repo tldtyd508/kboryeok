@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1973,
     "throws": null,
     "bats": null,
     "positionGroup": null,
@@ -13,10 +13,38 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1992,
+    "retirementYear": 2009,
+    "jerseyNumbers": [
+      67,
+      31
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 67,
+        "period": "1992~1998. 7. 31."
+      },
+      {
+        "number": 31,
+        "period": "1998. 8. 1.~2003"
+      },
+      {
+        "number": 31,
+        "period": "2004~2008. 7. 2."
+      },
+      {
+        "number": 31,
+        "period": "2009~2010"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 박종호(1973)",
+        "url": "https://namu.wiki/w/박종호(1973)",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +54,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

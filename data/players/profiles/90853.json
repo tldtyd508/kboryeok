@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1971,
     "throws": null,
     "bats": null,
     "positionGroup": "P",
@@ -13,10 +13,55 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1990,
+    "retirementYear": 2008,
+    "jerseyNumbers": [
+      51,
+      14,
+      1,
+      18,
+      11,
+      38,
+      29
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 51,
+        "period": "1990~1993. 6. 13."
+      },
+      {
+        "number": 14,
+        "period": "1993. 6. 14.~1998"
+      },
+      {
+        "number": 1,
+        "period": "1999~2002"
+      },
+      {
+        "number": 18,
+        "period": "2003"
+      },
+      {
+        "number": 11,
+        "period": "2004"
+      },
+      {
+        "number": 38,
+        "period": "2005~2007"
+      },
+      {
+        "number": 29,
+        "period": "2008"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 이상목",
+        "url": "https://namu.wiki/w/이상목",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +71,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

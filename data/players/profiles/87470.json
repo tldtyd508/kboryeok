@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1963,
     "throws": null,
     "bats": null,
     "positionGroup": null,
@@ -13,10 +13,25 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1987,
+    "retirementYear": 1999,
+    "jerseyNumbers": [
+      1
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 1,
+        "period": "1987~1999"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 류중일",
+        "url": "https://namu.wiki/w/류중일",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +41,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

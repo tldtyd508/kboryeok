@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1961,
     "throws": null,
     "bats": null,
     "positionGroup": null,
@@ -13,10 +13,42 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1984,
+    "retirementYear": 1999,
+    "jerseyNumbers": [
+      33,
+      16
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 33,
+        "period": "1984~1993"
+      },
+      {
+        "number": 33,
+        "period": "1994~1997. 6. 7."
+      },
+      {
+        "number": 16,
+        "period": "1997. 6. 8.~1997"
+      },
+      {
+        "number": 33,
+        "period": "1998"
+      },
+      {
+        "number": 33,
+        "period": "1999"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 김광림(야구)",
+        "url": "https://namu.wiki/w/김광림(야구)",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +58,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

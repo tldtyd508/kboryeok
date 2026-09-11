@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1969,
     "throws": null,
     "bats": null,
     "positionGroup": null,
@@ -13,10 +13,30 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1991,
+    "retirementYear": 2004,
+    "jerseyNumbers": [
+      14,
+      16
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 14,
+        "period": "1991~1992"
+      },
+      {
+        "number": 16,
+        "period": "1993~2004"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 박정태",
+        "url": "https://namu.wiki/w/박정태",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +46,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

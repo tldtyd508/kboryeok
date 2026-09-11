@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1961,
     "throws": null,
     "bats": null,
     "positionGroup": "P",
@@ -13,10 +13,30 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1985,
+    "retirementYear": 1996,
+    "jerseyNumbers": [
+      49,
+      1
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 49,
+        "period": "1985~1988"
+      },
+      {
+        "number": 1,
+        "period": "1989~1996"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 정삼흠",
+        "url": "https://namu.wiki/w/정삼흠",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +46,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

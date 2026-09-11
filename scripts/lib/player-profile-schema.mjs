@@ -34,6 +34,7 @@ export function toCanonicalProfile(profile) {
       debutYear: profile.career?.debutYear ?? null,
       retirementYear: profile.career?.retirementYear ?? null,
       jerseyNumbers: profile.career?.jerseyNumbers ?? [],
+      ...(profile.career?.jerseyNumberHistory ? { jerseyNumberHistory: profile.career.jerseyNumberHistory } : {}),
       ...(profile.career?.jerseyNumberSources ? { jerseyNumberSources: profile.career.jerseyNumberSources } : {}),
       teamStints: profile.career?.teamStints ?? [],
     },
@@ -62,6 +63,9 @@ export function toRuntimeProfile(profile) {
     current: canonical.current ? { team: canonical.current.team, jerseyNumber: canonical.current.jerseyNumber } : null,
     career: {
       jerseyNumbers: canonical.career.jerseyNumbers,
+      ...(canonical.career.jerseyNumberHistory
+        ? { jerseyNumberHistory: canonical.career.jerseyNumberHistory }
+        : {}),
       ...(canonical.career.jerseyNumberSources
         ? { jerseyNumberSources: canonical.career.jerseyNumberSources }
         : {}),

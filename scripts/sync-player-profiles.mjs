@@ -101,6 +101,7 @@ for (const base of baseById.values()) {
       debutYear: previous?.career?.debutYear ?? null,
       retirementYear: previous?.career?.retirementYear ?? null,
       jerseyNumbers,
+      ...(previous?.career?.jerseyNumberHistory ? { jerseyNumberHistory: previous.career.jerseyNumberHistory } : {}),
       ...(previous?.career?.jerseyNumberSources ? { jerseyNumberSources: previous.career.jerseyNumberSources } : {}),
       teamStints,
     },

@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1960,
     "throws": null,
     "bats": null,
     "positionGroup": null,
@@ -13,10 +13,39 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1983,
+    "retirementYear": 1997,
+    "jerseyNumbers": [
+      5,
+      8,
+      9
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 5,
+        "period": "1983~1985"
+      },
+      {
+        "number": 8,
+        "period": "1986~1993"
+      },
+      {
+        "number": 9,
+        "period": "1994~1996"
+      },
+      {
+        "number": 8,
+        "period": "1997"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 한대화",
+        "url": "https://namu.wiki/w/한대화",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +55,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

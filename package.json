@@ -20,6 +20,7 @@
     "data:build-players": "node scripts/build-player-catalog.mjs",
     "data:validate-players": "node scripts/validate-player-profiles.mjs",
     "data:sync-player-profiles": "node scripts/sync-player-profiles.mjs",
+    "data:apply-retired-jerseys": "node scripts/apply-retired-jersey-batch.mjs",
     "data:sync-relations": "node scripts/sync-player-relations.mjs",
     "data:build-relations": "node scripts/build-player-relations.mjs",
     "data:validate-relations": "node scripts/validate-player-relations.mjs",

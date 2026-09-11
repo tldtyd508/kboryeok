@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1970,
     "throws": null,
     "bats": null,
     "positionGroup": null,
@@ -13,10 +13,29 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1993,
+    "retirementYear": 2003,
+    "jerseyNumbers": [
+      7
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 7,
+        "period": "1993~1999"
+      },
+      {
+        "number": 7,
+        "period": "2000~2003"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 최태원(야구선수)",
+        "url": "https://namu.wiki/w/최태원(야구선수)",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +45,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

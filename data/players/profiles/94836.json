@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1971,
     "throws": null,
     "bats": null,
     "positionGroup": null,
@@ -13,10 +13,39 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1994,
+    "retirementYear": 2008,
+    "jerseyNumbers": [
+      36,
+      9,
+      27
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 36,
+        "period": "1994~1999"
+      },
+      {
+        "number": 36,
+        "period": "2000~2001"
+      },
+      {
+        "number": 9,
+        "period": "2002~2005. 6. 2."
+      },
+      {
+        "number": 27,
+        "period": "2005. 6. 3.~2008"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 조원우",
+        "url": "https://namu.wiki/w/조원우",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +55,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

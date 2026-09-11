@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1956,
     "throws": null,
     "bats": null,
     "positionGroup": "P",
@@ -13,10 +13,25 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1982,
+    "retirementYear": 1990,
+    "jerseyNumbers": [
+      19
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 19,
+        "period": "1982~1990"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 유종겸",
+        "url": "https://namu.wiki/w/유종겸",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +41,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

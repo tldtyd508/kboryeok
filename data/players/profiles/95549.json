@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1970,
     "throws": null,
     "bats": null,
     "positionGroup": null,
@@ -13,10 +13,41 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1995,
+    "retirementYear": 2008,
+    "jerseyNumbers": [
+      49
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 49,
+        "period": "1995~2000"
+      },
+      {
+        "number": 49,
+        "period": "2001~2003"
+      },
+      {
+        "number": 49,
+        "period": "2004~2005"
+      },
+      {
+        "number": 49,
+        "period": "2006~2007"
+      },
+      {
+        "number": 49,
+        "period": "2008"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 마해영",
+        "url": "https://namu.wiki/w/마해영",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +57,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

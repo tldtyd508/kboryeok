@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1972,
     "throws": null,
     "bats": null,
     "positionGroup": null,
@@ -13,10 +13,30 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1995,
+    "retirementYear": 2008,
+    "jerseyNumbers": [
+      18,
+      5
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 18,
+        "period": "1995~1997"
+      },
+      {
+        "number": 5,
+        "period": "2005~2009"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 박현승",
+        "url": "https://namu.wiki/w/박현승",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +46,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

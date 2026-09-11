@@ -54,7 +54,9 @@
 
 모든 선수는 ID와 같은 이름의 개별 JSON을 가진다. 현역은 `current`에 해당 시즌 구단과 등번호를 두고, 은퇴 선수는 `current: null`로 둔다. 포지션·투타·출생연도·등번호가 모두 갖춰진 선수는 `game-ready`, 이름과 KBO ID만 확보한 선수는 `index-only`로 구분해 불완전한 정보가 게임 판정에 섞이지 않게 한다.
 
-은퇴 선수의 등번호는 나무위키 선수 문서를 참고할 수 있으며 `career.jerseyNumberSources`에 문서 URL과 확인일을 저장한다. 현역 선수의 등번호 조건은 현재 등록 번호, 은퇴 선수는 KBO 선수 시절 사용한 번호 중 하나라도 범위에 들면 충족한다. 해외 구단·국가대표·코칭스태프 번호는 포함하지 않는다.
+은퇴 선수의 등번호는 나무위키 선수 문서를 참고할 수 있으며 `career.jerseyNumberSources`에 문서 URL과 확인일을 저장한다. 번호를 사용한 순서와 기간은 `career.jerseyNumberHistory`의 `{ number, period }` 항목으로 보존한다. 현역 선수의 등번호 조건은 현재 등록 번호, 은퇴 선수는 KBO 선수 시절 사용한 번호 중 하나라도 범위에 들면 충족한다. 해외 구단·국가대표·코칭스태프 번호는 포함하지 않는다.
+
+은퇴 선수 보강은 `data/player-index/retired-jersey-batches/`에 검토가 끝난 100명 단위 배치를 남긴 뒤 `npm run data:apply-retired-jerseys -- <batch.json>`으로 적용한다. 배치는 KBO 공식 기록의 마지막 활동연도 순으로 진행하고, 기존 보강 선수와 출처에서 등번호 기간을 확인할 수 없는 선수는 배치 메타데이터에 별도로 기록한다.
 
 팀메이트를 각 선수 JSON에 서로 복제하지 않는다. `data/relations/team-seasons/{season}.json`의 같은 시즌·같은 구단 소속으로 계산한다. 감독도 같은 파일에 한 번만 저장한다. 수상 이력은 `data/relations/awards/`에 정규화하고 선수 ID로 연결한다. 빙고의 팀메이트·감독·수상 조건은 이 관계 원본에서 계산하되, 공개 문제에는 계산된 `validPlayerIds`를 함께 고정해 이후 이력 보강이 과거 문제의 정답을 바꾸지 못하게 한다.
 

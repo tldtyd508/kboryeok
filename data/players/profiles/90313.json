@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1968,
     "throws": null,
     "bats": null,
     "positionGroup": null,
@@ -13,10 +13,34 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1990,
+    "retirementYear": 2001,
+    "jerseyNumbers": [
+      37,
+      0
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 37,
+        "period": "1990~1992"
+      },
+      {
+        "number": 0,
+        "period": "1993~2000.7.6."
+      },
+      {
+        "number": 0,
+        "period": "2000.7.7.~2001"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 김경기",
+        "url": "https://namu.wiki/w/김경기",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +50,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

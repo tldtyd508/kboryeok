@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1970,
     "throws": null,
     "bats": null,
     "positionGroup": "P",
@@ -13,10 +13,34 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1992,
+    "retirementYear": 2008,
+    "jerseyNumbers": [
+      20,
+      64
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 20,
+        "period": "1992~2000"
+      },
+      {
+        "number": 20,
+        "period": "2003~2007"
+      },
+      {
+        "number": 64,
+        "period": "2008"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 정민태",
+        "url": "https://namu.wiki/w/정민태",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +50,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

@@ -29,6 +29,12 @@ for (const file of files) {
     throw new Error(`${file}: 등번호 이력이 올바르지 않습니다.`);
   }
   if (new Set(numbers).size !== numbers.length) throw new Error(`${file}: 등번호 이력에 중복이 있습니다.`);
+  const numberHistory = profile.career.jerseyNumberHistory;
+  if (numberHistory !== undefined && (!Array.isArray(numberHistory) || numberHistory.some((entry) =>
+    !Number.isInteger(entry.number) || entry.number < 0 || entry.number > 999 || typeof entry.period !== "string" || !entry.period
+  ))) {
+    throw new Error(`${file}: 기간별 등번호 이력이 올바르지 않습니다.`);
+  }
   if (!Array.isArray(profile.career.teamStints)) throw new Error(`${file}: teamStints 배열이 필요합니다.`);
   if (!profile.sources?.some((source) => source.role === "primary" && source.url?.startsWith("https://"))) {
     throw new Error(`${file}: KBO 또는 구단 공식 1차 출처가 필요합니다.`);
@@ -53,6 +59,9 @@ for (const file of files) {
     if (!Array.isArray(jerseySources) || !jerseySources.some((source) => source.url?.startsWith("https://") && source.accessedAt)) {
       throw new Error(`${file}: 검수된 은퇴 선수 등번호에는 참고 문서와 확인일이 필요합니다.`);
     }
+  }
+  if (numberHistory?.length && !numberHistory.every((entry) => numbers.includes(entry.number))) {
+    throw new Error(`${file}: 기간별 등번호가 등번호 목록과 일치하지 않습니다.`);
   }
 }
 

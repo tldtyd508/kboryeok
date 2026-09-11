@@ -13,6 +13,7 @@ export interface PlayerProfile {
   current: { team: string; jerseyNumber: number } | null;
   career: {
     jerseyNumbers: number[];
+    jerseyNumberHistory?: Array<{ number: number; period: string }>;
     jerseyNumberSources?: Array<{ name: string; url: string; accessedAt: string }>;
   };
 }

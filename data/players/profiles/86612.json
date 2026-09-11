@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1962,
     "throws": null,
     "bats": null,
     "positionGroup": "P",
@@ -13,10 +13,39 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1986,
+    "retirementYear": 2003,
+    "jerseyNumbers": [
+      47,
+      67,
+      46
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 47,
+        "period": "1986~1999"
+      },
+      {
+        "number": 67,
+        "period": "2000"
+      },
+      {
+        "number": 47,
+        "period": "2001~2003.6.9."
+      },
+      {
+        "number": 46,
+        "period": "2003.6.10.~2003"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 김정수(1962)",
+        "url": "https://namu.wiki/w/김정수(1962)",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +55,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

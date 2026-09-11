@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1966,
     "throws": null,
     "bats": null,
     "positionGroup": "P",
@@ -13,10 +13,35 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1987,
+    "retirementYear": 2002,
+    "jerseyNumbers": [
+      31,
+      67,
+      13
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 31,
+        "period": "1987~1998. 7. 31."
+      },
+      {
+        "number": 67,
+        "period": "1998. 8. 1.~1999"
+      },
+      {
+        "number": 13,
+        "period": "2000~2002"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 최창호(야구선수)",
+        "url": "https://namu.wiki/w/최창호(야구선수)",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +51,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

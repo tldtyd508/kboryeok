@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1973,
     "throws": null,
     "bats": null,
     "positionGroup": null,
@@ -13,10 +13,45 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1996,
+    "retirementYear": 2007,
+    "jerseyNumbers": [
+      3,
+      1,
+      35,
+      11,
+      51
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 3,
+        "period": "1996~1997"
+      },
+      {
+        "number": 1,
+        "period": "1998~2004. 7. 12."
+      },
+      {
+        "number": 35,
+        "period": "2004. 7. 13.~2004"
+      },
+      {
+        "number": 11,
+        "period": "2005"
+      },
+      {
+        "number": 51,
+        "period": "2006~2007"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 김대익",
+        "url": "https://namu.wiki/w/김대익",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +61,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

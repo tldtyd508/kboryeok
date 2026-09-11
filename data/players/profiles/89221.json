@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1966,
     "throws": null,
     "bats": null,
     "positionGroup": null,
@@ -13,10 +13,30 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1989,
+    "retirementYear": 2001,
+    "jerseyNumbers": [
+      5,
+      4
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 5,
+        "period": "1989~1997"
+      },
+      {
+        "number": 4,
+        "period": "1998~2001"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 이명수(1966)",
+        "url": "https://namu.wiki/w/이명수(1966)",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +46,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

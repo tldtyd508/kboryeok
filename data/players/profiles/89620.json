@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1966,
     "throws": null,
     "bats": null,
     "positionGroup": "P",
@@ -13,10 +13,39 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1989,
+    "retirementYear": 2005,
+    "jerseyNumbers": [
+      19,
+      16,
+      13
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 19,
+        "period": "1989~1999"
+      },
+      {
+        "number": 16,
+        "period": "2000~2001. 7. 29."
+      },
+      {
+        "number": 13,
+        "period": "2001. 7. 30.~2001"
+      },
+      {
+        "number": 19,
+        "period": "2002~2005"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 이강철",
+        "url": "https://namu.wiki/w/이강철",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +55,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1971,
     "throws": null,
     "bats": null,
     "positionGroup": "P",
@@ -13,10 +13,48 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1994,
+    "retirementYear": 2009,
+    "jerseyNumbers": [
+      30,
+      34,
+      19,
+      59
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 30,
+        "period": "1994~1995"
+      },
+      {
+        "number": 34,
+        "period": "1996~2005"
+      },
+      {
+        "number": 34,
+        "period": "2006"
+      },
+      {
+        "number": 19,
+        "period": "2007"
+      },
+      {
+        "number": 34,
+        "period": "2008"
+      },
+      {
+        "number": 59,
+        "period": "2009"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 최상덕",
+        "url": "https://namu.wiki/w/최상덕",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +64,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

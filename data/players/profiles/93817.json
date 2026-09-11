@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1971,
     "throws": null,
     "bats": null,
     "positionGroup": "P",
@@ -13,10 +13,49 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1993,
+    "retirementYear": 2004,
+    "jerseyNumbers": [
+      17,
+      13,
+      29,
+      57,
+      65
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 17,
+        "period": "1993~1999"
+      },
+      {
+        "number": 17,
+        "period": "2000~2000. 6. 1."
+      },
+      {
+        "number": 13,
+        "period": "2000. 6. 2.~2000"
+      },
+      {
+        "number": 29,
+        "period": "2001~2002"
+      },
+      {
+        "number": 57,
+        "period": "2003~2003. 6. 2."
+      },
+      {
+        "number": 65,
+        "period": "2003. 6. 12.~2005"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 성영재",
+        "url": "https://namu.wiki/w/성영재",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +65,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

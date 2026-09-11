@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1968,
     "throws": null,
     "bats": null,
     "positionGroup": "P",
@@ -13,10 +13,53 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1992,
+    "retirementYear": 2006,
+    "jerseyNumbers": [
+      52,
+      18,
+      67,
+      27,
+      20
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 52,
+        "period": "1992~1994"
+      },
+      {
+        "number": 18,
+        "period": "1995"
+      },
+      {
+        "number": 67,
+        "period": "1996~1998"
+      },
+      {
+        "number": 27,
+        "period": "1999~1999.4.15."
+      },
+      {
+        "number": 67,
+        "period": "1999.4.16.~2001"
+      },
+      {
+        "number": 20,
+        "period": "2002~2003"
+      },
+      {
+        "number": 67,
+        "period": "2004~2006"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 오봉옥",
+        "url": "https://namu.wiki/w/오봉옥",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +69,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

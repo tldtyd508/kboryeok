@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1966,
     "throws": null,
     "bats": null,
     "positionGroup": "P",
@@ -13,10 +13,40 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1987,
+    "retirementYear": 2001,
+    "jerseyNumbers": [
+      13,
+      21,
+      64,
+      29
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 13,
+        "period": "1985~1996"
+      },
+      {
+        "number": 21,
+        "period": "1997~1999"
+      },
+      {
+        "number": 64,
+        "period": "2000"
+      },
+      {
+        "number": 29,
+        "period": "2001~2001.6."
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 송유석",
+        "url": "https://namu.wiki/w/송유석",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +56,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

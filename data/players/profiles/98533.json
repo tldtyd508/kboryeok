@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1972,
     "throws": null,
     "bats": null,
     "positionGroup": null,
@@ -13,10 +13,50 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1998,
+    "retirementYear": 2007,
+    "jerseyNumbers": [
+      33,
+      10,
+      8,
+      44,
+      37,
+      24
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 33,
+        "period": "1998"
+      },
+      {
+        "number": 10,
+        "period": "1999~2002. 7. 20."
+      },
+      {
+        "number": 8,
+        "period": "2002. 7. 21.~2002"
+      },
+      {
+        "number": 44,
+        "period": "2003~2006. 6. 25."
+      },
+      {
+        "number": 37,
+        "period": "2006. 7. 5.~2006"
+      },
+      {
+        "number": 24,
+        "period": "2007"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 조경환(야구)",
+        "url": "https://namu.wiki/w/조경환(야구)",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +66,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

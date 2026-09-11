@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1975,
     "throws": null,
     "bats": null,
     "positionGroup": null,
@@ -13,10 +13,43 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1994,
+    "retirementYear": 2008,
+    "jerseyNumbers": [
+      4,
+      32,
+      44
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 4,
+        "period": "1994"
+      },
+      {
+        "number": 32,
+        "period": "1995~2000"
+      },
+      {
+        "number": 44,
+        "period": "2001"
+      },
+      {
+        "number": 32,
+        "period": "2002~2004"
+      },
+      {
+        "number": 32,
+        "period": "2005~2008"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 심정수",
+        "url": "https://namu.wiki/w/심정수",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +59,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

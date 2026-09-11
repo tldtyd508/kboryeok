@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1974,
     "throws": null,
     "bats": null,
     "positionGroup": "P",
@@ -13,10 +13,49 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1993,
+    "retirementYear": 2006,
+    "jerseyNumbers": [
+      28,
+      30,
+      14,
+      18,
+      39
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 28,
+        "period": "1993"
+      },
+      {
+        "number": 30,
+        "period": "1997~1998"
+      },
+      {
+        "number": 14,
+        "period": "1999"
+      },
+      {
+        "number": 18,
+        "period": "2000~2004. 7. 12."
+      },
+      {
+        "number": 39,
+        "period": "2004. 7. 13.~2004"
+      },
+      {
+        "number": 18,
+        "period": "2005~2006"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 노장진",
+        "url": "https://namu.wiki/w/노장진",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +65,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }

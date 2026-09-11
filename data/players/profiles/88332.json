@@ -5,7 +5,7 @@
   "aliases": [],
   "status": "retired",
   "bio": {
-    "birthYear": null,
+    "birthYear": 1969,
     "throws": null,
     "bats": null,
     "positionGroup": "P",
@@ -13,10 +13,33 @@
   },
   "current": null,
   "career": {
-    "debutYear": null,
-    "retirementYear": null,
-    "jerseyNumbers": [],
-    "teamStints": []
+    "debutYear": 1988,
+    "retirementYear": 2000,
+    "jerseyNumbers": [
+      21
+    ],
+    "teamStints": [],
+    "jerseyNumberHistory": [
+      {
+        "number": 21,
+        "period": "1988~1998. 7. 30."
+      },
+      {
+        "number": 21,
+        "period": "1998. 7. 31.~1999"
+      },
+      {
+        "number": 21,
+        "period": "2000"
+      }
+    ],
+    "jerseyNumberSources": [
+      {
+        "name": "나무위키 박정현(1969)",
+        "url": "https://namu.wiki/w/박정현(1969)",
+        "accessedAt": "2026-09-11"
+      }
+    ]
   },
   "sources": [
     {
@@ -26,8 +49,9 @@
     }
   ],
   "review": {
-    "status": "generated",
-    "reviewedAt": null,
-    "completeness": "index-only"
+    "status": "verified",
+    "reviewedAt": "2026-09-11",
+    "completeness": "index-only",
+    "note": "retired-jersey-001: KBO 활동기간과 나무위키 등번호 이력을 대조함."
   }
 }
