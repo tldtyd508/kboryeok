@@ -1,0 +1,97 @@
+{
+  "id": "kbo5001-season-home-runs-2026-09-13",
+  "game": "kbo5001",
+  "publishDate": "2026-09-13",
+  "revision": 1,
+  "title": "2025 정규시즌 홈런 178",
+  "prompt": "후보 12명 중 5명을 골라 2025 KBO 정규시즌 홈런 합계 178을 정확히 만들어 보세요.",
+  "statLabel": "2025 정규시즌 홈런",
+  "scopeLabel": "2025 KBO 정규시즌 완료 기록 · 2026-09-13 조회 스냅샷",
+  "target": 178,
+  "selectionCount": 5,
+  "maxSubmissions": 3,
+  "candidates": [
+    {
+      "name": "디아즈",
+      "value": 50,
+      "status": "active"
+    },
+    {
+      "name": "데이비슨",
+      "value": 36,
+      "status": "active"
+    },
+    {
+      "name": "위즈덤",
+      "value": 35,
+      "status": "inactive"
+    },
+    {
+      "name": "노시환",
+      "value": 32,
+      "status": "active"
+    },
+    {
+      "name": "오스틴",
+      "value": 31,
+      "status": "active"
+    },
+    {
+      "name": "송성문",
+      "value": 26,
+      "status": "inactive"
+    },
+    {
+      "name": "최형우",
+      "value": 24,
+      "status": "active"
+    },
+    {
+      "name": "문보경",
+      "value": 24,
+      "status": "active"
+    },
+    {
+      "name": "최정",
+      "value": 23,
+      "status": "active"
+    },
+    {
+      "name": "김영웅",
+      "value": 22,
+      "status": "active"
+    },
+    {
+      "name": "박동원",
+      "value": 22,
+      "status": "active"
+    },
+    {
+      "name": "안현민",
+      "value": 22,
+      "status": "active"
+    }
+  ],
+  "solutions": [
+    [
+      "디아즈",
+      "데이비슨",
+      "위즈덤",
+      "오스틴",
+      "송성문"
+    ]
+  ],
+  "sources": [
+    {
+      "name": "KBO 기록실 · 2025 정규시즌 타자 기본기록",
+      "url": "https://www.koreabaseball.com/Record/Player/HitterBasic/Basic1.aspx",
+      "accessedAt": "2026-09-13",
+      "role": "primary"
+    }
+  ],
+  "review": {
+    "status": "verified",
+    "reviewedAt": "2026-09-13",
+    "note": "KBO 공식 기록실에 시즌 2025, 홈런 HR_CN 내림차순 요청을 보내 상위 12명의 값을 대조했다. 12명 중 5명 조합 792개를 검사한 178홈런 유일해다."
+  }
+}
